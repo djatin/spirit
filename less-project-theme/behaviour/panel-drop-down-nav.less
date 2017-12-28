@@ -1,0 +1,168 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Drop Down Menu panel
+	Version: 3.0
+	URL: http://bigmallet.co.uk
+	Made from bits and pieces from the internet. 
+	with help http://heydonworks.com/practical_aria_examples/#submenus
+	
+	Behaviours panel nav drop down menu
+
+============================================================ */
+
+//Class
+//.panel
+//.panel__menu
+//.menu 
+
+// panel dropdown menu ==============
+// base styles 
+
+
+// End panel dropdown menu  ========================
+ //indicate there is a drop down when not all links have drop downs this happens at small sizes
+//so only in the panel context
+.panel .panel__link {
+    //1px/0.0625em
+    .min-width(0.0625em; {
+        padding-right: 1.5em; //specific to each implementaion
+        position: relative;
+        &:after {
+             display: block;  
+            content:'';
+            margin-top: -3px;
+            //.milli (); //13px
+            height: 0; 
+            width: 0;
+            .arrow-down();
+            .arrow-sm();
+            position: absolute;
+            top: 50%;
+            right: 0.46153846153846em;
+            .transition(all @duration-quickly ease-in-out);
+        }
+        /*&:hover, &:active, &:focus, &.is-active, &.active-trail {
+            &:after {
+               border-top-color: @white; 
+            }
+        }*/
+    });
+    }   
+
+// starts 320px===================================================
+
+.min-width(20em; {
+    
+//no js browser have the panels expanded
+    
+/* For browsers THAT DO and have touch cut the mustard */
+
+.js-panel__link {
+      cursor: pointer;  
+        
+}
+
+
+
+// use .js navigation classes 
+    .js-panel__child {
+        display: none;
+    }
+    
+.js-panel__child.is-open { 
+            // first level menu 
+           display: table !important;
+}
+// twizzle the arrow round
+.js-panel__link {
+   
+         &.is-active {
+             &:after {
+              .rotate(180deg);
+            }
+        }
+    }       
+
+    
+// positioning of sub menu
+[class*="--panel"] {
+        position: relative;
+}
+    
+   
+
+
+// end 320px
+});
+
+// Navigation drop downs need to be prevented from opeing and closing
+// 320px and 767px  
+.min-width-max(20em; {
+    
+    // keeep it open
+    .global-nav--panel .panel .menu {
+            display: block;
+     }
+    
+    // only if js is running
+    .tertiary-nav--panel .js-panel__child.is-open { 
+    position: absolute;
+    //top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: @zindex-overlay;
+    .BoxShadowHelper(0);
+    }
+    
+} 47.9375em);
+
+
+// tweaks 768px===================================================
+
+.min-width(48em; {
+
+    //.panel__link becomes a button so we need to reset some stuff
+    button.panel__link {
+        border: 0;
+        width: 100%;
+        font-family: inherit;
+        text-align: left;
+        .appearance();
+    }
+    
+//working on hover
+//no js
+    .panel > .menu { 
+        display: none;
+    }
+
+/* no-touch and browsers THAT DON'T cut the mustard :hover and :focus for key boards  */ 
+    .panel {
+        &:hover > .menu {
+            display: table;
+        }
+     }
+
+// add class 
+.mustardo .js-panel:hover > .js-panel__child {
+        display: none;
+ 
+}
+              
+    // end no-js 
+    
+    
+.global-nav--panel .panel > .menu, .tertiary-nav--panel .panel > .menu { 
+    position: absolute;
+    //top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: @zindex-overlay;
+    .BoxShadowHelper(0);
+}
+    
+});
+// End panel dropdown menu  ========================

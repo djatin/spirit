@@ -1,0 +1,342 @@
+// out: null
+
+// global styles 
+/* !webforms --------------------------------------------------- */
+// Styles for DRUPAL FORMS
+// EXtends Forms
+
+/* clases
+
+basic mark up
+- <div .webform-component
+--- label
+----- input (form-text, form-textarea, form-select, form-email)
+- </div>
+*/
+
+/*types
+-markup (area code)
+-select
+-textfield
+-number (same as textfield)
+-textarea
+-checkboxes
+-radio
+-permission (text area)
+-date
+*/
+
+/*///////////////////////////////////////////////////////////
+
+    Webforms
+
+//////////////////////////////////////////////////// */
+
+//-markup and permision working
+.webform-component-markup p, .webform-component-permission p {
+    margin: 0;
+    .milli--margin();
+    //font-size: 1em;
+    color: inherit;
+}
+
+.webform-component-markup p, .webform-component-permission p {
+    &:first-child {
+        margin-top: 0; // match line height
+    }
+}
+
+// Hide the date piccker for now
+.webform-calendar {
+    .hidden();
+}
+
+//Newsletter form -----------------------------------
+
+
+// SITE SPECIFIC ----------------------------------
+
+// Donate form ---------------------------------
+// Donate form currently uses webforms 
+
+/* Classes
+form--donate
+
+// USEs fieldsets to differenciate 
+.fieldset--step-1 (top level)
+.fieldset--single
+.fieldset--monthly
+.fieldset--set-amount (choices)
+.fieldset--other-amount (user choice)
+
+Then it uses normal form-items
+.form-type-radios 
+--label
+--.form-radios
+---.form-item .form-type-radio
+----.form-radio
+----label.option
+
+//prompts
+.form-radio__prompt prompt (container)
+.prompt__title
+--.prompt__amount
+.prompt__body
+*/
+
+
+
+
+
+.form--donate legend, .form--sponsor legend {
+    text-align: center;
+    .one-whole();
+}
+
+
+
+.fieldset--step-1 > legend .fieldset__legend {
+    display: inline-block;
+    max-width: 12.5em;
+    .beta--no-margin ();
+    font-weight: normal;
+    .inline-block();
+}
+
+
+//hide specific legends 
+.fieldset--set-amount .fieldset__legend {
+    .visually-hidden();   
+}
+
+.fieldset--other-amount {
+    margin-top: @space-xl; // match wrappers
+}
+
+.fieldset--other-amount legend {
+    overflow: hidden;
+}
+
+.fieldset--other-amount .fieldset__legend {
+    .epsilon--no-margin ();
+    margin-bottom: @space-s;
+    text-align: left;
+    .letterspacing120();
+    color:@textcolor;
+}
+
+
+.fieldset--step-1 .form-submit {
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 2.25em;
+    padding-right: 2.25em;
+    .one-third ();
+    min-width: 11.25em;
+    max-width: 20em;
+    background-color : @basecolor;
+    border-color: @basecolor;
+    &:hover {
+       background-color : darken(@basecolor, 4%);
+       border-color : darken(@basecolor, 4%); 
+            
+    }
+    &:active, &:focus {
+        background-color : lighten(@basecolor, 2%);
+        border-color : lighten(@basecolor, 2%);
+    }
+}
+
+
+// Labels
+
+.fieldset--set-amount > .form-type-radios {
+    margin-bottom: 0;
+}
+
+.fieldset--set-amount .option {
+    display: block;
+    height: 100%;
+    margin-top: @space-s;
+    padding-top: @space-xs;
+    padding-right: @space-default;
+    padding-bottom: @space-l;
+    padding-left: @space-default;
+    border-width: 2px;
+    border-style: solid;
+    border-color: @basecolor;
+    //color: @basecolor;
+    text-align: center;
+    .BoxShadowHelper(0); 
+}
+    
+
+// Prompts styles
+
+
+.prompt {
+    // prompts are in a form element and they are normally set to a smaller font size
+    // get us back up to default sizing
+    font-size: 16px;
+    font-size: 1rem;
+}
+
+.prompt__title {
+    
+    .epsilon--no-margin ();
+    color: @basecolor;
+    
+    
+}
+
+.prompt__title em {
+    display: inline-block;
+    .giga ();
+    font-style: normal;
+    .inline-block();
+}
+
+.prompt__title span {
+    font-style: italic;
+    color: @grey--light-4;
+}
+
+.prompt__body {
+    margin-top: @space-s;
+    margin-left: auto;
+    margin-right: auto;
+    .themeasure();
+    .epsilon ();
+    text-transform: uppercase;
+}
+
+//Other amount stying 
+.fieldset--other-amount {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: @gutter;
+    .themeasure();
+}
+
+.fieldset--other-amount .form-item {
+    //reset margins
+    margin-bottom: 0;
+}
+
+.fieldset--other-amount .form-radios .form-item {
+    margin-bottom: @space-s;
+    padding-left: 0.5em; // magic number
+}
+
+
+
+.fieldset--other-amount .form-type-textfield {
+    
+    
+    .generatedcontent & {
+        padding-left: @space-xl;
+        position: relative;
+        &:before {
+            display: block;
+            content: '\00a3';
+            margin-top: -0.5em;
+            .mega ();
+            color: @basecolor;
+            position: absolute;
+            left: 0;
+            top: 50%;
+        }
+    }
+}
+
+.fieldset--other-amount .form-text {
+    &:hover, &:active, &:focus {
+        border-color: @basecolor;
+        background-color: @bck-color-alt;
+    }
+}
+
+
+//behaviour 
+.fieldset--set-amount .option {
+    &:hover {
+        //color: @highlight--color-1;
+        //border-color: @highlight--color-1;
+        background-color: @bck-color-alt;
+        box-shadow: none;
+    }
+}
+
+.fieldset--set-amount .form-radio {
+    &:hover {
+       + .option {
+            //color: @highlight--color-1;
+            //border-color: @highlight--color-1;
+            background-color: @bck-color-alt;
+            box-shadow: none;
+        } 
+    }
+   &:active, &:focus {
+        + .option {
+            color: @white;
+            border-color: @basecolor;
+            background-color: @basecolor;
+            box-shadow: none;
+            outline: @outline;
+            outline-offset: @space-xxs;
+            .prompt__title {
+                    color: inherit;
+                }
+        }
+    }
+    .checked & {
+        .visually-hidden();
+        &:checked {
+            + .option {
+               color: @white;
+               border-color: @basecolor;
+               background-color: @basecolor; 
+               box-shadow: none;
+                // horrible nest nesting for 
+                .prompt__title {
+                    color: inherit;
+                }
+                
+            }
+        }
+    } 
+}
+
+
+//Sponsorship form -------------
+/*Classes
+//.form--sponsor
+fieldset--sponsor
+
+Builds on elements of the donate form
+
+*/
+
+
+.fieldset--sponsor > legend .fieldset__legend {
+    .halfmeasure();
+}
+
+// the select part of the form
+.fieldset--sponsor .form-type-select {
+    margin-left: auto;
+    margin-right: auto;
+    .themeasure();
+}
+
+.fieldset--sponsor .form-type-select label {
+    .delta ();
+    font-weight: 700;
+    .letterspacing120();
+    text-transform: uppercase;
+}
+
+.prompt__body--info {
+    margin-top: 3em;
+    margin-bottom: 3em;
+}

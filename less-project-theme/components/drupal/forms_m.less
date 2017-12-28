@@ -1,0 +1,171 @@
+// out: null
+// Media Queries for component
+
+/* !forms --------------------------------------------------- */
+
+/* /////////////////////////////////////////////////////
+
+    GENERIC DRUPAL FORM LAYOUTS 
+
+///////////////////////////////////////////////////////*/
+
+
+// For Browsers that get media queries 
+.min-width(0.0625em {
+
+// Special cases postcode needs to be smaller than 100% width
+
+.form-item[class*='-city'] + .form-item[class*='-postal-code'] {
+        max-width: 33.333333%;
+}
+    
+});
+    
+
+//local varible 
+@small_major: 18.5em; //300px as we still waht opera mini to work
+@small_minor: 40em; //640 when grid is floated
+
+
+//only for browsers that can cope with this so from 300px up 
+.min-width(@small_major {
+
+    
+//Specific date selects
+.form-type-date-select {
+    .clearfix();
+}
+
+.form-type-date-select .form-type-select {
+    margin: @gutter @gutter 0 0;
+    float: left;
+    &:last-child {
+        margin-right: 0;
+    }
+    &[class*='-value-month'], &[class*='-value-day'], &[class*='-value-year'] {
+        .one-third--gutter ();  
+    }
+    &[class*='-value-hour'] {
+        margin-right: 0;
+    }
+}
+
+.date-hour {
+    padding-right: 0.75em;
+    position: relative;
+    &:after {
+        display: inline-block;
+        content: ':';
+        margin-top: -0.75em;
+        position: absolute;
+        right: 0.25em; //4px
+        top: 50%;
+    }
+}
+    
+    
+/*// Gift Aid compontent -------------------------------------------
+// Mark up 
+<fieldset class="webform-component-fieldset webform-component--step-2--gift-aid-details fieldset fieldset--gift-aid">
+<legend><span class="fieldset__legend">
+<div class="fieldset__description description">
+</div>
+<div class="form-item webform-component webform-component-markup webform-component--step-2--gift-aid-details--gift-aid-text">
+ <p>
+<div class="form-item webform-component webform-component-checkboxes webform-component--step-2--gift-aid-details--gift-aid">
+  <label for="edit-submitted-step-2-gift-aid-details-gift-aid">
+ <div id="edit-submitted-step-2-gift-aid-details-gift-aid" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-step-2-gift-aid-details-gift-aid-1">
+ <input type="checkbox" id="edit-submitted-step-2-gift-aid-details-gift-aid-1" name="submitted[step_2][gift_aid_details][gift_aid][1]" value="1" class="form-checkbox">
+<label class="option" for="edit-submitted-step-2-gift-aid-details-gift-aid-1">
+*/
+
+.fieldset--gift-aid {
+    //match style of form input
+    padding: 4em;
+    padding-left: 0.625em;
+    padding-right: 0.625em;
+    padding-bottom: 0.375em; //6px 10px 
+    border : 1px solid @inputborder--hover;
+    background-image: url(../img/skin/logo/giftaid/giftaid_logo.gif);
+    background-position: top left;
+    background-repeat: no-repeat;
+     /*&:hover {
+        border-color: @inputborder--hover;
+    }*/
+}
+    
+.fieldset--gift-aid  .fieldset__legend {
+        .visually-hidden();
+}
+    
+.fieldset--gift-aid .fieldset__description {
+    font-weight: 700;    
+}
+    
+/////////////////////////////////////////////////////
+    
+    // make these infield top aligned
+    
+////////////////////////////////////////////////////
+ 
+//http://uxmovement.com/forms/why-infield-top-aligned-form-labels-are-quickest-to-scan/
+//only for browsers that can cope with this so from 320px up 
+// These take place in a grid
+    
+
+// nest all this should happen in the grid if its not in a grid there is a reason and shouldn't get this styling
+.o-grid { 
+    
+//All - 72px height bounding box
+ > .form-item {
+    padding-top: @space-xxs;//6px
+    padding-bottom: @space-xxs;//6px
+    //min-height: 4.5em; //72px;
+}
+    
+// joined items
+.form-item--joined-top {
+        //top part 
+        margin-bottom: 0 !important;
+        border-bottom: 0!important;
+        
+        
+    }
+    
+.form-item--joined-bottom {
+        //bottom part
+        padding-top: 0 !important;
+        border-top: 0 !important;
+          
+
+}
+    
+    > .form-actions {
+        margin-top: @space-xxs; 
+    }
+    
+    .form-actions input, .form-actions button {
+        width: 100%;
+    }
+   
+// end nest    
+}  
+
+//end @small_major
+});
+
+
+// Mailchimp forms ------------------------------------
+.min-width(@small_minor {
+    //to cope with labels 
+    .form--newsletter .form-actions {
+        margin-top: 1.25em; // magic number to make for actions in the grid line up
+    }
+    
+    
+    .contentinfo__newsletter form {
+        margin-bottom: 0;
+    }
+    
+    
+});

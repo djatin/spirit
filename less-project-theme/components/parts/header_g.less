@@ -1,0 +1,54 @@
+// out: null
+
+// global styles 
+/* !header --------------------------------------------------- */
+/* clases
+.header (generic class )
+.main__header
+.section__header
+
+contains 
+
+.page-title
+
+*/
+
+
+
+// Component in situ 
+// Handling banners and hiding the page title and breadcrumbs which are what is normally in the .main__header
+// classes
+//.has-banner
+//.no-banner (default)
+
+.has-banner .main__header {
+    .visually-hidden();   
+}
+
+//Site specific 
+//layout--blog has a banner and article meta
+//.layout--blog 
+
+//Header meta 
+.header__meta {
+    font-family: @fall-back--serif;
+    .wf-active & {
+        font-family: @font-stack__playfair;
+    }
+    font-style: italic;
+    color: @grey--light-4;
+}
+
+
+
+//Author details in the meta
+
+.author__item img {
+    height: 5.25em;
+    width: 5.25em;
+    .rounded(5.25em);
+    overflow: hidden;
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+}
+

@@ -1,0 +1,76 @@
+// out: null
+// ============================================================
+//
+//  Big Mallet's Mallet - Extended
+//  Grids 
+//	Version: 3.1
+//	
+//  based on styles for Grids
+//  uses @CSSWIZARDRY grid sytem - http://csswizardry.com/ 
+//  adapted by http://www.tomjn.com/ for Less
+//  & Patternlab - http://patternlab.io
+//
+// ============================================================ */
+
+
+// Base =================================================== 
+
+// .o-grid - grid container 
+// .o-grid__item - item in the grid
+
+//modifiers 
+// .grid--inline-center (grid of items where they are just displayed inline) 
+// .grid--no-gutter 
+// .grid--rev (revesed)
+// .grid--Nup (grid of N number items *Desides the width of .o-grid-item*)
+// .grid--golden (give odd and evens golden section ratios) 
+
+// .grid__item--faked (created to hide unevenness)
+
+/**
+ * 1. Allow the grid system to be used on lists.
+ * 2. Remove any margins and paddings that might affect the grid system.
+ * 3. Apply a negative `margin-left` to negate the columns’ gutters.
+ * 4. Remove whitespace caused by `inline-block` elements.
+ */
+.o-grid {
+    list-style:none;                /* [1] */
+    margin:0;                       /* [2] */
+    padding:0;                      /* [2] */
+    //letter-spacing:-0.31em;         /* [4] */
+    //word-spacing:-0.43em;           /* [4] */   
+   .clearfix();
+    overflow: hidden; 
+}
+
+// .o-grid-item
+/**
+ * 1. Cause columns to stack side-by-side.
+ * 2. Space columns apart.
+ * 3. Align columns to the tops of each other.
+ * 4. Reinstate removed whitespace.
+ * 5. Required to combine fluid widths and fixed gutters. (see as default on normalize)
+ * 6. ensure grid item doesn't get the layout bug.
+ */
+[class*='grid__item'] {
+    //display:inline-block;           /* [1] */
+    vertical-align:top;             /* [3] */
+    //letter-spacing:normal;          /* [4] */
+    //word-spacing:normal;            /* [4] */
+    //.box-sizing(border-box);        /* [5] */
+    overflow: hidden;
+    // IE FIX   /* [6] */
+    .ie7 & {
+        .has-layout();  
+    }
+}
+
+
+// SITE SPECIFIC TWEAKS =================================================== 
+
+/*[class*='grid__item'] img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}*/
+

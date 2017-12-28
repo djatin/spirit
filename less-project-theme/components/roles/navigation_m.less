@@ -1,0 +1,223 @@
+// out: null
+// Media Queries for component
+
+/* !navigation --------------------------------------------------- */
+/* clases
+.navigation (generic class based on role="navigation")
+.navigation (generic class based on role="navigation")
+
+.global-nav (site menu)
+.utility-menu (secondary menu)
+
+.menu (generic menu)
+.menu li 
+.menu li a
+
+.menu .menu (sub-menu)
+
+*/
+
+/*// 320 major layout change to navigation ========================
+.min-width(20em; {
+// Panel Menu (See behaviour > panel-drop-down-nav) 
+    
+// If something has a panel modifier this is where there postion starts
+
+ 
+// Coloring 
+.panel ul {
+    background: darken(@basecolor, 10%);
+        
+}   
+    
+.panel ul a {
+   color: @whiteonblack;
+    &:hover {
+        color: @white;
+    }
+}  
+    
+//end 320px major
+});*/
+
+
+/*// 320px have the toggle button tabable for no off canvas  ========================
+.min-width(18.75em; {
+
+// Menu toggle ---------------------------- 
+// this is the menu button to link to nav on very small devices or when there is no js on small devices
+.menu-toggle .toggle-control {
+        //all imutable don't want overidden
+        margin-top: 0 !important;
+        text-indent: -99em !important;
+        position: absolute !important;
+        top: 0 !important;
+        z-index: -1 !important;
+        overflow: hidden !important;
+        
+    &:active, &:focus {
+        text-indent: 0 !important;
+        z-index: @zindex-modal !important;
+    }
+        
+}
+    
+// navigation (role='navigation') -----------------------------
+
+//Submenu -------------------
+// for testing 
+    //.navigation .menu .menu {
+    // display: none; 
+//}
+    
+
+// global navigation -------------------
+
+  
+// utility navigation -------------------
+    
+
+
+    
+//end 320 major
+});*/
+
+.min-width(18.75em; {
+    
+    .navigation__utility-nav .menu {
+        .one-half();
+        float: left;
+}
+    
+.navigation__utility-nav > .menu a {
+        position: relative;
+        padding-right: @space-default;
+        //  this might need to overflow
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-align: right;
+        background-color: white;
+    &:hover, &:active, &:focus {
+        text-decoration: underline;
+        color: inherit;
+    }
+    &:active, &:focus, &.is-active, &.active {
+        color: @basecolor;
+        font-weight: 700;
+    }
+}
+    
+});
+
+//768px Minor -----------------------
+.min-width(48em; {
+// Make the skip to menu button tabable on focus 
+.menu-toggle .toggle-control {
+        //all imutable don't want overidden
+        margin-top: 0 !important;
+        text-indent: -99em !important;
+        position: absolute !important;
+        top: 0 !important;
+        z-index: -1 !important;
+        overflow: hidden !important;
+        
+    &:active, &:focus {
+        text-indent: 0 !important;
+        z-index: @zindex-modal !important;
+    }
+        
+}
+    
+    
+// navigation (role='navigation') -----------------------------   
+    .navigation {
+        margin-top: 0;
+        margin-bottom: 0;
+        padding-left: 0;
+        padding-right: 0;
+        position: absolute;
+        top: 6em;
+        left: @space-s;
+        right: @space-s;
+        z-index: @zindex-nav; 
+    }
+
+// global navigation -------------------
+    // Sub nav
+    .navigation__global-nav .menu .menu {
+        position: absolute;
+    }
+    
+    .navigation__global-nav .menu {
+    .clearfix();
+    
+    }
+    
+    .navigation__global-nav .menu li {
+    float: left;
+    
+    }
+    
+// utility navigation -------------------
+.navigation__utility-nav {
+    min-width: 19.5em;
+    position: absolute;
+    top: -5.25em;
+    right: 0;
+     .clearfix();   
+}
+    
+});
+
+//912px Minor -----------------------
+.min-width(57em; {
+ 
+// navigation (role='navigation') -----------------------------   
+    .navigation {
+        top: 5.25em; 
+        right: @gutter;
+    }
+// global navigation -------------------
+    .navigation__global-nav > .menu {
+        //swing it right
+        float: right;
+    }
+    .navigation__global-nav .menu li {
+        width: auto;
+    }
+ 
+    
+// utility navigation -------------------
+    
+.navigation__utility-nav {
+        top:-4.5em;
+}  
+    
+});
+
+.min-width(78em; {
+ 
+// navigation (role='navigation') -----------------------------   
+    .navigation {
+        top: 5.25em; 
+        right: @gutter;
+    }
+// global navigation -------------------
+ 
+    
+// utility navigation -------------------
+    
+.navigation__utility-nav {
+        top:-4.5em;
+}  
+    
+});
+
+// Media Queries for component in situ 
+
+// contentinfo menu --------------------------------
+
+  
+
+
+

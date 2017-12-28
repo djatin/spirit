@@ -1,0 +1,49 @@
+// out: null
+/* Helper Classes  =================================================== */
+/*
+    ultility classes that can be used It has a very specific role. Should not be bound onto or changed 
+
+    these are prefixed with u-
+
+    on older projects you may need to use unprefixed
+    // These are render versions of helper mixins
+*/
+
+.hide-text, .u-hide-text {
+    .hide-text (); // has some issues in Opera
+}
+	
+//Hide from both screenreaders and browsers
+.hidden, .u-hidden {
+    .hidden ();
+}
+
+// Hide from both screenreaders and browsers on mobiles can be overwritten at various breakpoints 
+.mobile-hidden, .u-mobile-hidden {
+    .mobile-hidden ();
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.visually-hidden, .u-visually-hidden {
+    .visually-hidden ();
+}
+
+// Hide visually and from screenreaders, but maintain layout.
+.invisible, .u-invisible {
+    .invisible ();
+}
+// Contain floats: h5bp.com/q
+.clearfix, .u-clearfix {
+    .clearfix () ;
+}
+// clear floats 
+.clear, .u-clear {
+    .clear-both();   
+}
+
+.clear--left, .u-clear--left {
+   .clear-left();
+}
+.clear--right, .u-clear--right {
+    .clear-right();   
+}

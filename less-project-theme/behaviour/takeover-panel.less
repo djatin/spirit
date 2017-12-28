@@ -1,0 +1,52 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Takeover Panel
+	Version: 3.0
+	URL: http://bigmallet.co.uk
+	Made from bits and pieces from the internet. 
+	with help http://heydonworks.com/practical_aria_examples/#submenus
+	
+	Behaviours for Takeover panel 
+
+============================================================ */
+
+// Takeover is a modified splash splash stlyes are found in style-banner_g.less and style-banner_m.less
+
+// Defaults
+
+// hide the close button until we hit 320px
+js-takeover {
+    position: relative;   
+}
+
+.js-takeover__toggle-control {
+    display: none;
+}
+
+// if the form item is required and has class .js-webform-component--validate
+
+// Js
+
+.js-takeover__toggle-control {
+    //320px / 20em 
+    .min-width(20em; {
+        display: block;
+        position: absolute;
+        top: 3.75%;
+        right: 3.75%;
+        z-index: @zindex-modal;
+    });
+}
+
+// unfix the navigation
+.has-takeover .banner, .has-takeover .navigation {
+    position: absolute !important;
+}
+
+
+// HTML5 Browsers uses .mustardo as they cut the mustard
+
+
+
+// Extra Decoration 

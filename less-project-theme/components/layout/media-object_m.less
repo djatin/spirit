@@ -1,0 +1,131 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Extended
+    Media Objects
+	Version: 3.1
+	
+    uses the Media Object by @stubbornella
+    http://www.stubbornella.org/
+
+============================================================ */
+
+/* layoutc =================================================== */
+//Some defaults colors text etc..
+// .o-media-- - container
+// .o-media__item - the media item e.g. image
+// .o-media__body - the media text 
+
+//modifiers 
+//.media--object (basic media object behaviour)
+//.media--rev (reverse the default)
+
+//elements in situe
+//.d-section--alignment-none (image above text default)
+//.d-section--alignment-center(image on top with text centered)
+//.d-section--alignment-left (media floated left)
+//.d-section--alignment-right (media floated right)
+
+
+// Handheld major =================================================== */
+// 768px/48em up
+@handheld_major: 30em;
+.min-width(@handheld_major {
+    
+    .o-media {
+        .clearfix();
+    }
+    
+    // the default for the media object is image floated left and text next to it
+    .o-media__item {
+        margin-right: (@gutter/2); 
+        width: auto;
+        float:left;
+    }
+    
+    .o-media__body {
+        padding-left: 3px; // stop the button focus being cut off
+        padding-bottom: 3px;
+        overflow: hidden;
+    }
+    
+    // .media--object 
+    
+    .media--object img {
+        width: auto;
+        max-width: none;
+    }
+    
+    
+    //elements in situe
+    
+    // reversed
+    .media--rev .o-media__item, .d-section--alignment-right .o-media__item {
+           margin-right: 0;
+           margin-left: @gutter;    
+           float: right;
+    }
+        
+    
+    .d-section--style-media[class*='--alignment-center'] .o-media__body {
+            // match the text measure
+           margin-left: auto;
+           margin-right: auto;
+            .themeasure();
+    }
+    
+    
+});
+
+// media sections we are changing the float till later
+.min-width-max(@handheld_major {
+    
+    // media sections 
+    .d-section--style-media .o-media__item {
+        margin-left: 0;
+        margin-right: 0;
+        float: none;
+    }
+    
+}59.9375em);//960px
+
+
+// large minor =================================================== */
+
+@medium_minor: 60em;
+
+.min-width(@medium_minor {
+    
+    //elements in situe
+    .d-section--style-media .o-media__item {
+           .five-eighths();
+    }
+
+    .d-section--style-media[class*='--alignment-center'] .o-media__item  {
+           margin-left: auto;
+           margin-right: auto;
+           float: none;
+    }
+    
+    
+    .d-section--style-media[class*='--alignment-center'] .o-media__item[class*='gallery']  {
+        .themeasurelg();
+    }
+    
+    //large gallery
+    .d-section--style-media[class*='--modification-5'] .o-media__item[class*='gallery']  {
+        .seven-eighths();
+        max-width: none;
+        
+    }
+    
+    
+    
+});
+
+// SITE SPECIFIC TWEAKS =================================================== 
+
+
+
+
+

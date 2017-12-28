@@ -1,0 +1,247 @@
+// out: null
+
+// Media Queries for components  
+/* !Feed --------------------------------------------------- 
+    d-sections with a feed, normall made up of tiles
+*/
+
+/* clases
+
+.d-section--style-feed (the section__wrapper)
+
+.d-feed
+.d-feed__body
+
+
+*/
+
+.d-feed {
+    .clearfix();   
+}
+
+
+// A vauge grid layout
+.d-feed__body > .o-tile {
+    // 640px/40em
+	.min-width(40em; {
+        width: 50%;
+        &:nth-child(2n+1) {
+            clear:left;
+        }
+    });
+    // 960px/60em
+	.min-width(60em; {
+        width: 33.33333333333333%;
+        &:nth-child(2n+1) {
+            clear:none;
+        }
+        &:nth-child(3n+1) {
+            clear:left;
+        }
+    });
+    
+    
+}
+
+// flex box the layout
+.flexbox .d-feed__body {
+    // 640px/40em
+	.min-width(40em; {
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        display: flex;
+        
+         
+        -ms-flex-direction: row;
+        -ms-flex-wrap: wrap;
+        -webkit-flex-flow: row wrap;
+        flex-flow: row wrap;
+        
+          //so extras fall in the center
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        
+    });
+    
+}
+
+
+.flexbox .d-feed__body > .o-tile {
+    // 640px/40em
+	.min-width(40em; {
+        max-width: 50%;
+         -ms-flex: 1 0 50%;
+        -webkit-flex: 1 0 50%;
+        flex: 1 0 50%;
+    });
+    // 960px/60em
+	.min-width(60em; {
+        max-width: 33.33333333%;
+        -ms-flex: 1 0 33.33333333333333%;
+        -webkit-flex: 1 0 33.33333333333333%;
+        flex: 1 0 33.33333333333333%;
+    });
+    
+    
+}
+
+//Double column 
+.flexbox .d-feed[class*="-count-2"] .d-feed__body > .o-tile, .flexbox .d-feed[class*="-count-4"] .d-feed__body > .o-tile, .flexbox .d-feed[class*="-count-8"] .d-feed__body > .o-tile, .flexbox .d-feed[class*="-count-10"] .d-feed__body > .o-tile {
+    // 640px/40em
+	.min-width(40em; {
+        max-width: 50%;
+         -ms-flex: 1 0 50%;
+        -webkit-flex: 1 0 50%;
+        flex: 1 0 50%;
+    });
+}
+
+
+/*// OVERFLOW SCROLL 
+
+//d-feed--style-2|Overflow Scroller (news slider)
+.d-feed--style-2 .d-feed__body > .o-tile {
+    .min-width(20em; {
+        position: relative;
+        &:before {
+        display: block;
+        content: '';
+        height: 1px;
+        background: @whiteonblack;
+        position:absolute;
+        left: 19.1%;
+        right: 19.1%;
+        bottom: 0;
+        }
+    });
+    
+}
+
+
+//640px /40em
+.min-width(40em; {
+
+.d-feed--style-2 .d-feed__body > .o-tile {
+    
+        min-height: 24em;
+        .one-sixth();
+        min-width: 24em;
+
+    &:before {
+        width: 1px;
+        height: auto;
+        background: @grey--light-1;
+        position:absolute;
+        left: 0;
+        right: auto;
+        top:0;
+        bottom:1.5em;
+        }
+}
+
+.flexbox .d-feed--style-2 .d-feed__body > .o-tile {
+ 
+         -ms-flex: 1 0 16.666%;
+        -webkit-flex: 1 0 16.666%;
+        flex: 1 0 16.666%;
+ 
+}
+
+.d-feed--style-2 .d-feed__body > .o-tile:first-child {
+
+        &:before {
+        display:none;
+        }
+}
+
+//use overflow scroll
+.d-feed--style-2 {
+    height: 27em; // match tile height currently 432px but will change depending on the site
+    overflow: hidden; //should hide the scroll bar
+    //give it some decoration
+    position: relative;
+    &:before, &:after {
+    display: block;
+    content:'';
+    position: absolute;
+    }
+    &:before {
+    width: 6em;
+    
+    background: -webkit-linear-gradient(left, rgba(255,255,255,0.1), @white 40%); 
+// Chrome 10-25, Safari 5.1-6 
+    background: linear-gradient(to right, rgba(255,255,255,0.1), @white 40%); 
+// W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ 
+
+    top: 0;
+    right:0;
+    bottom: 0;
+    z-index: @zindex-simple--behind;
+    }
+    &:after {
+        margin-top: -1.5em;
+        width: 3em;
+        height: 3em;
+        
+        background: url(../../common/img/global/bigmallet-ui-icons-sprite.png) -48px -384px no-repeat; 
+        right: 0.75em;
+        top: 50%;
+        z-index: @zindex-simple--front;
+    }
+
+}
+
+.d-feed--style-2 .dk {
+
+        //prevent it being a scroll trap
+        margin: 0 3em 0 0;
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+        //white-space: nowrap;
+        cursor: move;
+
+}
+
+.d-feed--style-2 .d-feed__body {
+    // give it a width that will scroll
+    width: 144em; //6x 24em
+}
+
+//Add the js button
+.js-scroll-btn {
+    margin-top: -2.75em;
+    padding: 0;
+    border: 0;
+    width: 3em;
+    height: 5.5em;
+    background: transparent;
+    .appearance();
+     position: absolute;
+    right: 0.75em;
+        top: 50%;
+        z-index: @zindex-overlay;
+}
+
+// end 640/40em    
+});
+
+.svg .d-feed--style-2 {
+    .min-width(40em; {
+    &:after {
+    margin-top: -2.75em;
+    width: 3em;
+    height: 5.5em;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2248%22%20height%3D%2288%22%20viewBox%3D%220%200%2048%2088%22%20overflow%3D%22visible%22%3E%3Cpath%20fill%3D%22%23B9B9B9%22%20d%3D%22M2.116%200L0%202.12%2041.77%2044%200%2085.88%202.115%2088%2046%2044%22/%3E%3C/svg%3E');
+	background-position: left center;
+    background-size: 3em 5.5em;
+    }
+    });
+}
+
+*/
+
+
+
+// Component in situ 
+

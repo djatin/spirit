@@ -1,0 +1,223 @@
+// out: null
+
+// Media Queries for components 
+/* !Banners --------------------------------------------------- 
+    d-sections splash banners normally full width banners
+*/
+
+/* clases
+
+.d-section--style-banner (the section__wrapper)
+
+//Children
+.o-splash
+.o-splash__wrapper  
+.o-splash__hgroup
+.o-splash__text
+
+.o-splash__anchor
+.anchor--left, .anchor--center, .anchor--right
+.o-splash__filter
+.filter--style-1 (darkens image 10%)
+
+.o-splash__figure-group (normally a holder for a group of info graphics
+
+//modififers 
+.title--splash
+.subtitle--splash
+
+d-section--modification-1|data capture banner
+
+*/
+
+.d-section--style-banner {
+    // 640px/40em
+    // reset section__wrapper width
+	.min-width(40em; { 
+        //reset left right from negative 
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+         max-width: 100% !important; // this should not change so we are going to go in hard and stop it from changings
+    });
+        
+}
+
+
+//Filters
+// 1px / 0.0625em
+.min-width(0.0625em {
+.o-splash__filter {
+
+        position: relative;
+        &:after {
+        display: block;
+        content:'';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        }
+
+}
+
+.filter--style-1 {
+        &:after {
+        background: rgba(0,0,0,0.1);
+        }
+}
+
+.filter--style-2 {
+        &:after {
+        background: rgba(0,0,0,0.2);
+        }
+}
+
+.filter--style-3 {
+        &:after {
+        background: rgba(0,0,0,0.3);
+        }
+
+}
+
+.filter--style-4 {
+        &:after {
+        background: rgba(0,0,0,0.4);
+        }
+}
+
+});
+
+
+
+// Major transformation of the banner 
+@medium_major: 40em;
+    
+.min-width(@medium_major {
+    
+    .d-section--style-banner, .o-splash {
+        height: 33em; // must match image
+    // cut off the banner here
+        overflow: hidden;
+    }
+    
+    .o-splash  {
+        //layout using display table 
+        display: table;
+        width: 100%;
+        // ensure the anchor is positioned realtive to this
+        position: relative;
+        
+    }
+    
+    //shift the image behind
+    .o-splash__anchor {
+        // height needs to be set to the aspect ratio fo the banner image
+        // currently
+        height: 33em;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: @zindex-simple--behind;
+    }
+    
+    //.o-splash__anchor
+    //.anchor--left, .anchor--center, .anchor--right
+    // when picture element starts getting replaced at 600em use csstransforms to cut out IE8
+    .o-splash__anchor img {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+        
+    //.anchor--left needs nothing automatically left
+    //.splash-anchor--left .crop img {
+           
+    //}
+    
+    //.anchor--right
+    .csstransforms .anchor--right img {
+        left: auto;
+        right: 0;
+    }
+    
+    //.splash-anchor--center
+    .csstransforms .anchor--center img {
+        left: 50%;
+    //-webkit-transform: translate(-50%,0);
+     // -ms-transform: translate(-50%,0);
+      //    transform: translate(-50%,0);
+        .translate(@x: -50%, @y: 0);
+    }
+        
+    .o-splash__wrapper {
+        display: table-cell;
+        // rest padding to match wrappers
+        padding-left: @gutter;
+        padding-right: @gutter;
+        vertical-align: bottom;
+        // make the wrapper site infront of the anchor image
+        position: relative;
+        z-index: @zindex-simple--front;
+    }
+    
+    .o-splash__anchor img {
+        // reset the image so height is 100% and width is auto
+        width: auto;
+        max-width: none;  
+        height: 100%;
+    }
+    
+    
+    //Modifications
+    
+    // aligned banners have text in the in the middle fo the banner
+    .d-section[class*="--alignment-"] .o-splash__wrapper {
+        vertical-align: middle;
+    }
+    
+    
+});
+
+
+//Tall / Short / Other styles 
+//Tall default
+//d-section--style-banner-1|Short
+//d-section--style-banner-2|Tall
+
+
+.d-section--style-banner.d-section--style-banner-1, .d-section--style-banner-1 .o-splash, .d-section--style-banner-1 .o-splash__anchor {
+    .min-width(@medium_major {
+        height: 19.5em; // 312px
+    });
+} 
+
+
+//Tweaks
+// Data capture banners 
+.d-section--modification-1 .o-splash__wrapper {
+    .min-width-max(@medium_major {
+          padding-top: @space-s;
+    }63.9375em);
+}
+
+//very large displays 
+    .o-splash__anchor img {
+        .min-width(120em {
+            .no-cssvwunit & {
+        // reset the image so height is 100% and width is auto
+        width: 100%;
+        max-width: none;  
+        height: auto;
+        min-height: 33em;
+            
+            .d-section--style-banner-1 & {
+                min-height: 19.5em;
+            }
+        }
+        });
+    }
+
+

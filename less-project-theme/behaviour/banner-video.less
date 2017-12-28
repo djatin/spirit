@@ -1,0 +1,233 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Video Banner Styles
+	Version: 1.0
+	URL: http://bigmallet.co.uk
+	Made from bits and pieces from the internet. 
+	with help http://heydonworks.com/practical_aria_examples/#submenus
+	
+	Behaviours Styles for the video banner
+
+============================================================ */
+
+// Defaults
+
+.js-play-btn,.js-close-btn {
+    margin:0;
+    padding:0;
+    background:transparent;
+    text-align:center;
+    overflow:hidden;
+    .appearance();
+    position:relative
+}
+
+.js-play-btn__text,.js-close-btn__text{
+    .visually-hidden();
+}
+
+.js-play-btn {
+    margin:.75em auto;
+    height:6em;
+    width:6em;
+    border:6px solid #fff;
+    .rounded(6em);
+    opacity: 0.7;
+    &:hover {
+        opacity: 0.9;
+    }
+    &:focus, &:active {
+        opacity: 1;
+    }
+}
+
+.js-play-btn__icon{
+    display:block;
+    margin:-24px 0 0 -14px;
+    width:0;
+    height:0;
+    border-top:24px solid transparent;
+    border-bottom:24px solid transparent;
+    border-left:36px solid #fff;
+    position:absolute;
+    top:50%;
+    left:50%;
+    
+}
+
+.js-close-btn{
+    height:48px;
+    width:48px; // static for icon using sprite
+    border:1px solid #ededed;
+    &:hover, &:active, &:focus {
+        border-color:@white;
+        background-color:@grey--dark-3;
+    }
+}
+
+.js-close-btn__icon{
+    display:block;
+    margin:0;
+    padding:0;
+    width:100%;
+    height:100%;
+    background:transparent url(../../common/img/global/bigmallet-ui-icons-sprite.png) -49px -2px no-repeat;
+}
+
+// Hide things on mobiles until there is space to hide video banner
+// 1px to 640px
+.min-width-max(0.0625em {
+    // hide buttons properly
+    .js-splash-video__play-btn,.js-splash-video__close-btn{
+        display:none !important
+    }
+        
+    .splash--video .o-splash__anchor{
+        display:none !important;
+    }    
+        
+}39.9375em);
+
+// starts 640px===================================================
+.min-width(40em {
+
+.js-splash-video__play-btn {
+    display:block
+}
+    
+.js-splash-video__close-btn {
+    display:block;
+    position:absolute;
+    top:3em;
+    right:1.5em;
+    z-index:@zindex-overlay;
+}
+
+//Project specific 
+.js-d-section--splash-video, .js-splash-video {
+    will-change:height;
+    //height:auto;
+}
+    
+.js-splash-video {
+    display:block;
+    background:@black;
+}
+    
+//.js-splash-video__anchor{
+    //background:@highlight--color-2;
+//}
+    
+.js-splash-video__video-embed{
+    margin:0 auto;
+    padding:3em 6em;
+    max-width:76em; // max width of video at 1024px True 16:9 Resolutions + padding
+    position:relative;
+}
+    
+.js-splash-video__wrapper{
+    display:block;
+    margin-top:-9.5em;
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+}
+    
+
+// if it has transforms position everything in the center 
+.csstransforms .js-splash-video__wrapper {
+    margin-top:0;
+    .translate(0, -50%);
+}
+    
+
+    
+
+    // Video Playing ------------------------
+    //.is-playing   Placed on the .d-section-wrapper 
+    
+    
+    .is-playing .js-splash-video__wrapper, .is-playing .js-splash-video__play-btn, .is-playing .js-splash-video__anchor {
+        display:none;
+    }
+    
+    /* Project specific */
+    .js-d-section--splash-video.is-playing  , .is-playing .js-splash-video  {
+        height:auto;
+    }
+    
+    //animations
+    .cssanimations .js-splash-video__video-embed .video-embed__wrapper {
+        .translate(0, 120%);
+        will-change:transform;
+        .transition(transform @duration-slowly ease-in-out);
+    }
+    
+    .cssanimations .is-playing .js-splash-video__video-embed .video-embed__wrapper {
+        .translate(0, 0);
+    }
+    
+    .cssanimations .js-splash-video__wrapper, .cssanimations .js-splash-video__play-btn {
+        display:block;
+        opacity:1;
+        will-change:opacity,visibility;
+        .transition(all @duration-promptly ease-in-out);
+    }
+    
+    
+    .cssanimations .is-playing .js-splash-video__wrapper, .cssanimations .is-playing .js-splash-video__play-btn {
+        opacity:0;
+        visibility:hidden;
+    
+    }
+
+
+
+
+
+// end 640px
+});
+
+// Tweaks 1104px to make the image cover the video 
+.min-width(69em {
+    
+    .js-splash-video__anchor {
+        height:46.5em
+    }
+
+});
+
+// End Video banner  ========================
+
+
+//Project specific 
+.js-splash-video {
+    text-align: left;
+}
+
+.js-splash-video__play-btn {
+    .min-width(40em {
+        margin-top: -3em;
+        margin-left:-3em;
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        z-index: @zindex-overlay;
+    });
+    .min-width(48em {
+        left: 30%;
+    });
+    .min-width(64em {
+        left: 50%;
+    });
+        
+}
+
+
+//video banners all aligned right
+.js-splash-video__wrapper .o-splash__the-measure {
+    max-width: 23.5em;
+    margin-right: 0;
+}

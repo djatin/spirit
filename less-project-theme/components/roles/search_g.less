@@ -1,0 +1,167 @@
+// out: null
+
+// global styles 
+
+/* !Search form --------------------------------------------------- */
+
+/*
+.search (wrapping div)
+.search__wrapper 
+.search__title
+.search-form (the form element)
+.search__search-form (search form in the search module div as it may be used else where who know what drupal does with these!)
+.search-form__fieldset (the fieldset wrapper)
+.form-item (drupal wrapper for form elements)
+.form-type-textfield (the type of form-item)
+.form-actions (the submit wrapper)
+.form-submit (the submit btn)
+
+// modifiers 
+.search--navigation (search in the navigation normally the utility navigation)
+.search--page (search form in the page)
+*/
+
+
+
+.search__title {
+    .visually-hidden();
+}
+
+
+.search-form { // the search-form
+        margin: 0;
+        padding: 0;
+        position: relative;
+}
+
+
+.search-form .form-type-textfield  { // the textfield and label holder
+        margin: 0;
+    }
+
+.search-form label  {
+    display: block;
+    margin: 0;
+    font-size: 0.75em;
+    line-height: 1.5;
+    text-transform: uppercase;
+    .letterspacing60();
+}
+
+
+.search-form .form-text {
+        height: auto;
+        border-left-width: 0;
+        border-right-width: 0;
+        border-top-width: 0;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: @grey-color-30;
+        padding: 1.25em;
+        font-size: 0.75em;
+        line-height: 1.5;
+        color: @textcolor;
+        .appearance();
+        
+        .lt-ie8 & {
+            border-width: 1px;
+            border-style: solid;
+            border-color: @grey-color-30;
+        }
+        
+        &:hover, &:active, &:focus {
+            box-shadow:none;
+        }
+    
+        //Placeholder 
+    &::-webkit-input-placeholder { font-style:italic; text-transform: uppercase; .letterspacing60(); }
+    &::-moz-placeholder { font-style:italic; text-transform: uppercase; .letterspacing60(); }
+    &:-ms-input-placeholder { font-style:italic; text-transform: uppercase; .letterspacing60(); } 
+    &:-moz-placeholder { font-style:italic; text-transform: uppercase; .letterspacing60(); } 
+    
+    &:hover {
+        &::-webkit-input-placeholder { font-style:normal; color: @grey--light-1;}
+        &::-moz-placeholder { font-style:normal; color: @grey--light-1;}
+        &:-ms-input-placeholder { font-style:normal; color: @grey--light-1;} 
+        &:-moz-placeholder { font-style:normal;color: @grey--light-1; }     
+    }
+    &:active, &:focus {
+        &::-webkit-input-placeholder { font-style:normal; color: @whiteonblack;}
+        &::-moz-placeholder { font-style:normal; color: @whiteonblack;}
+        &:-ms-input-placeholder { font-style:normal; color: @whiteonblack;} 
+        &:-moz-placeholder {font-style:normal; color: @whiteonblack; }   
+    }
+}
+
+
+
+
+// !Search--navigation ----------------------
+
+
+// !Search--page ----------------------------
+
+//.search--page  {
+
+//}
+
+
+// !SEARCH RESULTS ----------------------------
+
+// Re-write drupal search page
+.search-results {
+    max-width: 33em;
+}
+
+.search-results__title {
+    .gamma--margin ();
+    text-transform: uppercase;
+}
+
+.search-results ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.search-results li {  
+        padding-bottom: 0.75em;
+        border-bottom: 1px solid @grey--light-2;
+        &:last-child {
+            border-bottom: 0;
+        }
+}
+
+.search-performance {
+    display: none;   
+}
+// spelling suggesstions
+//.search-info
+.spelling-suggestions {
+    margin: 0 0 0.75em;
+}
+
+.did-you-mean {
+        padding-right: 0.375em;
+}
+
+.search-results .placeholder, .search-snippet strong {
+    color: @warningcolor;
+}
+
+
+.search-result__title {
+    .delta--margin ();  
+    text-transform: uppercase;
+}
+
+//no results displayed in a ul
+.search-results--no-result ul li {
+      margin: 0.5em 0;   
+}
+ 
+.search-results--no-result li em {
+          max-width: 15.5em;
+          padding: 0 0.25em;
+          color: @basecolor;
+          white-space:nowrap;
+}

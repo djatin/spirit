@@ -1,0 +1,79 @@
+// out: null
+
+// global styles 
+/* !infographic --------------------------------------------------- */
+/* clases
+.infographic (the main figure)
+.infographic__img
+infographic__figcaption (wrapper for the text)
+.infographic__title
+.infographic__text
+.infographic__btn 
+
+// Infographic wrappers they appear in figure group
+
+.section__figure-group
+.figure-group
+
+.o-splash__figure-group (specifally in the banner
+
+//Modifier
+.figure-group--N (number of infographics contained)
+
+*/
+
+.infographic {
+    display: inline-block;
+    margin-top: @space-default;
+    margin-bottom: @space-default;
+    margin-left: (@gutter/2);
+    margin-right: (@gutter/2);
+    text-align: center;
+    vertical-align: top;
+}   
+
+.infographic__icon {
+    margin-left: auto;
+    margin-right: auto;
+    .halfmeasure();
+    
+}
+
+.infographic__figcaption {
+    // max width for all the text 
+    margin-left: auto;
+    margin-right: auto;
+    .halfmeasure();
+    text-align: inherit;
+}
+
+.infographic__title {
+    .beta--no-margin ();
+}
+
+// the emblished part of the infographic title
+.infographic__highlight {
+    display: block;
+    .alpha ();
+    font-style: normal;
+    color: @basecolor;
+}
+
+.infographic__text {
+    .zeta ();
+    color: @grey-color-05;
+    
+}
+
+.infographic__btn {
+    margin-top: @space-default; 
+}
+
+/* Infographic wrapper ------------------- */
+.section__figure-group {
+    margin-top: 0;
+    //margin-bottom: @space-default;
+}
+
+
+// Component in situ 

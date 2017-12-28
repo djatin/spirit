@@ -1,0 +1,269 @@
+// out: null
+@charset "UTF-8";
+
+// Default Variables
+
+@slick-font-path: "./fonts/";
+@slick-font-family: "slick";
+@slick-loader-path: "./";
+@slick-arrow-color: white;
+@slick-dot-color: black;
+@slick-dot-color-active: @slick-dot-color;
+@slick-prev-character: "←";
+@slick-next-character: "→";
+@slick-dot-character: "•";
+@slick-dot-size: 6px;
+@slick-opacity-default: 0.75;
+@slick-opacity-on-hover: 1;
+@slick-opacity-not-active: 0.25;
+
+/* Arrows */
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    display: block;
+    margin-top: -1.5em;
+    width: 48px; // static for sprite
+    height: 48px;
+    line-height: 1.5;
+    font-size: 1em;
+    cursor: pointer;
+    background-color: @black;
+    background-color: fade(@black, 70%);
+    background-image:  url(../../common/img/global/bigmallet-ui-icons-sprite.png);
+    background-repeat:  no-repeat;
+    color: transparent;
+    top: 50%;
+    padding: 0;
+    border: none;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance:    none;
+    appearance:         none;
+    z-index: 450;
+    &:hover, &:focus {
+        background-color: fade(@black, 80%);
+        color: transparent;
+        outline: none;
+        
+    }
+    &.slick-disabled {
+        opacity: @slick-opacity-not-active;
+    }
+}
+
+.slick-next {
+    background-position: -48px -384px;
+    
+}
+
+.slick-prev {
+    background-position: -2px -384px;
+    left: 0; // Site specific 
+    &[dir="rtl"] {
+        left: auto;
+        right: 0;
+    }
+}
+
+.slick-next {
+    right: 0; // site specific
+    &[dir="rtl"] {
+        left: 0;
+        right: auto;
+    }
+}
+
+
+/* Dots
+
+.slick-dotted .slick-slider {
+    margin-bottom: 30px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -25px;
+    list-style: none;
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    li {
+        position: relative;
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        margin: 0 5px;
+        padding: 0;
+        cursor: pointer;
+        button {
+            border: 0;
+            background: transparent;
+            display: block;
+            height: 20px;
+            width: 20px;
+            outline: none;
+            line-height: 0px;
+            font-size: 0px;
+            color: transparent;
+            padding: 5px;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance:    none;
+            appearance:         none;
+            &:hover, &:focus {
+                outline: none;
+                &:before {
+                    opacity: @slick-opacity-on-hover;
+                }
+            }
+            &:before {
+                position: absolute;
+                top: 0;
+                left: 0;
+                content: @slick-dot-character;
+                width: 20px;
+                height: 20px;
+                font-family: @slick-font-family;
+                font-size: @slick-dot-size;
+                line-height: 20px;
+                text-align: center;
+                color: @slick-dot-color;
+                opacity: @slick-opacity-not-active;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+        &.slick-active button:before {
+            color: @slick-dot-color-active;
+            opacity: @slick-opacity-default;
+        }
+    }
+}
+ */
+
+
+// BM STYLES --------
+
+// centered and slected images 
+
+
+//Widths project specific
+.d-feed--behaviour-slider .slick-slider {
+        
+    .min-width(672px; {
+        margin: 0 auto;
+        .five-eighths();
+        
+    });
+    .min-width(64em; {
+        .six-eighths();
+        
+    });
+}
+
+// larger buttons for the feed slider
+.d-feed--behaviour-slider .slick-prev, .d-feed--behaviour-slider .slick-next {
+    margin-top: -5.625em;
+    width: 6em;
+    height: 11.25em;
+    background: transparent url(../../common/img/global/bigmallet-ui-icons-sprite.png) 0px -624px no-repeat;
+}
+
+.d-feed--behaviour-slider .slick-prev {
+    background: transparent url(../../common/img/global/bigmallet-ui-icons-sprite.png) 0px -803px no-repeat;
+    left: -6em; // Site specific 
+    &[dir="rtl"] {
+        right: -6em;
+    }
+  }
+
+.d-feed--behaviour-slider .slick-next {
+    right: -6em; // site specific
+    &[dir="rtl"] {
+        left: -6em;
+    }
+  }
+
+//Svg for large ui components 
+.svg .d-feed--behaviour-slider .slick-next {
+    .min-width(48em; {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%21DOCTYPE%20svg%20PUBLIC%20%22-//W3C//DTD%20SVG%201.1//EN%22%20%22http%3A//www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd%22%20%5B%0D%0A%09%3C%21ENTITY%20ns_flows%20%22http%3A//ns.adobe.com/Flows/1.0/%22%3E%0D%0A%5D%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2296%22%20height%3D%22180%22%20viewBox%3D%22-2%20-2%2096%20180%22%20overflow%3D%22visible%22%3E%3Cpath%20fill%3D%22%23A0A0A0%22%20d%3D%22M.707%200L0%20.707%2087.292%2088%200%20175.293l.707.707%2088-88%22/%3E%3C/svg%3E');
+	background-position: left center;
+    background-size: 6em 11.25em;
+    });
+}
+
+.svg .d-feed--behaviour-slider .slick-prev {
+    .min-width(48em; {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2296%22%20height%3D%22180%22%20viewBox%3D%220%200%2096%20180%22%3E%3Cpath%20fill%3D%22%23A0A0A0%22%20d%3D%22M5.293%2090l88%2088%20.707-.707L6.708%2090%2094%202.707%2093.293%202l-88%2088z%22/%3E%3C/svg%3E');
+	background-position: left center;
+    background-size: 6em 11.25em;
+    });
+}
+
+
+
+// GALLERY
+//.gallery__figure 
+//.gallery__figcaption
+
+
+//hide the thumbnails 
+// we shouldn't be loading these but I need to figure out away of doing that?
+.gallery .thumbnails {
+    margin-top: 2px;
+}
+
+.gallery .thumbnails ul {
+    display: none;
+
+}
+
+.gallery .thumbnails .slick-initialized {
+        display: block;
+}
+
+
+.gallery ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.gallery__figure {
+    position: relative;   
+}
+
+.gallery__figure figcaption {
+    margin-top: 2px; // match margin on thumbnails so it looks even
+    padding-top: @space-xs;
+    padding-right: @space-m;
+    padding-bottom: @space-xs;
+    padding-left: @space-m;
+    width: auto;
+    background: @basecolor;
+    text-align: right;
+    color: @whiteonblack;
+    .min-width(672px; {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: @zindex-overlay;
+    });
+}
+
+.gallery .thumbnails li {
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.gallery .thumbnails li[class*='slick-center'] img, .gallery .thumbnails li[class*='slick-current'] img {
+            border: 4px solid @highlight--color-1;   
+}
+

@@ -1,0 +1,94 @@
+// out: null
+
+// global styles 
+/* !wrappers --------------------------------------------------- */
+/* clases
+.wrapper (generic class )
+
+.banner__wrapper
+.main__wrapper 
+.header__warpper
+.admin__wrapper
+.contentinfo__wrapper (see contentinfo role)
+
+section (semantic wrapper)
+.section (class of wrapper, incase div is use instead of section)
+.section__wrapper 
+
+.the-measure (text wrapper)
+
+// modifiers 
+.wrapper--page (whole site wrapper)
+*/
+
+.wrapper {
+   margin: 0 auto;
+}
+
+.banner__wrapper {
+    padding: 0.75em;
+    overflow: hidden;
+}
+
+
+.header__wrapper, .admin__wrapper {
+    padding-top: @space-s;
+    padding-left: @space-default;
+    padding-right: @space-default;
+    padding-bottom: @space-s;
+}
+
+.section__wrapper {
+    margin-top: @space-xl;
+    margin-bottom: @space-xl;
+    padding-left: @space-default;
+    padding-right: @space-default;
+}
+
+
+.navigation__wrapper {
+    //IE6-7 because of hack we need to align it left
+    *text-align: left;
+}
+
+// Modifiers
+.wrapper--page {
+    position: relative;
+    background-color: @bck-color-base;
+    //IE6-7 hack for magin auto to work
+    *text-align: center;
+    
+}
+
+
+.wrapper--max-w {
+    //.seven-eighths();
+    max-width: 78em;
+    //IE6-7 because of hack we need to align it left
+    *text-align: left;
+}
+
+
+// Component in situ 
+
+//Site specific 
+//layout--blog has a banner and article meta
+.layout--blog .header__wrapper {
+    //resets
+    padding: 0;
+}
+
+.layout--blog .header__wrapper > .wrapper--max-w {
+    max-width: none;
+}
+
+.layout--blog .section--faked .section__wrapper {
+    margin-bottom: 0;
+}
+
+//first text section should have no margin top
+.layout--blog .main__content > .section--main .section__wrapper {
+    &:first-child {
+        margin-top: 0;
+    }
+}

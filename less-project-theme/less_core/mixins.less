@@ -1,0 +1,687 @@
+// out: null
+// Mixins =================================================== 
+
+// 1. ROOT 					==============================
+// 2. TYPOGRAPHY 			==============================
+
+// text scale 
+// These handle massive type, for less frequently occuring bits of text (e.g. in mastheads and banners). 
+//traditional scale 16	18	21	24	36	48	60	72
+// baseline 24px;
+.tera () {
+    font-size: 6em;     // 96px 
+    line-height: 1.25;    // 120px 
+}
+
+.tera--no-margin () {
+    margin-top: 0;
+    .tera();
+}
+
+.giga () {
+    font-size: 4.5em;     // 72px 
+    line-height: 1.33333333333333;    // 96px 
+}
+
+.giga--no-margin () {
+    margin-top: 0;
+    .giga ()
+}
+
+.mega () {
+    font-size: 3.25em;     // 52px (13 x2 = 26 x 2 = 52);
+    line-height: 1.25;      // 65px 
+}
+
+.mega--no-margin () {
+    margin-top: 0;
+    .mega ();
+}
+
+.kilo () {
+    font-size: 3em;     // 48px (13 x2 = 26 x 2 = 52);
+    line-height: 1.125;      // 54px 
+}
+
+.kilo--no-margin () {
+    margin-top: 0;
+    .kilo ()
+}
+
+// Define headings and their associated classes here.
+// h1
+.alpha () {
+    font-size: 2.25em;     // 36px 
+    line-height: 1.33333333333333;    // 48px 
+
+}
+
+.alpha--margin () {
+    margin-top: 0.66666666666667em; //24px
+    font-size: 2.25em;     // 36px 
+    line-height: 1.33333333333333;    // 48px  
+
+}
+
+.alpha--no-margin () {
+    margin-top: 0; 
+    .alpha ();
+}
+
+/*//Fluid alpha
+.alpha--fluid-in-measure () {
+    font-size: calc( 1.5em + (2.25 - 1.5) * ( (100vw - 15em) / ( 64 - 15) ));
+}
+//Note: In the example above, 1.5em is the minimum font-size and 2.25em is the maximum. 240px is the start of the viewport range and 576px is where it should stop scaling . The inclusion or absence of the units after each value is important.*/
+
+//h2
+.beta (){
+    font-size: 1.5em;    // 24px 
+    line-height: 1.33333333333333;      // 32px 
+
+}
+
+.beta--margin (){
+    margin-top: 0.66666666666667em; // 16px 
+    font-size: 1.5em;    // 24px 
+    line-height: 1.33333333333333;      // 32px 
+
+}
+
+.beta--no-margin (){
+    margin-top: 0;
+    .beta ();
+
+}
+
+// Skip 24px 
+
+//h3
+.gamma (){
+    font-size: 1.3125em;  // 21px 
+    line-height: 1.52380952380952;    // 32px 
+
+}
+
+.gamma--margin (){
+    margin-top: 0.76190476190476em; //16px
+    font-size: 1.3125em;  // 21px 
+    line-height: 1.52380952380952;    // 32px 
+
+}
+
+.gamma--no-margin (){
+    margin-top: 0;
+    .gamma ();
+
+}
+
+//h4
+.delta (){
+    font-size: 1.125em; // 18px 
+    line-height: 1.333333333;  // 24px 
+}
+
+.delta--margin (){
+    margin-top: 1.33333333333333em; //24px
+    font-size: 1.125em; // 18px 
+    line-height: 1.33333333333333;  // 24px 
+}
+
+.delta--no-margin (){
+    margin-top: 0;
+    .delta ();
+}
+
+//h5
+.epsilon (){
+    font-size: 1em;     // 16px 
+    line-height: 1.5;    // 24px 
+}
+
+.epsilon--margin (){
+    margin-top: 0.75em; // 12px
+    font-size: 1em;     // 16px 
+    line-height: 1.5;    // 24px 
+}
+
+.epsilon--no-margin (){
+    margin-top: 0; 
+    .epsilon (); 
+}
+
+// basefont is 16px so font sizes below basefont
+
+//h6
+.zeta (){
+    font-size: 0.875em;     // 14px 
+    line-height: 1.57142857142857;    // 22px 
+}
+
+.zeta--margin (){
+    margin-top: 1em; // 14px
+    font-size: 0.875em;     // 14px 
+    line-height: 1.57142857142857; // 22px; 
+}
+
+.zeta--no-margin (){
+    margin-top: 0; 
+    .zeta ();
+}
+
+// Smaller-than-body-copy sizes here. 
+//used for small
+.milli () {
+    font-size: 13px;  // 
+    font-size: 0.8125rem;  // 13px 
+    line-height: 1.84615384615385;  // 24px 
+     letter-spacing: 0.025em;
+}
+
+.milli--margin() {
+    margin-top: 1.84615384615385em;
+    font-size: 13px;  // 
+    font-size: 0.8125rem;  // 13px 
+    line-height: 1.84615384615385;  // 24px 
+    letter-spacing: 0.025em;
+}
+
+.milli--no-margin() {
+    margin-top: 0;
+    .milli ();
+}
+
+// should be used on on on small--xx
+.micro () {
+    font-size: 0.6875em;
+    line-height: 1.63636363636364; 
+}
+
+// Letter spacing
+.letterspacing60() {
+     letter-spacing: 0.0625em;   
+}
+
+.letterspacing120() {
+    letter-spacing: 0.125em;
+}
+
+.letterspacing200() {
+    letter-spacing: 0.1875em;
+}
+
+.text-overflow() {
+overflow : hidden;
+text-overflow : ellipsis;
+white-space : nowrap; }
+
+// Word break- hyphens for long words 
+// basically some things support css hyphen some support word-break.
+// see http://kenneth.io/blog/2012/03/04/word-wrapping-hypernation-using-css/
+.hyphen() {
+-ms-word-break: break-all;
+     word-break: break-all;
+     /* Non standard for webkit */
+     -webkit-word-break: break-word;
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+    -ms-hyphens: auto;
+        hyphens: auto;
+}
+
+// 3. COLOUR 				==============================
+// 4. TEXTURE 				==============================
+
+// Arrow Shapes 
+// CSS Arrow shapes 
+.arrow-left() {
+    // triangle icon 
+    width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent; 
+	border-right: 10px solid ; 
+}
+
+.arrow-right() {
+	width: 0; 
+	height: 0; 
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	border-left: 10px solid ;
+}
+
+.arrow-down() {
+    width: 0;
+	height: 0;
+	border-left: 10px solid transparent;
+	border-right: 10px solid transparent;
+	border-top: 10px solid ;
+}
+
+.arrow-sm() {
+    border-width: 6px;
+}
+
+.arrow-lg() {
+    border-width: 24px;
+}
+
+// Decorative borders 
+.border--dotted () {
+    border-top-width: 1px;
+    border-top-style: dotted;
+    border-top-color: @grey-color-30;
+}
+
+.border--dotted-bottom () {
+    border-bottom-width: 1px;
+    border-bottom-style: dotted;
+    border-bottom-color: @grey-color-30;
+}
+
+// .bordered(COLOR, COLOR, COLOR, COLOR);
+
+.bordered(@top-color: #eee, @right-color: #eee, @bottom-color: #eee, @left-color: #eee) {
+border-top : solid 1px @top-color;
+border-left : solid 1px @left-color;
+border-right : solid 1px @right-color;
+border-bottom : solid 1px @bottom-color; }
+
+// .rounded(VALUE);
+
+.rounded(@radius:4px) {
+//-webkit-border-radius : @radius;
+//-moz-border-radius : @radius;
+border-radius : @radius; }
+
+// .border-radius(VALUE,VALUE,VALUE,VALUE);
+
+.border-radius(@topright: 0, @bottomright: 0, @bottomleft: 0, @topleft: 0) {
+//-webkit-border-top-right-radius : @topright;
+//-webkit-border-bottom-right-radius : @bottomright;
+//-webkit-border-bottom-left-radius : @bottomleft;
+//-webkit-border-top-left-radius : @topleft;
+//-moz-border-radius-topright : @topright;
+//-moz-border-radius-bottomright : @bottomright;
+//-moz-border-radius-bottomleft : @bottomleft;
+//-moz-border-radius-topleft : @topleft;
+border-top-right-radius : @topright;
+border-bottom-right-radius : @bottomright;
+border-bottom-left-radius : @bottomleft;
+border-top-left-radius : @topleft;
+-webkit-background-clip : padding-box;
+-moz-background-clip : padding;  
+background-clip : padding-box; }
+
+// .box-shadow(HORIZONTAL VERTICAL BLUR COLOR))
+
+.box-shadow(@shadow: 0 1px 3px rgba(0,0,0,.25)) {
+//-webkit-box-shadow : @shadow;
+//-moz-box-shadow : @shadow;
+box-shadow : @shadow; }
+
+// marterial design boxshadow
+.BoxShadowHelper(@level: 1){
+    & when (@level = 0) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    & when (@level = 1) {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    & when (@level = 2) {
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 3) {
+        box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    }
+    & when (@level = 4) {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    }
+    & when (@level = 5) {
+        box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    }
+}
+
+// .drop-shadow(HORIZONTAL, VERTICAL, BLUR, ALPHA);
+
+.drop-shadow(@x-axis: 0, @y-axis: 1px, @blur: 2px, @alpha: 0.1) {
+-webkit-box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+-moz-box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha);
+box-shadow : @x-axis @y-axis @blur rgba(0, 0, 0, @alpha); }
+
+// .opacity(VALUE);
+
+.opacity(@opacity : .5) {
+//-webkit-opacity : @opacity;
+//-moz-opacity : @opacity;
+opacity : @opacity; }
+
+// .rotate(VALUEdeg);
+
+.rotate(@deg) {
+-webkit-transform : rotate(@deg);
+-moz-transform : rotate(@deg);
+-ms-transform : rotate(@deg);
+-o-transform : rotate(@deg);
+transform : rotate(@deg); }
+
+// .scale(VALUE);
+
+.scale(@ratio) {
+-webkit-transform : scale(@ratio);
+-moz-transform : scale(@ratio);
+-ms-transform : scale(@ratio);
+-o-transform : scale(@ratio);
+transform : scale(@ratio); }
+
+// .skew(VALUE, VALUE);
+
+.skew(@x: 0, @y: 0) {
+-webkit-transform : skew(@x, @y);
+-moz-transform : skew(@x, @y);
+-ms-transform : skew(@x, @y);
+-o-transform : skew(@x, @y);
+transform : skew(@x, @y); }
+
+// .transition(PROPERTY DURATION DELAY(OPTIONAL) TIMING-FINCTION);
+
+.transition(@transition) {
+-webkit-transition : @transition;
+-moz-transition : @transition;
+-ms-transition : @transition;
+-o-transition : @transition;
+transition : @transition; }
+
+.transition--multi(@transition1, @transition-2) {
+-webkit-transition : @transition1, @transition-2;
+-moz-transition : @transition1, @transition-2;
+-ms-transition : @transition1, @transition-2;
+-o-transition : @transition1, @transition-2;
+transition : @transition1, @transition-2; }
+
+
+// .translate(VALUE, VALUE)
+
+.translate(@x: 0, @y: 0) {
+-webkit-transform : translate(@x, @y);
+-moz-transform : translate(@x, @y);
+-ms-transform : translate(@x, @y);
+-o-transform : translate(@x, @y);
+transform : translate(@x, @y); }
+
+.translate3d(@x: 0, @y: 0, @z: 0) {
+-webkit-transform : translate(@x, @y, @z);
+-moz-transform : translate(@x, @y, @z);
+-ms-transform : translate(@x, @y, @z);
+-o-transform : translate(@x, @y, @z);
+transform : translate(@x, @y, @z); }
+
+// 5. ELEMENTS 				==============================
+
+// .background-alpha(VALUE VALUE);
+
+.background-alpha(@color: @white, @alpha: 1) {
+background-color : hsla(hue(@color), saturation(@color), lightness(@color), @alpha); }
+
+// .background-size(VALUE VALUE);
+
+.background-size(@size){
+-webkit-background-size : @size;
+-moz-background-size : @size;
+-o-background-size : @size;
+background-size : @size; }
+
+// .background-clip(VALUE); (border-box, padding-box, content-box)
+
+.background-clip(@clip) {
+-webkit-background-clip : @clip;
+-moz-background-clip : @clip;
+background-clip : @clip; }
+
+// Chrome Frame
+
+.chromeframe() { 
+margin : .2em 0; 
+background : @lightgrey; 
+color : @black; 
+padding : .2em 0; }
+
+// .resize(VALUE) (none, both, horizontal, vertical, inherit)
+
+.resize(@direction: both) {
+resize : @direction;
+overflow : auto; }
+
+// .userselect(VALUE) (all, element, none, text)
+
+.user-select(@select) {
+-webkit-user-select : @select;
+-moz-user-select : @select;
+-o-user-select : @select;
+user-select : @select; }
+
+
+// Forms ==============================================
+.placeholder(@placeholdercolor) {
+    &::-webkit-input-placeholder { color:@placeholdercolor; }
+    &::-moz-placeholder { color:@placeholdercolor; } /* firefox 19+ */
+    &:-ms-input-placeholder { color:@placeholdercolor; } /* ie */
+    &:-moz-placeholder { color:@placeholdercolor; }    
+}
+
+.appearance() {
+        -webkit-appearance: none !important;
+        -moz-appearance:    none !important;
+        appearance:         none !important;
+}
+
+
+// Helper classes ====================================== 
+// image replace
+.hide-text () {
+display: block !important;
+text-indent : -999em !important;
+white-space : nowrap !important;
+overflow: hidden !important;
+}
+
+// Hide from both screenreaders and browsers: h5bp.com/u
+.hidden () {display: none !important; visibility: hidden !important;}
+
+// none readable mobile 
+.mobile-hidden () {
+    display: none; //not important so can be overwritten
+}
+
+// Hide only visually, but have it available for screenreaders: h5bp.com/v
+.visually-hidden () {margin: -1px !important;padding: 0 !important;width: 1px !important;height: 1px !important;border: 0 !important;clip: rect(0 0 0 0) !important;clip-path: inset(50%);position: absolute !important;white-space: nowrap;overflow: hidden;word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */}
+
+// Hide visually and from screenreaders, but maintain layout.
+.invisible () {visibility: hidden !important;}
+
+// Contain floats: h5bp.com/q
+.clearfix () {
+    &:before,&:after {
+        content:" " !important;
+        display:table !important;
+        }
+        &:after{
+            clear:both !important;
+        }
+}
+
+// clear floats 
+.clear-left() {
+    clear: left !important;
+}
+.clear-right() {
+    clear: right !important;   
+}
+.clear-both() {
+    clear: both !important;   
+}
+
+
+// 6. LAYOUT 				============================== 
+
+// BOX_SIZING
+// If you need specific box sizing 
+//.box-sizing(VALUE); (border-box, padding-box, content-box)
+
+.box-sizing(@boxsize: border-box) {
+-webkit-box-sizing : @boxsize;
+-moz-box-sizing : @boxsize;
+-ms-box-sizing : @boxsize;
+box-sizing : @boxsize; }
+
+// ** NOTE box-sizing will be applied as standard in normalize.less **
+
+
+// TABLE DISPLAY 
+// for use to center text objects, while we wait for better flex box support. 
+.table-display-parent () {
+    display: table;
+}
+
+.table-display-child () {
+    display: table-cell;
+}
+
+.table-display-child--middle () {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.table-display-child--bottom () {
+    display: table-cell;
+    vertical-align: bottom;
+}
+
+//Flexy object 
+.flexy () {
+     display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;   
+
+}
+
+//the flexy box
+.flexy__block () {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    -ms-flex-preferred-size: auto;
+    flex-basis: auto;
+    -webkit-flex: 1;
+}
+
+// GRID WIDTHS
+    // golden section 
+    .golden-section--lg() { width:@goldensectionlg; }
+    .golden-section--sm() { width: @goldensectionsm; }
+
+     //Whole
+    .one-whole()         { width:100%; }
+    .one-whole--gutter()         { width:(100% - @gutter--grid); }
+
+
+     // Halves
+    .one-half()       { width:50%; }
+    .one-half--gutter()       { width: (50% - @gutter--grid); }
+
+     //Thirds
+
+    .one-third ()        { width:33.333%; }
+    .one-third--gutter ()        { width:(33.333% - @gutter--grid); }
+    .two-thirds ()       { width:66.666%; }
+    .two-thirds--gutter ()       { width:(66.666% - @gutter--grid); }
+
+
+     //Quarters
+    .one-quarter ()     { width:25%; }
+    .one-quarter--gutter ()     { width:(25% - @gutter--grid); }
+    .two-quarters ()    { width:50%; }
+    .three-quarters ()   { width:75%; }
+
+
+    //Fifths
+    .one-fifth()       { width:20%; }
+    .one-fifth--gutter()       { width:(20% - @gutter--grid); }
+    .two-fifths()       { width:40%; }
+    .three-fifths()     { width:60%; }
+    .four-fifths()       { width:80%; }
+
+
+
+     //Sixths
+    .one-sixth()       { width:16.666%; }
+    .two-sixths()        { width:33.333%; }
+    .three-sixths()   { width:50%; }
+    .four-sixths()     { width:66.666%; }
+    .five-sixths()       { width:83.333%; }
+
+
+
+     //Eighths
+    .one-eighth()       { width:12.5%; }
+    .two-eighths()       { width:25%; }
+    .three-eighths()     { width:37.5%; }
+    .four-eighths()     { width:50%; }
+    .five-eighths()      { width:62.5%; }
+    .six-eighths()       { width:75%; }
+    .seven-eighths()     { width:87.5%; }
+
+
+
+     //Tenths
+
+    .one-tenth()        { width:10%; }
+    .two-tenths()        { width:20%; }
+    .three-tenths()     { width:30%; }
+    .four-tenths()     { width:40%; }
+    .five-tenths()       { width:50%; }
+    .six-tenths()       { width:60%; }
+    .seven-tenths()      { width:70%; }
+    .eight-tenths()      { width:80%; }
+    .nine-tenths()       { width:90%; }
+
+
+
+    //Twelfths
+    .one-twelfth()       { width:8.333%; }
+    .two-twelfths()      { width:16.666%; }
+    .three-twelfths()    { width:25%; }
+    .four-twelfths()     { width:33.333%; }
+    .five-twelfths()     { width:41.666% }
+    .six-twelfths()      { width:50%; }
+    .seven-twelfths()    { width:58.333%; }
+    .eight-twelfths()    { width:66.666%; }
+    .nine-twelfths()     { width:75%; }
+    .ten-twelfths()      { width:83.333%; }
+    .eleven-twelfths()   { width:91.666%; }
+
+//  7. VENDOR-SPECIFIC 		==============================
+
+// IE6 - 7 haslayout bug
+.has-layout() {*zoom: 1;}
+// IE6 - 7 inline block
+.inline-block() {
+    *display: inline;
+    *zoom: 1;
+}
+//  8. MODERNIZR 			==============================
+//  9. TEMPLATE SPECIFICS 	==============================
+
+//the measure
+// this is for containers so based on 16px 
+.halfmeasure() {max-width: 18em;}
+.themeasure() { max-width: 36em;}
+.themeasurelg() { max-width: 42em;}// 640px
+.themeasureform() { max-width: 36em;}// 672px

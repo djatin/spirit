@@ -1,0 +1,280 @@
+// out: null
+/* Elements =================================================== */
+
+/* FIGURES, IMAGES, VIDEO, IFRAMES, VCARDS =========================================== */
+
+hr { 
+display : block; 
+margin : 1em 0; 
+//width: @goldensectionsm;
+//max-width: 42em;
+height : 1px; 
+padding : 0;
+border : 0;
+border-bottom: 1px solid @grey--light-3;
+}
+
+
+// img
+
+img {
+// Exceutive decision - why are imgs not block elements?
+display: block;
+border: 0;
+}
+
+//images in the text
+.s-the-measure > img {
+    display: inline-block;
+    .inline-block();
+    width: auto;
+    
+}
+
+//iframes
+
+iframe {
+    display: block;   
+}
+
+
+// Main_section figures
+// types of figure 
+// base figure in the main article
+
+figure {
+    margin-top : 1.5em; //2 x baseheightline
+    background: transparent;
+}
+
+figure img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+   
+}
+
+/*figure figure {
+    background: transparent;
+}  */ 
+
+
+// simple inline quote
+q {
+   font-family: @fall-back--serif;
+   color: @basecolor;
+   letter-spacing: normal;
+    
+}
+
+// blockquote should appear inside a figure
+// figure element class
+
+// basic blockquote
+
+/* Markup suggestion
+    <figure>
+    <blockquote><p>Quote</p></blockquote>
+    <figcaption>Attirution</figcaption>
+   </figure>
+*/
+
+blockquote {
+    //fallback font size
+    .beta ();
+    font-family: @fall-back--serif;
+    color: @basecolor;
+    text-align: left;
+    
+    //match the decoration of the headings 
+    margin-top: @space-m;//24px
+    margin-bottom: @space-m;//24px
+    padding-top: @space-m; 
+    padding-bottom: @space-m;
+    padding-left: @space-m;
+    padding-right: @space-m;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    
+    /* Text */
+    p {
+        font-size: inherit !important;
+        line-height: inherit !important;
+        font-weight: inherit !important;
+        /* Quotemarks */
+    &:before, &:after {
+        display: inline;
+    }
+    &:before {
+        content:"\201C"; // double quote 
+    }
+    &:after {
+        content:"\201D"; // double quote
+    }
+    }
+    
+}
+
+blockquote *:first-child {
+    margin-top: 0;   
+}
+
+/* Figcaption */
+// Used with blockquote as the attirbution
+
+
+figcaption {
+    display : block;
+    margin-top: @space-s;
+}
+
+blockquote + figcaption {
+    padding-left: 1.846153846153846em;//24px match blockquote
+    padding-right: 1.846153846153846em;//24px match blockquote
+    color: @basecolor;
+    .letterspacing200();
+    text-transform: uppercase;
+}
+
+
+/* Citations 
+cite {
+    
+}*/
+
+
+// Classed Quote -----------------------------
+// classes ------------------- */
+// .quote (figure container)
+// .quote__logo (logo in in the quote)
+// .quote__blockquote
+// .quote__attribution (figcaption normally)
+// ---------------------- */
+
+.quote {
+    max-width: 54em;
+    //text-transform: uppercase;
+}
+
+.quote__logo {
+    max-width: 7.75em;  //124px; 
+}
+
+
+.quote__attribution {
+    text-transform: uppercase;
+}
+
+.quote__attribution p {
+    margin: 0;   
+}
+
+//.quote__attribution em {
+//}
+
+//Classed Figure 
+.figure figcaption {
+    //padding-top: @space-xxs;
+    padding-right: (@gutter/2);
+    //padding-bottom: @space-xxs;
+    padding-left: (@gutter/2);
+    .six-eighths();
+    .milli ();
+    font-style: italic;
+    text-align: left;
+    color: @textcolor;
+}
+
+
+
+
+/* Maps        	============================== */
+.map-embed {
+    margin-top: @space-l;
+    margin-left: auto;
+    margin-right: auto;
+    .themeasurelg();  
+}
+        
+/* Video        	============================== */
+//.video-embed - the class 
+//.video-embed--16-9 - new youtube
+//.video-embed--4-3 - old youtube
+//.video-embed__wrapper required to make it responsive
+
+
+// video only need if you are using some player that is rubish Vimeo and Youtube handle no js wel these days
+//.no-js .video-embed {
+        // as they go bang when there is no js
+        //display: none;
+//}
+
+// Make video responsive you cna use this a global as most things that handle video cna cope with this 
+    
+.video-embed__wrapper {
+    height: 0;
+	position: relative;
+	
+	    
+}
+
+ .video-embed iframe, .video-embed object,  .video-embed embed {
+    width: 100% !important;
+	height: 100% !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+
+}
+    
+.video-embed figcaption {
+        text-align: center;
+        text-transform: lowercase;
+}
+
+
+//.video-embed--4-3 .video-embed__wrapper {
+   // padding-bottom: 75%; /* 4:3 */
+//}
+
+.video-embed--16-9 .video-embed__wrapper {
+    	padding-bottom: 56.25%; /* 16:9 */
+}
+
+// vine style videos have a 1 to 1 ratio
+//.video-embed--1-1 {
+        // these have a max-width other wise they become very big. 
+        //max-width: 33em;
+//}
+
+//.video-embed--1-1 .video-embed__wrapper {
+    	//padding-bottom: 100%; /* 1:1 */
+    //}
+
+/* SITE-SPECIFIC 		============================== */
+
+// DRUPAL QUIRKS
+/* quirk of drupal remove p tags */
+.video-embed__wrapper  p {
+       display: none; 
+}
+
+// Hide media root button
+.video-embed a {
+        display: none;
+}
+
+
+/* Vcard */
+
+//.vcard 
+//.tel
+//.email
+//.fn .org (full name organisaton)
+//.adr
+//.street-address
+//.locality
+//.postal-code
+//.country

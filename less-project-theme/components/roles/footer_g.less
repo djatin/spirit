@@ -1,0 +1,38 @@
+// out: null
+
+// global styles 
+/* !Footers --------------------------------------------------- */
+/* clases
+.footer (generic footer class)
+.contentinfo (generic class based on role="contentinfo" )
+
+*/
+
+
+.contentinfo {
+    margin-top: @space-xl;
+    background: @footerbg;
+    color: @footertextcolor;
+}
+
+.contentinfo__wrapper {
+        max-width: 78em;
+        padding-top: (@gutter/2); //approx 48px / 1024px
+        padding-left: @space-default;
+        padding-right: @space-default;
+        padding-bottom: @space-xxl;  
+        .clearfix();
+        
+}
+
+.contentinfo__section {
+    margin-top: @space-m;
+}
+
+.contentinfo__section p {
+    margin-top: 1.84615384615385em;
+    .milli ();
+}
+
+// Layout of footer
+

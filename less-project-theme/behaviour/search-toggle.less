@@ -1,0 +1,142 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Search Toggle
+	Version: 2.0
+	URL: http://bigmallet.co.uk
+	Made from bits and pieces from the internet. 
+	Roughly on 320andup by Andy Clarke and Stark by John Albin
+	
+	Behaviours search toggle
+
+============================================================ */
+// use .is-active toogle child state
+// .is-selected is the toggle parent state
+
+// search toggle ==============
+// base styles 
+
+
+
+
+// hide the button (should not be loaded by js unless it has the rigth criteria but just incase)
+.js-search-toggle {
+    display: none;
+}
+
+
+// no-touch basic hover 
+// starts 320px===================================================
+.bhSearch_toggle-320px() {
+
+    
+// search icon
+.bm-icon--search {
+    height: 3em;
+    width: 3em;
+    background-color: transparent !important;
+    background: url(../img/global/bigmallet-icons-sprite.png) 0 -336px no-repeat; 
+    
+    
+}
+    
+.js-search-toggle {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background:none;
+    position: absolute;
+    top: -3em; //47px
+    right: 0;
+    &.is-selected {
+        background: @explorecolor;
+    }
+    &.is-selected .bm-icon--search {
+        background-position: -48px -336px;
+    }
+}
+
+    
+// search position
+.js-search {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 11.25em; // bring the search down to bring button inline 180px
+    left: 0;
+    right: 0; //6px
+    z-index: @zindex-simple--front;
+}
+      
+.js-search__wrapper  {
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    top: 1px;
+    right: 0;
+    left: 0; //6px 
+     
+ }
+
+.js-search .search__title {
+    .visually-hidden();   
+}
+  
+.js-search__wrapper.is-active {
+    max-height: 6em;
+ }
+    
+
+    
+
+// end 20em / 320 px
+}
+
+
+// start tablet 768px===================================================
+.bhSearch_toggle-768px() {
+
+
+    
+// move the toggle to then end
+.js-search-toggle {
+    left: 0;
+    right: auto;
+}
+
+.js-search-toggle:hover {
+    margin-top: 1px;   
+}
+    
+// search position
+.js-search {
+    top: 3.375em; // bring the search down to bring button inline
+}
+    
+.search--navigation .search__wrapper  { 
+    width: 18.625em;
+    position: absolute;
+    left: -15.625em;
+    top: 1px;
+    right: auto;
+}
+  
+       
+
+// No Js shift the search to the very top 
+.search--navigation .search__title {
+    .visually-hidden();   
+}
+    
+    
+.no-js .search--navigation {
+    position: absolute;
+    top: 3.375em;
+   
+}
+
+    
+}
+
+// End simple dropdown  ========================

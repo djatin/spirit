@@ -1,0 +1,31 @@
+// out: null
+
+// global styles 
+/* !component name --------------------------------------------------- */
+/* clases
+.small-print (generic class )
+.contentinfo__small-print
+
+p small 
+
+*/
+.small-print small {
+    display: block;
+}
+
+.contentinfo__small-print {
+    color: @grey-color-05;   
+}
+
+// Component in situ 
+
+//Small print in the prompts on donation and sponsorship pages
+.prompt__small-print {
+    font-family: @fall-back--serif;
+    .wf-active & {
+        font-family: @font-stack__playfair;
+    }
+    font-style: italic;
+    text-transform: none;
+    color: @grey--light-4;
+}

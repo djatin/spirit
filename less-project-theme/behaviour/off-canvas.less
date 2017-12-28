@@ -1,0 +1,187 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Off Canvas
+	Version: 2.2
+	URL: http://bigmallet.co.uk
+	Made from bits and pieces from the internet. 
+	Roughly based on Jeremy Keith http://24ways.org/2014/responsive-enhancement/
+	
+	Behaviours off-canvas menu for mobile
+    Applies to mustardo Browsers and ones that understand media queries
+
+============================================================ */
+
+// mobile off-canvass menu behaviour ==============
+// base styles any browser
+// testing 
+
+//local variable
+@canvasdawerwidth : 16.5em;
+
+
+// For browser that cut the mustard and between 320px and 767px
+//@media only screen and (min-width: 20em) and (max-width: 47.9375em) {
+.min-width-max(20em; {  
+
+    .toggle-control__text {
+    .visually-hidden();   
+    }
+    
+
+    // shift the menu toggle left
+    .mustardo-menu-toggle {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: @zindex-nav;
+    }
+    
+    .mustardo-nav-toggle {
+        background-image: url(../../common/img/global/off-canvas/off-canvas-icon--menu.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        &:hover, &:active, &:focus {
+          margin-top: 0.8125em;
+        margin-bottom: 0.6875em;
+         background-color: transparent;  
+        }
+    }
+    
+    
+    .mustardo-nav-toggle--close {
+        background-image: url(../../common/img/global/off-canvas/off-canvas-icon--close.png);
+    }
+
+    .svg .mustardo-nav-toggle--menu {
+        // uggg http: requst for close icon as SVG data url has a bad performance hit in mobiles
+        background-image: url(../../common/img/global/off-canvas/off-canvas-svg--menu.svg);
+        background-size: 3em 3em;
+    }
+    
+    .svg .mustardo-nav-toggle--close {
+        // uggg http: requst for close icon as SVG data url has a bad performance hit in mobiles
+        background-image: url(../../common/img/global/off-canvas/off-canvas-svg--close.svg);
+        background-size: 3em 3em;
+    }
+    
+    
+    
+    //navigation styling for everything in the nav 
+    .mustardo-navigation {
+        margin: 0;
+        width:@canvasdawerwidth; //264px
+        min-height: 100%;
+        background: @whiteonblack;
+        //border-right: 1px solid darken(@whiteonblack, 5%);
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: -@canvasdawerwidth; //264px
+        z-index: @zindex-nav; // bellow the button at 500
+        transition: transform @duration-quickly ease-in-out;
+        .transition--multi(transform @duration-quickly ease-in-out, visibility @duration-quickly ease-in-out);
+    }
+    
+    .mustardo-navigation .navigation__wrapper {
+        padding: 4.625em 0;
+        
+    }
+    
+    // Shift the page 
+    .mustardo-wrapper--page {
+        transition: opacity @duration-quickly ease-in-out;
+        position: relative;
+        overflow: hidden;
+        
+    }
+        
+    
+    .is-open .mustardo-wrapper--page > * {
+        opacity: 0.5;
+    }
+    
+    .is-open .mustardo-navigation {
+        right: 0;
+        opacity: 1;   
+        .BoxShadowHelper(2);
+    }
+
+    .csstransforms .mustardo-navigation {
+        visibility: hidden;
+        //.translate(0, 0);
+        
+    }
+    
+    .csstransforms .is-open .mustardo-navigation {
+        right: -@canvasdawerwidth; //264px
+        visibility:visible;
+        .translate(-@canvasdawerwidth, 0);
+    }
+    
+    
+    
+    // Position of Navigation elements
+    
+    // move search to the top
+    .mustardo-navigation .navigation__utility-nav {
+        margin: 0;
+        position: absolute;
+        top: 4.5em; //72px
+        left: 0.375em;
+        right: 0.375em;
+    }
+    // Shift nav to accomedate search
+    .mustardo-navigation .navigation__global-nav {   
+            margin-top: 3.75em; //60px
+    }
+    
+   
+
+    
+// end mustardo
+
+// end media query
+//}
+    
+} 47.9375em;);
+
+// 768 ===================================================
+.min-width(48em; {
+// reset menu behaviours
+    
+    // belt and braces reset 
+    .mustardo-wrapper--page.is-active {
+    position: static;
+    left: auto;
+    border: 0;
+    }
+    
+    //Make sure the close button is gone too
+    .navigation__menu-toggle {
+        display: none !important;
+    }
+    
+    // hide the buttons 
+    // see navigation_m.less
+
+    /* reset nav from off canvas */
+    //.global-nav--banner, .utility-nav--banner {
+        //position: absolute;
+       // position: static;
+       // top: auto;
+       // left: auto;
+        //right: auto;
+        //> .menu {
+        //    width: auto; /* reset width */
+        //}
+    //}
+    
+    
+    
+// end mustardo
+
+// END 768 mediaquery
+});
+// End off canvas  ========================

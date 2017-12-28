@@ -1,0 +1,248 @@
+// out: null
+// Media Queries for component
+
+/* !webforms --------------------------------------------------- */
+// Styles for DRUPAL FORMS
+/* clases
+.form (gerneric all forms)
+.webform-client-form (the form)
+.form__wrapper
+
+basic mark up
+- <div .webform-component
+--- label
+----- input (form-text, form-textarea, form-select, form-email)
+- </div>
+*/
+
+/*types
+-markup (area code)
+-select
+-textfield
+-number (same as textfield)
+-textarea
+-checkboxes
+-radio
+-permission (text area)
+-date
+
+*/
+
+
+ 
+/*///////////////////////////////////////////////////////////
+
+    Webforms
+
+//////////////////////////////////////////////////// */
+
+//local varible 
+@small_major: 18.5em; //300px as we still waht opera mini to work
+
+// make these infield top aligned 
+//http://uxmovement.com/forms/why-infield-top-aligned-form-labels-are-quickest-to-scan/
+//only for browsers that can cope with this so from 320px up 
+
+.min-width(@small_major {
+
+// nest all this should happen in the grid if its not in a grid there is a reason and shouldn't get this styling
+.o-grid { 
+    
+    //alternative setups div becomes the input - select, radios, check boxes, date, etc
+    // We are going to tidy this up more
+    .webform-component-date .form-item {
+    display: inline-block;
+    margin: 0 0.5em 0 0;
+    min-width: 4.5em; 
+    .one-quarter();
+    }
+    
+// End nest
+}
+
+//end @small_major
+});
+
+
+// Media Queries for component in situ
+// 320px/20em
+//.min-width(20em; {
+
+/*.contentinfo__newsletter {
+        max-width: 22.5em;
+}
+    
+.contentinfo__newsletter form {
+    position: relative;   
+}
+  
+.contentinfo__newsletter .webform-component-email {
+        margin: 0;
+        .golden-section--lg();
+}
+
+.contentinfo__newsletter .form-actions {
+    
+    .golden-section--sm();
+    position: absolute;
+    right: 0;
+    bottom: -0.1875em; //-3px mathc button margin
+    overflow: visible;
+}
+    
+    .contentinfo__newsletter .webform-submit {
+        //at some widths this can become compressed so reduce the padding and make sure the text doesn't wrap
+        padding-left: 0.375em;
+        padding-right: 0.375em;
+        white-space: nowrap;
+        //position: absolute;
+        //bottom: -4.875em; //78px
+
+    }
+    
+    .contentinfo__newsletter .webform-component--privacy-statement  {
+        .clear-both();
+    } 
+
+    .placeholder .contentinfo__newsletter .webform-submit {
+        .one-whole();
+        //bottom: auto;
+        //top:-0.375em; //shift it up to account for the margin
+    }*/
+    
+//});
+
+
+
+// Donate form ---------------------------------
+// Donate form currently uses webforms 
+
+/* Classes
+form--donate
+
+// USEs fieldsets to differenciate 
+.fieldset--step-1 (top level)
+.fieldset--single
+.fieldset--monthly
+.fieldset--set-amount (choices)
+.fieldset--other-amount (user choice)
+
+Then it uses normal form-items
+.form-type-radios 
+--label
+--.form-radios
+---.form-item .form-type-radio
+----.form-radio
+----label.option
+
+//prompts
+.form-radio__prompt prompt (container)
+.prompt__title
+--.prompt__amount
+.prompt__body
+*/
+
+
+//768px/48em
+.min-width(48em; {
+
+ .fieldset--set-amount .form-type-radios {
+        margin-top: @gutter--grid;
+        .clearfix();
+  }
+
+.fieldset--set-amount .form-radios {
+        margin-left: -@gutter--grid;
+}
+    
+.fieldset--set-amount .form-radios .form-item {
+    margin-left: @gutter--grid;
+    .one-third--gutter ();
+    float: left;
+    
+    
+}
+    
+.fieldset--set-amount .option {
+        margin-top: 0;
+}
+
+@supports (display: grid) {
+    
+.fieldset--set-amount .form-radios {
+        margin-left: 0;
+        // very simple grid set up a inline block is a little skewed     
+        display: grid;
+        //grid-template-columns: repeat(3, 1fr); // 3 equal space 
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: @gutter--grid;
+}
+
+
+.fieldset--set-amount .form-radios .form-item {
+        margin-left: 0;
+        width: auto;
+        float: none;
+}
+
+}
+    
+//Other amounts 
+.fieldset--other-amount {
+        .clearfix();
+}
+    
+.fieldset--other-amount legend {  
+    .one-third();
+    max-width: 12em;
+    float: left;
+}
+    
+.fieldset--other-amount .fieldset__legend {
+    // magic number 
+    margin-top: 1.125em; //18px
+    }
+    
+.fieldset--other-amount .form-item {
+    .two-thirds();
+    float: right;
+    clear: right;
+} 
+    
+//When js is running you can hide the other amount radio button but it makes me sad
+    .js-fieldset--other-amount .form-radios {
+        .visually-hidden();
+    }
+    
+});
+
+
+//Sponsorship form -------------
+/*Classes
+//.form--sponsor
+fieldset--sponsor
+
+Builds on elements of the donate form
+
+*/
+
+//640px/40em
+.min-width(40em; {
+
+// flexy model by https://alisdair.mcdiarmid.org/simple-item-aligment-with-flexbox/
+.fieldset--sponsor .form-type-select {
+    .flexy ();
+}
+    
+.fieldset--sponsor .form-type-select .form-select {
+       .flexy__block (); 
+}
+
+.prompt__body--info {
+    margin-top: @gutter;
+    margin-bottom: @gutter;
+    
+    
+}
+    
+});

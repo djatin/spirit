@@ -1,0 +1,464 @@
+// out: null
+
+// global styles 
+/* !forms --------------------------------------------------- */
+// Styles for DRUPAL FORMS
+
+/* our clases
+.form (generic)
+.form__wrapper
+
+*/
+
+main form {
+    margin: 0 auto;
+    /*.themeasureform();*/
+    text-align: left;
+}
+
+/*/////////////////////////////////////////////////
+
+/*html form styling*/
+
+/////////////////////////////////////////////////*/
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    margin-bottom: 1em; // see form item margin 1em 
+  
+}
+
+fieldset fieldset {
+    margin: 0;
+}
+
+
+// Drupal adds a span to the legend it is recommend that you style this rather than legend
+legend span {
+    display: block;
+    //text styles
+    color: @basecolor;
+    .zeta--margin ();
+    font-weight: 700;
+    text-transform: uppercase; 
+    cursor: pointer;
+}
+
+//fieldset fieldset legend 
+fieldset fieldset fieldset legend span {
+    font-weight: 400;
+}
+
+label {
+display: block;
+padding-left: 0.5em; // 6px match padding of inputs
+padding-right: 0.5em;
+max-width: 100%;
+font-size: 12px;
+font-size: 0.75rem;
+line-height: 1.5;
+font-weight : normal;
+text-align: left;
+//color : @grey;
+cursor : pointer; 
+.box-sizing();
+
+}
+
+
+input,
+textarea,
+select {
+display : block;
+margin: 0;
+width: 100%;
+font-size: 0.875em; //14px;
+line-height:1.57142857142857; //22px
+border : @inputborderwidth @inputborderstyle @inputborder;
+background : @inputbackground;
+color : @inputtext; 
+
+.lt-ie9 & {
+    min-height: 0;   
+}
+    
+*display: block;
+*filter:chroma(color=#000000);
+    
+}
+// Focus defaults
+input, textarea, button, select {
+    &:focus {
+    //outline : thin dotted;
+    outline: @outline;
+    outline-offset: -2px;
+    }
+}
+
+//borders fro inputs and text area
+input,textarea {
+padding: 0.42857142857143em; //6px + 1px border + 22px lineheight = 36px 
+height: 3.428571428571429em; //48px 
+// Ios Gradient background
+background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,0)));
+background-image:-webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
+&:hover {
+border-style: solid;
+background : @inputbackground--hover; 
+}
+
+&:active, &:focus {
+    //border-color : @inputborder--focus;
+    //background-color : @inputbackground--focus;
+    color: @inputtext; 
+}
+
+&:hover, &:active, &:focus {
+       .BoxShadowHelper(0); 
+}
+    
+}
+
+input[type='text'], input[type='email'], textarea {
+    .rounded(0);
+}
+
+
+// f'ing checkboxes -------------------------------
+input[type='image'],
+input[type='checkbox'],
+input[type='radio'] {
+display: inline-block;
+padding: 0;
+width: 1em;
+height: 1em; //reset height
+.epsilon ();
+background: transparent;
+cursor : pointer;
+}
+
+
+input[type="checkbox"] {
+    // let the browser deal with it
+    //width: 1em; 
+    //height: 1em;
+    *overflow: hidden;
+
+}
+
+input[type="image"] {
+border : 0; 
+.box-shadow(none); }
+
+input[type="file"] {
+width : auto;
+padding : initial;
+line-height : initial;
+border : initial;
+background-color : transparent;
+background-color : initial;
+.box-shadow(none); }
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+*overflow : visible; 
+}
+
+
+// dirty hack to remove the border box around checkboxes and radios in IE
+/* IE9, IE8, IE7, IE6 */
+input[type="checkbox"], input[type="radio"] { border: 0\9; vertical-align: middle\9; }
+
+/* Hack for IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    input[type="checkbox"], input[type="radio"] { border: 0; vertical-align: middle;}
+}
+
+// Selects ---------------------------------------
+select {
+    height: 3.428571428571429em; //48px match other inputs
+    &:hover {
+        border-style: solid;
+        background : @inputbackground--hover; 
+        
+    }
+    &:hover, &:active, &:focus {
+       .BoxShadowHelper(0); 
+    }
+}
+
+select[multiple],
+select[size] {
+height : auto; }
+
+
+
+textarea {
+.resize(vertical);
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+overflow : auto; 
+    
+vertical-align : top; }
+
+input[type="hidden"] {
+display : none; }
+
+// disabled
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+.opacity(.5);
+cursor : not-allowed; }
+
+// focus defaults
+
+input[type="file"], input[type="radio"],input[type="checkbox"] {
+        &:hover, &:active, &:focus {
+        outline: 0;
+        .box-shadow(none); 
+        }
+}
+
+/* form typography ----------------- */
+
+
+form abbr {
+ text-align: right;
+ color: @errorcolor;
+}
+
+
+form small  {
+    font-size: 12px;
+    font-size: 0.75rem;
+}
+
+form ul {
+margin: 1.5em 0;
+padding: 0;
+list-style-type : none !important; 
+}
+
+form br {
+display : none; }
+
+
+
+/* /////////////////////////////////////////////////////
+
+    GENERIC DRUPAL FORM LAYOUTS 
+
+///////////////////////////////////////////////////////*/
+
+// General form object holder
+.form-item {
+    margin-bottom: 0.75em; //12px
+   //clear: both;
+    
+}
+
+/* Form messeaging -------------------------- */
+// rewrite system menu
+.description {
+   margin: 0.25em 0.25em 1.5em;
+   &:extend(label);
+    color: @grey--dark-3;
+}
+
+// drupal's required 
+.form-required {
+    color: @errorcolor;
+    display: none; // make sure you use (required)
+}
+
+// Text area ------------------------------------- */
+
+.form-textarea-wrapper {
+    margin-top: 0;
+}
+
+.form-textarea {
+    height: 12.28571428571429em;//172px /14px
+}
+
+
+// get rid of this
+.grippie {
+    display: none !important;
+}
+
+// checkboxes and radios --------------------- */
+/* 
+- <div .form-checkboxes / .form-radios
+-- <div .form-type-radio / form-type-checkbox
+--- input 
+--- label 
+*/
+
+.form-checkboxes label, .form-radios label {
+    display: inline;   
+}
+
+.form-checkboxes .form-item, .form-radios .form-item {
+    margin: 0;
+}
+
+//for IE
+*.form-checkboxes input, .form-radios input {
+    .inline-block();
+    width: 1em;
+    height: 1em;
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    
+}
+
+//file uploads ---------------------------------- */
+// file icons
+.form-managed-file .image-preview, .form-managed-file .image-widget-data {
+    margin-top: 0.375em; //6px;
+}
+
+.file-icon {
+	display:inline-block;
+    .inline-block();
+	width: auto;
+	vertical-align:baseline;
+}
+
+/* Submit btn ------------------------------------------------- */
+
+// for less capable browsers we use the class
+.form-actions {
+    overflow: hidden;
+}
+
+
+
+.form-submit {
+    margin : 1px 0 3px; // 1px 0 3px // match box shadow
+    padding : 0.857142857142857em 1.71428571428571em; // height 48px; 
+    height: auto;
+    width: auto; 
+    .zeta (); //14px / 22px
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    color : @submittext; 
+    .letterspacing60();
+    background-color : @submitbackground;
+    border-color: @submitbackground;
+    // make sure it wraps
+    white-space: normal;
+    // apperance 
+    .appearance();
+    // match .o-btn
+    .BoxShadowHelper(0);
+    .rounded(0);
+    &:hover, &:active, &:focus {
+        color: @submittext;
+    }
+    &:hover {
+       background-color : darken(@submitbackground, 4%);
+       border-color : darken(@submitborder, 4%); 
+            
+    }
+    &:active, &:focus {
+        
+        background-color : lighten(@submitbackground, 2%);
+        border-color : lighten(@submitborder, 2%);
+        
+    }
+    &:hover, &:active, &:focus {
+        margin-top: 2px;
+        margin-bottom: 2px; 
+        box-shadow: none;
+    }
+}
+
+
+// Submit has layout    
+.lt-ie8 {
+    .form-submit {
+        .has-layout();
+    }
+}
+
+//ERRORS 
+input.error, textarea.error, select.error {
+    border-style: solid;
+}
+
+
+// Form links -------------------------------------------------
+
+
+
+// Drupal form Text components ---------------------------------
+// Steps 
+//.step
+//step--N
+
+//titles
+.step > legend {
+    .clearfix(); // fixes titles 
+    width: 100%;
+}
+.step > legend span {
+    margin: 0 0 1.14285714285714em; //32px (gives you 36px when it meets the next item)
+    padding-bottom: 0.21428571428571em; //6px due to the weird x-height of Core Paint
+    border-bottom: 1px solid @inputborder;
+    .beta();
+    
+}
+
+/*// Gift Aid compontent -------------------------------------------
+// Mark up 
+<fieldset class="webform-component-fieldset webform-component--step-2--gift-aid-details fieldset fieldset--gift-aid">
+<legend><span class="fieldset__legend">
+<div class="fieldset__description description">
+</div>
+<div class="form-item webform-component webform-component-markup webform-component--step-2--gift-aid-details--gift-aid-text">
+ <p>
+<div class="form-item webform-component webform-component-checkboxes webform-component--step-2--gift-aid-details--gift-aid">
+  <label for="edit-submitted-step-2-gift-aid-details-gift-aid">
+ <div id="edit-submitted-step-2-gift-aid-details-gift-aid" class="form-checkboxes"><div class="form-item form-type-checkbox form-item-submitted-step-2-gift-aid-details-gift-aid-1">
+ <input type="checkbox" id="edit-submitted-step-2-gift-aid-details-gift-aid-1" name="submitted[step_2][gift_aid_details][gift_aid][1]" value="1" class="form-checkbox">
+<label class="option" for="edit-submitted-step-2-gift-aid-details-gift-aid-1">
+*/
+
+//specific forms
+
+//Banner forms -------------------------------------
+.d-section--modification-1 form {
+    margin-top: @gutter--grid;
+}
+
+
+// Mailchimp Newsletter ----------------------------- 
+//.form--newsletter (class on form)
+
+// this can sometimes be a webform but regardless  
+.contentinfo__newsletter form {
+    margin-top: @space-s;
+    margin-bottom: @space-s;
+}
+
+
+/*.placeholder .contentinfo__newsletter label {
+    .visually-hidden();
+}*/
+
+
+

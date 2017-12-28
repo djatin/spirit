@@ -1,0 +1,141 @@
+// out: null
+
+// global styles 
+/* !Banners --------------------------------------------------- 
+    d-sections splash banners normally full width banners
+*/
+
+/* clases
+
+.d-section--style-banner (the section__wrapper)
+
+//Children
+.o-splash
+.o-splash__wrapper  
+.o-splash__hgroup
+.o-splash__text
+
+.o-splash__anchor
+.anchor--left, .anchor--center, .anchor--right
+.o-splash__filter
+.filter--style-1 (darkens image 10%)
+
+.o-splash__figure-group (normally a holder for a group of info graphics
+
+//modififers 
+.title--splash
+.subtitle--splash
+
+d-section--modification-1|data capture banner
+
+
+*/
+
+// default for banner is centered text
+.d-section--style-banner {
+        margin: 0;
+        padding: 0;
+
+        .clearfix(); 
+        overflow: hidden; // hide everyting outside this
+        
+}
+//pattern library style so you can see where one banner starts and one finishes
+.section-banner-styles .d-section--style-banner {
+            margin-top: 1px;
+}
+
+
+.o-splash {
+    color: @white;
+    background: @highlight--color-2;  
+}
+
+.o-splash__anchor {
+    position: relative;  
+}
+
+.o-splash img {
+    margin: 0 auto; 
+}
+
+.o-splash__wrapper {
+    padding-top: 1.875em; //36px - 6px of the line height ; 
+    padding-left: @space-l;  
+    padding-right: @space-l;  
+    padding-bottom: @space-l;
+}
+
+.o-splash__the-measure {
+        margin-left: auto;
+        margin-right: auto;
+        .themeasure();
+    
+}
+
+.o-splash__hgroup {
+        max-width: 23.5em;
+}
+
+.o-splash__text {
+    margin-top: @space-default;
+    
+}
+
+.o-splash__text p { 
+    .zeta--margin(); 
+}
+
+/*.o-splash__icon {
+    margin: 0 auto 0.75em; 
+    width: 3em;
+}*/
+
+
+
+// Component in situ 
+
+
+// Align everything left is done by deafult
+.d-section--alignment-left .o-splash__text, .d-section--alignment-right .o-splash__text {
+    .seven-eighths();
+}
+
+.d-section--alignment-left .o-splash__text {
+       margin-left: 0;
+}
+
+//Align it all right 
+
+.d-section--alignment-right .o-splash__text {
+       margin-right: 0;
+}
+
+// center aligned banners
+.d-section--alignment-center .o-splash, .d-section--modification-1 .o-splash  {
+    text-align: center;
+}
+
+.d-section--alignment-center .o-splash__hgroup, .d-section--modification-1 .o-splash__hgroup {
+        max-width: none;
+}
+    
+//left and right aligned banners
+.d-section--alignment-left .o-splash__the-measure, .d-section--alignment-right .o-splash__the-measure {
+        // match hgroup width
+        max-width: 23.5em;
+    }
+    
+.d-section--alignment-left .o-splash__the-measure {
+        margin-left: 0;
+    }
+    
+.d-section--alignment-right .o-splash__the-measure {
+        margin-right: 0;
+}
+
+//Tall / Short / Other styles 
+//Tall default
+//d-section--style-banner-1|Short
+//d-section--style-banner-2|Free
+

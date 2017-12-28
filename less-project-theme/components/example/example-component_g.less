@@ -1,0 +1,28 @@
+// out: null
+
+// global styles 
+/* !component name --------------------------------------------------- */
+/* clases
+.name-space-component (generic class )
+.name-space-component__child
+
+.name-space-component--modifier
+*/
+.name-space-component {
+    
+	width: 80%;
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	&:after {
+		position: absolute;
+		top: 50%;
+		margin-top: -.5rem;
+	}
+}
+
+
+// Component in situ 
+.warning .name-space-component {
+    color: blue;
+}

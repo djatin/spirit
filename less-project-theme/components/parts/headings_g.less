@@ -1,0 +1,77 @@
+// out: null
+
+// global styles 
+/* !Headings and Titles --------------------------------------------------- */
+//.title 
+//.subtile
+// .hgroup (heading wrapper) 
+// .hgroup__title
+// .hgroup__subtitle
+
+//modifiers
+//.title--splash
+//.subtitle--splash
+
+/* ! Titles --------------------------------------------- */ 
+
+/*.page-title {  
+}*/
+
+.title {
+    .alpha--no-margin ();
+    text-transform: uppercase;
+}
+
+// long titles 
+.title em, .title span {
+    font-weight: inherit;
+    font-style: inherit;
+}
+
+.subtitle {
+    .epsilon--no-margin ();
+} 
+
+.hgroup {
+    margin-bottom: @space-default;
+}
+
+.hgroup__subtitle {
+    // important for sementic structure do not overwrite or remove
+    &:before {
+        display: block;
+        content:'subtitle: ';
+        .visually-hidden ();
+    }
+    
+}
+
+// Modifiers ----------------------------------------
+
+// Component in situ 
+
+.subtitle--meta {
+    // this is not a subtitle so remove the accessibility
+    &:before {
+    content:'';
+    display: none;
+    }
+}
+
+
+
+.o-media__hgroup {
+    margin-top: @space-default; //stop the center media hitting the top of the media item
+}
+
+//contentinfo title 
+.contentinfo .title {
+    .gamma ();
+}
+
+// scoped areas where we have no control over user input
+.s-the-measure {
+    h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    }
+}

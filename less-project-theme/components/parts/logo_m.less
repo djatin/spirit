@@ -1,0 +1,68 @@
+// out: null
+// Media Queries for component
+
+/* !logos --------------------------------------------------- */
+/* classes
+.logo (surrounding div)
+.logo--site (surrounding div of the site banner)
+.logo__link (a tag)
+.logo__text
+.logo__name
+.logo__strapline
+*/
+//.logo {
+	// 1px/0.0625em
+    /*.min-width(0.0625em; {
+        
+    });*/
+//}
+
+
+
+// hide the image
+    .logo__img {
+        // 1px/0.0625em
+        .min-width(0.0625em; {
+        display: none;  
+        });
+    }
+
+.logo__link {
+        // 1px/0.0625em
+        .min-width(0.0625em; {
+            // show just the icon till you have space for the whole logo
+            width: @siteLogoWidth;
+            height: @siteLogoHeight;
+            background: url('../img/skin/logo/no-svg_logo.png') left top no-repeat;
+        });
+        
+    }
+    // if background size use the double size image 
+    .backgroundsize .logo__link {
+        // 1px/0.0625em
+        .min-width(0.0625em; {
+            background-image: url('../img/skin/logo/no-svg_logo@2x.png'); 
+            background-size: @siteLogoWidth @siteLogoHeight;
+        });
+   }
+    // if svg use the svg of the logo
+    .svg .logo__link {
+        // 1px/0.0625em
+        .min-width(0.0625em; {
+           background-image: url('../img/skin/logo/svg_logo.svg'); 
+        });
+    }
+    // dirty hack for opera mini as it doesn't handle svg background images well
+    x:-o-prefocus, .svg .logo__link {
+        // 1px/0.0625em
+        .min-width(0.0625em; {
+            background-image: url('../img/skin/logo/no-svg_logo.png');
+        });
+    }
+
+
+// Media Queries for component insitue
+.banner__logo {
+    min-height: 7.5em;
+}
+ 

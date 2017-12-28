@@ -1,0 +1,58 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - js Form validation
+	Version: 3.0
+	URL: http://bigmallet.co.uk
+	Made from bits and pieces from the internet. 
+	with help http://heydonworks.com/practical_aria_examples/#submenus
+	
+	Behaviours for validating forms
+
+============================================================ */
+
+
+// Defaults
+
+// if the form item is required and has class .js-webform-component--validate
+
+// No Js
+
+
+// HTML5 Browsers uses .mustardo as they cut the mustard
+
+
+.mustardo .js-webform-component--validate:before{
+    position: absolute;
+    content: "";
+    display: block;
+    height: 25px;
+    width: 25px;
+    right: -30px;
+    bottom: 6px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.mustardo .webform-component.invalidated:before{
+    background-image: url(../img/validation_cross.png);
+    opacity: 0.4;
+}
+
+.mustardo .webform-component.validated:before{
+    background-image: url(../img/validation_tick.png);
+}
+
+.svg.mustardo .webform-component.invalidated:before{
+    background-image: url(../img/validation_cross.svg);
+}
+
+.svg.mustardo .webform-component.validated:before{
+    background-image: url(../img/validation_tick.svg);
+}
+
+
+// What does this do?
+.mustardo .webform-component .form-required {
+    display: none;
+}

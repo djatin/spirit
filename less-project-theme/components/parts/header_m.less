@@ -1,0 +1,86 @@
+// out: null
+// Media Queries for component
+/* !header --------------------------------------------------- */
+/* clases
+.header (generic class )
+.main__header
+.section__header
+
+contains 
+
+.page-title
+
+*/
+
+// Component in situ 
+// Handling banners and hiding the page title and breadcrumbs which are what is normally in the .main__header
+// classes
+//.has-banner
+//.no-banner (default)
+
+
+//Site specific 
+//layout--blog has a banner and article meta
+//.layout--blog 
+
+//Header meta 
+// Layout
+
+.min-width (20em {
+ //overal blog layout 
+    // Doesn't matter if the browser doesn't support transforms as it just means the title should be above the title so no need to use modernizr to test for support
+    .layout--blog .main__header .section--faked {
+        .rotate(180deg);
+    }
+    
+    .layout--blog .main__header .section--faked .page-title, .layout--blog .main__header .section--faked .header__meta {
+        .rotate(-180deg);
+    }
+    
+.author {
+    .table-display-parent ();
+    
+}
+    
+.author__item, .author__body {
+    .table-display-child--bottom ();
+    
+}
+
+.author__item {
+    width: 5.25em;
+}
+
+.author__item + .author__body {
+     padding-left: @space-default;   
+}
+ 
+
+    
+});
+
+.min-width-max(20em{
+    
+    .author + .meta__pub-date {
+     padding-left: 6.75em;
+}
+    
+}39.9375em);
+
+.min-width (40em {
+    
+    .header__meta {
+        .one-whole();
+        .table-display-parent ();
+        
+    }
+    .author {
+        .table-display-child--bottom ();
+    }
+    .meta__pub-date {
+        width: 6.35em;
+        .table-display-child--bottom ();
+        text-align: right;
+    }
+    
+});

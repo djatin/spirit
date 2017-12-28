@@ -1,0 +1,46 @@
+// out: null
+
+// global styles 
+/* !Drupal Cookie module --------------------------------------------------- */
+
+// !DRUPAL COOKIE		==============================
+
+.js-cookie-law {
+    margin: 0;
+    width: 100%;
+    background: @grey--dark-1;
+    background: fade(@grey--dark-1, 80%);
+    color: @white;
+    overflow: hidden;
+  
+    &:hover {
+       background: @grey--dark-2;    
+    }
+}
+
+.js-cookie-law a {
+    color: @warningcolor;
+    &:hover, &:active, &:focus {
+        color: @okcolor;  
+    }
+}
+
+
+.js-cookie-law__close-link {
+    //hide this button till 320px
+    display: none;
+}
+
+.js-cookie-law__wrapper {
+    margin: 1.5em 72px 1.5em 1.5em; // leave right for button + margin
+    
+}
+
+//typography 
+.js-cookie-law__title {
+    .epsilon--margin ()
+}
+
+.js-cookie-law p {
+    .milli();   
+}

@@ -1,0 +1,37 @@
+// out: null
+// Media Queries for component
+/* !Headings and Titles --------------------------------------------------- */
+//.title 
+//.subtile
+// .hgroup (heading wrapper) 
+// .hgroup__title
+// .hgroup__subtitle
+
+//modifiers
+//.title--splash
+//.subtitle--splash
+
+.title {
+    .min-width(30em {
+     .alpha (); // total height 2.5 x baseline
+    });
+    
+}
+
+// long titles 
+.title em, .title span {
+    .min-width-max(0.0625em {
+    //break the text
+     -ms-word-break: break-all;
+     word-break: break-all;
+
+     /* Non standard for WebKit */
+     word-break: break-word;
+
+-webkit-hyphens: auto;
+   -moz-hyphens: auto;
+        hyphens: auto;
+    }29.9375em);
+}
+
+// Media Queries for component insitue

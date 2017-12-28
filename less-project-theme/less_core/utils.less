@@ -1,0 +1,22 @@
+// out: null
+@fix-mqs: false;
+@old-ie: false;
+
+// Mixin that will create the fixed IE styles    
+.min-width(@width; @rules) when (@old-ie = true) and (@fix-mqs >= @width) {
+    @rules();
+}
+
+// Mixin that will wrap our content in a media query
+.min-width(@width; @rules) when (@old-ie = false) {
+    @media screen and (min-width: @width) {
+        @rules();
+    }
+}
+
+// Mixin for min with and max width media query these don't get complied into the IE style sheet
+.min-width-max(@width; @rules; @width-max;) when (@old-ie = false) {
+    @media screen and (min-width: @width) and (max-width: @width-max) {
+        @rules();
+    }
+}

@@ -1,0 +1,503 @@
+// out: null
+/* Forms Normalize
+   ========================================================================== */
+
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: inherit; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+  overflow: visible;
+}
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+  text-transform: none;
+}
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button; /* 2 */
+  cursor: pointer; /* 3 */
+}
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+  line-height: normal;
+}
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+  box-sizing: border-box; /* 1 */
+}
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+  -webkit-appearance: textfield; /* 1 */
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box; /* 2 */
+  box-sizing: content-box;
+}
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+  font-weight: bold;
+}
+
+/** 
+ * Placholder styles 
+*/
+
+.placeholder(@placeholdercolor);
+
+/* Forms =================================================== */
+
+form { 
+    margin-top: 1.5em;
+    color: @formtext;
+}
+
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    margin-bottom: 1em; // see form item margin 1em 
+  
+}
+
+fieldset fieldset {
+    margin: 0;
+}
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    display : block;
+    *margin-left : -7px; 
+    width : 100%;
+    white-space : normal; 
+}
+
+// the span 
+legend span {
+    display: block;
+    padding: 1em 0 0.42857142857143em 3px; // 14px 0 6px 3px border use padding as margin doesn't work because of legend bug
+    //text styles
+    .zeta;
+    font-weight: 700;
+    text-transform: uppercase; 
+    color: @basecolor;
+}
+
+//fieldset fieldset legend 
+fieldset fieldset fieldset legend span {
+    font-weight: 400;
+}
+
+label {
+display: block;
+max-width: 100%;
+font-size: 12px;
+font-size: 0.75rem;
+line-height: 1.5;
+font-weight : normal;
+text-align: left;
+//color : @grey;
+cursor : pointer; 
+.box-sizing();
+
+}
+
+
+input,
+textarea,
+select {
+display : block;
+margin: 0;
+font-size: 0.875em; //14px;
+line-height:1.57142857142857; //22px
+border : @inputborderwidth @inputborderstyle @inputborder;
+background : @inputbackground;
+color : @inputtext; 
+
+.lt-ie9 & {
+    min-height: 0;   
+}
+    
+.lt-ie8 & {
+    display: block;
+    filter:chroma(color=#000000);
+    }
+}
+/*// Focus defaults
+input, textarea, button {
+    &:focus {
+    //outline : thin dotted;
+    //outline: 2px solid #99ccff;
+    //outline-offset: 0;
+    outline: 0;
+        
+    }
+}*/
+
+//borders fro inputs and text area
+input,textarea {
+padding: 0.42857142857143em; //6px + 1px border + 22px lineheight = 36px 
+min-height: 2.57142857142857em; //36px 
+// Ios Gradient background
+background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,0)));
+background-image:-webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
+&:hover {
+border-color: @inputborder--hover ;
+background : @inputbackground--hover; 
+}
+
+&:active, &:focus {
+    border-color : @inputborder--focus;
+    background-color : @inputbackground--focus;
+    color: @inputtext;
+    
+}
+}
+
+input[type='text'], input[type='email'], textarea {
+    .rounded(0);
+}
+
+
+// f'ing checkboxes -------------------------------
+input[type='image'],
+input[type='checkbox'],
+input[type='radio'] {
+display: inline-block;
+padding: 0;
+min-height: 0;
+.epsilon ();
+background: transparent;
+cursor : pointer;
+}
+
+
+input[type="checkbox"] {
+    // let the browser deal with it
+    //width: 1em; 
+    //height: 1em;
+    *overflow: hidden;
+
+}
+
+input[type="image"] {
+border : 0; 
+.box-shadow(none); }
+
+input[type="file"] {
+width : auto;
+padding : initial;
+line-height : initial;
+border : initial;
+background-color : transparent;
+background-color : initial;
+.box-shadow(none); }
+
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+*overflow : visible; 
+}
+
+// dirty hack to remove the border box around checkboxes and radios in IE
+/* IE9, IE8, IE7, IE6 */
+input[type="checkbox"], input[type="radio"] { border: 0\9; vertical-align: middle\9; }
+
+/* Hack for IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    input[type="checkbox"], input[type="radio"] { border: 0; vertical-align: middle;}
+}
+
+// Selects ---------------------------------------
+select {
+    height: 2.57142857142857em; //36px match other inputs
+}
+
+select[multiple],
+select[size] {
+height : auto; }
+
+/* weird FF bug  * + * adds margin to the top of the options in select field*/
+select * {
+    margin: 0;   
+}
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+
+textarea {
+.resize(vertical);
+overflow : auto; 
+vertical-align : top; }
+
+input[type="hidden"] {
+display : none; }
+
+// disabled
+
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+.opacity(.5);
+cursor : not-allowed; }
+
+// focus defaults
+
+input[type="file"], input[type="radio"],input[type="checkbox"], select {
+        &:focus {
+        .box-shadow(none); 
+        }
+}
+
+
+
+/* Submit btn ------------------------------------------------- */
+
+// for less capable browsers we use the class
+.form-submit {
+    margin : 0.57142857142857em 0; // 8px 0 8px
+    padding : 0.78571428571429em 1.71428571428571em; // height 44px; 
+    width: auto;
+    .zeta (); //14px / 22px
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+    -webkit-font-smoothing: antialiased;
+    .rounded(0.28571428571429em); //4px;
+    color : @submittext; 
+    background-color : @submitbackground;
+    border-color: @submitbackground;
+    // make sure it wraps
+      white-space: normal;
+    // apperance 
+    .appearance();
+    // match .o-btn
+    &:hover, &:active, &:focus {
+        color: @submittext;
+    }
+    &:hover {
+       background-color : darken(@submitbackground, 4%);
+       border-color : darken(@submitborder, 4%); 
+    }
+    &:active, &:focus {
+        margin-top: 0.64285714285714em;
+        margin-bottom: 0.5em; // 9px 0 7px
+        background-color : lighten(@submitbackground, 2%);
+        border-color : lighten(@submitborder, 2%);
+    }
+}
+
+
+// Submit has layout    
+.lt-ie8 {
+    .form-submit {
+        .has-layout();
+    }
+}
+
+/* form typography ----------------- */
+
+
+form abbr {
+ text-align: right;
+ color: @errorcolor;
+}
+
+
+form small  {
+    font-size: 12px;
+    font-size: 0.75rem;
+}
+
+form ul {
+list-style-type : none !important; 
+}
+
+form br {
+display : none; }
+
+
+
+/* GENERIC DRUPAL FORM LAYOUTS ------------------------------------------- */
+
+// General form object holder
+.form-item {
+    margin-bottom: 0.375em; //6px
+   //clear: both;
+    
+}
+
+// rewrite system menu
+form .description {
+   &:extend(label);
+}
+
+// drupal's required 
+.form-required {
+    color: @errorcolor;
+    display: none; // make sure you use (required)
+}
+
+// Text area 
+.form-textarea-wrapper {
+    margin-top: 0;
+}
+// get rid of this
+.grippie {
+    display: none !important;
+}
+
+// checkboxes and radios 
+/* 
+- <div .form-checkboxes / .form-radios
+-- <div .form-type-radio / form-type-checkbox
+--- input 
+--- label 
+*/
+
+.form-type-checkbox label, .form-type-radio label {
+    display: inline;   
+}
+
+.form-checkboxes .form-item, .form-radios .form-item {
+    margin: 0;
+}
+
+//file uploads -----------------
+// file icons
+.form-managed-file .image-preview, .form-managed-file .image-widget-data {
+    margin-top: 0.375em; //6px;
+}
+
+.file-icon {
+	display:inline-block;
+	width: auto;
+	vertical-align:baseline;
+}
+
+
+
+/* Dupal FORMS & WEBFORMS LAYOUTS ------------------------------------------- */
+
+// USER FORMS EG. LOGIN / PASSWORD
+//.user-form
+// Modifier 
+//.user-form--page
+
+

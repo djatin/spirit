@@ -1,0 +1,151 @@
+// out: null
+// Media Queries for component
+
+/* !infographic --------------------------------------------------- */
+/* clases
+/* clases
+.infographic (the main figure)
+.infographic__img
+infographic__figcaption (wrapper for the text)
+.infographic__title
+.infographic__highlight
+.infographic__text
+.infographic__btn 
+
+// Infographic wrappers they appear in figure group
+
+.section__figure-group
+.figure-group
+
+.o-splash__figure-group (specifally in the banner
+
+//Modifier
+.figure-group--N (number of infographics contained)
+
+*/
+
+//.infographic {
+    // 1px/0.0625em
+    //.min-width(0.0625em; { 
+        
+    //});
+	// 320px/20em
+	//.min-width(20em; {
+        
+    //});
+	// 768px/48em
+	//.min-width(48em; {
+		
+	//});
+	// 1248px/78em
+	//.min-width(78em; {
+		
+	//});
+//}
+
+
+.infographic__highlight {
+    // get bigger when you have space
+	.min-width(30em; {
+        .kilo ();
+    });
+}
+
+
+/* Infographic grid ------------------- */
+
+//Trying heydon pickerings fukol grids 
+//https://github.com/Heydon/fukol-grids
+// As display inline block will look ok on almost everything we can enhance for better browsers
+.min-width(48em; {
+.section__figure-group {
+    display: flex; /* 1 */
+  flex-wrap: wrap; /* 2 */
+  margin-left: (@gutter/2); /* 5 match margin on items */
+  margin-right: (@gutter/2);
+    
+}
+
+.section__figure-group > figure {
+    //margin is set in global
+    flex: 1 0 ((100% / 3) - (@gutter));/* 3 100% / number of items - the margin-left + margin-right */
+}
+
+});
+    
+/*.section__figure-group > figure {
+    // 640px/40em
+	.min-width(40em; {
+       padding: 0 (@gutter/2);
+       vertical-align: center;
+    });
+}
+
+.section__figure-group[class*='--2'] {
+    
+    // 640px/40em
+	.min-width(40em; {
+        display: table;
+        
+	});
+}
+
+.section__figure-group[class*='--3'] {
+    // 832px/52em
+	.min-width(52em; {
+        display: table;
+	});
+}
+
+
+.section__figure-group[class*='--4'] {
+    // 960px/60em
+	.min-width(60em; {
+        display: table;
+	});
+}
+
+.section__figure-group[class*='--2'] figure {
+    // 640px/40em
+	.min-width(40em; {
+        display: table-cell;
+        .one-half();
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    });
+}*/
+
+/*.section__figure-group[class*='--3'] {
+    // 960px/60em
+	.min-width(60em; {
+        display: table-cell;
+        .one-third();
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    });
+}*/
+
+/*.section__figure-group[class*='--4'] figure {
+    // 960px/60em
+	.min-width(60em; {
+        display: table-cell;
+        .one-quarter();
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    });
+}*/
+
+
+// Media Queries for component in situ

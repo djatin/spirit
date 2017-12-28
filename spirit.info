@@ -1,0 +1,4 @@
+name = Spirit
+description = Theme of Spirit of 2012
+core = 7.x
+base theme = common

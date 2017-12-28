@@ -1,0 +1,124 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Extended
+    Tile
+	Version: 3.1
+	
+    Layout for tiles
+
+============================================================ */
+
+/* global =================================================== */
+//Some defaults colors text etc..
+// .o-tile -- container
+// .o-tile__item - the media item e.g. image
+// .o-tile__body - the media text 
+//.o-tile__icon
+
+// Typography
+//.o-tile__title
+//.o-tile__subtitle
+//.o-tile__text
+
+
+//modifiers 
+// .tile--generic-feed
+// .tile--feed-items
+
+.o-tile {
+    //testing
+    border: 1px solid #ccc;
+}
+
+.o-tile__item {
+    overflow:hidden;
+    /*// for testing 
+    border: 1px solid #ccc;*/
+}
+
+.o-tile img {
+    display: block;
+    margin-top: 0;
+}
+
+.o-tile__body {
+    padding-top: @space-m;
+    padding-bottom: @space-xl;
+    //overflow: hidden;  
+    /*// for testing 
+    border: 1px solid #ccc;*/
+}
+
+.o-tile__title {
+    margin-bottom: @space-default;
+    .beta--margin ();
+}
+
+.o-tile__title a {
+    display: block;
+    padding-right: 0.75em;
+    color: inherit;
+    position: relative;
+    
+    &:hover {
+        color: @btnbackgroundcolor;
+    }
+    &:active, &:focus {
+       color : darken(@btnbackgroundcolor, 5%);
+       outline: 0;
+    }
+}
+
+// not to be shown or read
+.o-tile__subtitle {
+    display: none;
+    margin-top: 0.285714285714286em; //4px
+    .zeta ();
+    font-family: @fall-back--serif;
+    font-style: italic;
+     .wf-active & {
+        font-family: @font-stack__playfair;
+     }
+}
+
+.o-tile__text {
+    .themeasure();
+    //min-height: 6em;
+}
+
+.o-tile__text p {
+    .zeta--margin();
+}
+
+/*.o-tile__btn {
+    display: none; // I have a feeling this may come back so don't remove from template
+}*/
+
+
+//elements in situe
+//.d-section--alignment-none (image above text default)
+//.d-section--alignment-center(image on top with text centered)
+//.d-section--alignment-left (media floated left)
+//.d-section--alignment-right (media floated right)
+
+
+
+// SITE SPECIFIC TWEAKS =================================================== 
+// feed taging styles
+.o-tile__footer {
+    margin-top: @space-l;
+    padding-top: @space-s;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: @textcolor;
+    .zeta ();
+}
+
+.o-tile__category {
+    font-weight: 700;
+    color: @basecolor;
+}
+
+// end base
+

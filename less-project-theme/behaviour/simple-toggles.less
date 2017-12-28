@@ -1,0 +1,148 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Drop Down Menu
+	Version: 2.0
+	URL: http://bigmallet.co.uk
+	Made from bits and pieces from the internet. 
+	Roughly on 320andup by Andy Clarke and Stark by John Albin
+	
+	Behaviours simple drop down menu
+
+============================================================ */
+// use .is-active toogle child state
+// .is-active is the toggle parent state
+
+// simple dropdown menu ==============
+// base styles 
+//.simple-toggles / .js-simple-toggles the toggles container
+//.simple-toggle__child / .js-simple-toggle__child
+//.simple-toggle__marker / .js-simple-toggle__marker
+
+
+/*<li class="js-simple-toggle">
+<a href="#" class="js-simple-toggle__marker">Welcome Foluke</a>
+<ul class="js-simple-toggle__child visually-hidden">
+<li class="first"></li>
+<li class="last"></li>
+</ul>
+</li>*/
+
+/* Active classes 
+.is-closed (intital state)
+.is-open (is open)
+.is-active (button is active)
+*/
+
+// no-touch basic hover 
+// starts 320px===================================================
+.bhSimple_toggle() {
+/*.js-simple-toggle__marker + [aria-hidden] {
+    display: none;
+}
+    
+.js-simple-toggle__marker + [aria-hidden="false"] {
+    display: block;   
+}*/
+    
+.js-simple-toggles .is-closed {
+    display: none;   
+}
+    
+.js-simple-toggles .is-open {
+       display: block; 
+}
+ 
+.js-simple-toggle__marker button {
+    margin: 0;
+    padding: 0.75em 0; // assume 48px
+    border: 0;
+    width: 100%;
+    background: none;
+    font-size: 1em;
+    text-align: left;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    .rounded(0px);
+    position: relative;
+     cursor: pointer;
+    // makes ure it doesn't look like a button
+    -webkit-appearance: value;
+   -moz-appearance:    value;
+   appearance:         value;
+    &:after {
+        // open close icon
+        display: block;
+content: "+";
+margin: -9px 0;
+height: 19px;
+font-family: @font-stack__open;
+font-size: 19px;
+font-weight: 400;
+line-height: 1;
+color: #B5B5B5;
+position: absolute;
+top: 50%;
+right: 6px;
+
+    }
+}
+    
+.js-simple-toggle__marker button.is-active  {
+       &:after {
+       content: "\2212"; 
+       }
+}
+    
+
+// Site specifics 
+.js-simple-toggles .panel-item__title, .js-simple-toggles .nolink {
+       padding: 0;
+}
+    
+    
+//.signin__name needs a slightly addjusted button
+.js-simple-toggles .signin__name {
+    //strip the button of its padding 
+    padding: 0;
+}
+    
+.js-simple-toggles .signin__name button {
+    padding: 0.57142857em 0 0.28571429em;
+}
+
+    
+
+// end .bhSimple_toggle
+}
+
+
+// Site specifics 
+.bhSimple_toggle_tweak() {
+        // reset buttons in the nav
+    .panel-item__title {
+          padding: 0.375em 0;
+    }
+    
+
+    .js-panel button {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 100%;
+    background: none;
+    font-size: 1em;
+    text-align: left;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    .rounded(0px);
+    position: relative;
+     cursor:auto;
+        &:after {
+            display: none;   
+        }
+    }
+    
+}
+
+// End simple dropdown  ========================

@@ -1,0 +1,48 @@
+// out: null
+
+// global styles 
+/* !breadcrumb navigation --------------------------------------------------- */
+/* clases
+.breadcrumbs__label
+.breadcrumbs__list (the ul)
+.breadcrumbs__item  (the li)
+.breadcrumbs__sep (the slash)
+*/
+
+.breadcrumbs {
+    margin: 0.75em 0;
+}
+
+.breadcrumbs__list {
+        margin: 0;
+        padding: 0;
+}
+
+.breadcrumbs__item {
+    display: inline-block;
+    margin: 0;
+    color: @basecolor;
+    .milli();
+    text-transform: uppercase;
+    .ie-lt8 & {
+         display: inline;
+        .has-layout();
+    }
+}
+.breadcrumbs__item  a {
+            border-bottom-width: 1px;
+            &:visited {
+                color: lighten(@basecolor, 3%);
+            }
+            &:hover, &:active, &:focus {
+                color: darken(@basecolor, 10%);
+            }
+}
+
+
+.breadcrumbs__sep {
+    color: @grey--light-2;
+}
+
+
+// Component in situ 

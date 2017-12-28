@@ -1,0 +1,364 @@
+// out: null
+// ============================================================
+//
+//  Big Mallet's Mallet - Extended
+//  Grids 
+//	Version: 3.1
+//	
+//  based on styles for Grids
+//  uses @CSSWIZARDRY grid sytem - http://csswizardry.com/ 
+//  adapted by http://www.tomjn.com/ for Less
+//  & Patternlab - http://patternlab.io
+//
+// ============================================================ */
+
+// .o-grid - grid container 
+// .o-grid__item - item in the grid
+
+//modifiers 
+// .grid--inline-center (grid of items where they are just displayed inline) 
+// .grid--no-gutter 
+// .grid--rev (revesed)
+// .grid--Nup (grid of N number items *Desides the width of .o-grid-item*)
+// .grid--golden (give odd and evens golden section ratios) 
+
+// .grid__item--faked (created to hide unevenness)
+
+// Handheld =================================================== */
+// 320px/20em up
+@handheld_major: 20em;
+
+// basic Grid -------------------------------------------- */
+// basic layout for grids starts a 320px;
+
+/* .grid-item */
+/**
+ * 1. Cause columns to stack side-by-side.
+ */
+[class*='grid__item'] {
+    
+	.min-width(@handheld_major {
+        
+    
+    //display: -moz-inline-stack;     
+    display: block; 
+    .one-whole();  
+    
+    });
+    
+}
+ 
+// special grid items
+// except faked items 
+.grid__item--faked {
+    .min-width(@handheld_major {
+        
+    display: none;   
+        
+        });
+}
+
+
+
+// Grid Modifiers  -----------------------------------*/
+
+//inline -centered grid */
+
+.grid--inline-center {
+    .min-width(@handheld_major {
+        
+    text-align: center;  
+        
+        });
+}
+.grid--inline-center [class*='grid__item'] {
+    .min-width(@handheld_major {
+        
+        display: -moz-inline-stack;     /* [1] */
+        display: inline-block;
+        float: none;
+        vertical-align: top;
+        
+    });
+}
+
+
+// 3. MODERNIZR 			==============================
+
+//-----------------------------
+// end Handheld
+
+
+// Handheld minor =================================================== */
+// 640px/40em up
+@handheld_minor: 40em;
+    
+
+   // THE GRIDS -------------------------------------------------- 
+    // defaults 
+.o-grid {
+    width: auto;
+}
+    
+    // grid with no gutter 
+    .grid--gutter {
+        .min-width(@handheld_minor {
+        
+            margin-right: (0% - @gutter--grid);     /* [3] */
+            
+         });   
+    }
+    
+  // nested gutter grids
+
+    .grid--gutter [class*='grid--gutter'] {
+        .min-width(@handheld_minor {
+        
+            margin-right: 0;   // remove margin for nested grids
+            
+         });   
+    }
+    
+    .grid--gutter [class*='grid__item'] {
+        .min-width(@handheld_minor {
+            
+        // once grid items start being in a grid remove default top margin
+        margin: 0 @gutter--grid @gutter--grid 0; 
+        //padding: 0 0 0 @gutter;           /* [2] */ 
+            
+        }); 
+        
+    }
+
+
+    // grid base 
+    [class*='grid--'] > [class*='grid__item'] {
+            .min-width(@handheld_minor {
+            
+                float: left;  
+                
+            });    
+        }
+    
+    // grid rev
+    [class*='grid--rev'] > [class*='grid__item'] {
+            .min-width(@handheld_minor {
+            
+                float: right;  
+                
+            });  
+     }
+
+// Grid golden - 61.8% - 38.2%
+    [class*='grid--golden'] > [class*='grid__item'] {
+            .min-width(@handheld_minor {
+            
+			.one-whole();
+                
+            
+          });  
+	}
+
+    
+    // Grid 2up - 50%
+    .grid--2up > [class*='grid__item'] {
+            .min-width(@handheld_minor {
+            
+			
+			.one-half();
+                
+                /*&:nth-of-type(odd) {
+				clear: left;
+			}*/
+             
+                .grid--gutter& {
+                    .one-half--gutter();
+                }
+            
+          });  
+	}
+
+    
+//modifier revesed
+.grid--2up[class*='--rev'] > [class*='grid__item'] {
+            .min-width(@handheld_minor {
+            
+
+			&:nth-of-type(odd) {
+				clear: right;
+			}
+                
+                
+            });        
+}            
+
+ 
+
+    
+    // normal 3-up is 50% width with a faked item
+    .grid--3up > [class*='grid__item'] {
+    .min-width(@handheld_minor {
+        
+			.one-whole();
+			
+        
+        });
+    }
+
+    
+    .grid--4up > [class*='grid__item'] {
+            .min-width(@handheld_minor {
+                
+			.one-half();
+                
+            
+                
+            .grid--gutter& {
+                    .one-half--gutter();
+             }
+                
+            /*&:nth-of-type(2n+1) {
+				clear: both;
+			}*/
+                
+            });  
+    }
+
+    //special grid items
+.grid__item--full {
+    .min-width(@handheld_minor {
+        .one-whole--gutter() !important;
+    });
+}
+    
+//-------------------------------
+// end handheld_minor 640px media query
+
+
+
+// Medium major =================================================== */
+// 768px/48em up
+@medium_major: 48em;
+        
+
+/* Grid 3up */
+.grid--3up > [class*='grid__item'] {
+    .min-width(@medium_major {
+        
+			.one-third();
+			
+			&:nth-of-type(2n+1) {
+				clear: none;
+			}
+			
+			&:nth-of-type(3n+1) {
+				clear: left;
+			}
+        
+            .grid--gutter& {
+                    .one-third--gutter();
+            }
+        
+    });
+}
+
+
+    
+//-------------------------------
+// End Medium major
+
+
+
+// Medium minor =================================================== */
+/*// 928px/58em up
+@medium_minor: 58em;
+        
+        
+// Start this early 
+//Grid 5up 
+.grid--5up > [class*='grid__item'] {
+            .min-width(@medium_minor {
+                
+			.one-fifth();
+			
+            &:nth-of-type(5n+1) {
+				clear: left;
+			}
+                
+            .grid--gutter& {
+                    .one-fifth--gutter();
+            }
+                
+            }); 
+}*/
+
+
+    
+//-------------------------------
+// End Medium minor
+
+
+
+// Full =================================================== */
+// 1024px/64em up
+@full_major: 64em;
+        
+    // THE GRIDS --------------------------------------------------
+    
+// Grid 1up - 100%
+.grid--1up [class*='grid__item'] {
+		.one-whole();
+
+}
+
+// Grid golden - 61.8% - 38.2%
+    .grid--golden > [class*='grid__item'] {
+            .min-width(@full_major {
+            
+			width: @goldensectionsm;
+                
+			&:first-child, &:nth-of-type(odd) {
+                width: @goldensectionlg 
+			}
+            &:nth-of-type(odd) {
+                clear: left;
+            }
+                
+            
+          });  
+	}
+   
+    
+/* Grid 4up */
+.grid--4up > [class*='grid__item'] {
+        .min-width(@full_major {
+			.one-quarter();
+			
+            
+            .grid--gutter& {
+                    .one-quarter--gutter();
+             }
+            
+            /*&:nth-of-type(2n+1) {
+				clear: none;
+			}
+			
+			&:nth-of-type(4n+1) {
+				clear: left;
+			}*/
+            
+        });
+}
+
+    
+
+    
+//-------------------------------
+// End Full
+
+
+
+// SITE SPECIFIC TWEAKS =================================================== */
+
+
+

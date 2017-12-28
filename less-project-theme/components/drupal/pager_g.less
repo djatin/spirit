@@ -1,0 +1,115 @@
+// out: null
+
+// global styles 
+/* !Drupal pager --------------------------------------------------- */
+// extension of .menu
+/* clases
+.pager
+.pager li
+.pager-current
+
+.item-list .pager li
+
+// show more buttons
+.pager-show-more (wrapper)
+.pager-show-more-next
+.pager-show-more-next a (the link)
+
+*/
+
+// !SYSTEM pager - overwriting the pager ==================================================
+.pager {
+    margin: 0.75em 0 0;
+    padding: 0.75em 0 0;
+    border-top: 1px solid @grey--light-3;
+    text-align: center;
+
+    .clearfix();
+}
+
+.pager li {
+    display: inline;
+    padding: 0.5em;
+    background-image: none;
+    list-style-type: none;
+}
+
+
+.pager-current {
+    color: @textcolor;
+    font-weight: normal;
+}
+
+
+// Component in situ 
+.item-list .pager li {
+  &:first-child {
+    
+    padding: 0;
+    max-width: none;
+    background: none;
+  }
+}
+
+// Show more buttons
+.pager-show-more {
+    border: 0;
+    padding: 0;
+    max-width: none;
+}
+
+.pager-show-more .pager-show-more-next {
+    display: block;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.pager-show-more-next a {
+    display : inline-block;
+margin : 1px 0; // 12px 0 12px
+padding : 0.75em 1.5em; // height 48px; 
+font-size: 1em;
+//font-weight: 700;
+line-height: 1.5;
+text-transform: uppercase;
+text-align: center;
+text-decoration : none;
+.letterspacing120();
+color : @white;
+// border radius if required 
+//.rounded(1.5em);
+cursor : pointer;
+// background function
+background-color : darken(@highlight--color-1, 2%);
+.BoxShadowHelper(0); 
+.transition(background @duration-promptly ease-in-out);
+    
+    &:hover, &:active, &:focus {
+        color: @white;
+         
+    }
+
+    &:hover {
+        background-color : @highlight--color-1;
+    }
+    
+    &:active, &:focus {
+        margin-top: 2px;
+        margin-bottom: 0; // 13px 0 11px
+        background-color : lighten(@highlight--color-1, 3%);
+        box-shadow: none;
+    }
+    
+    
+
+    &:visited {
+        color: @white;
+        opacity: 0.8;
+    }
+    
+    .inline-block();
+    
+}
+
+// components in situe 

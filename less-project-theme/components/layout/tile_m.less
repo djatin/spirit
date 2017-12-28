@@ -1,0 +1,108 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Extended
+    Tiles
+	Version: 3.1
+	
+    Layout for tiles
+
+============================================================ */
+
+/* Media Queries =================================================== */
+//Some defaults colors text etc..
+// .o-tile -- container
+// .o-tile__item - the media item e.g. image
+// .o-tile__body - the media text 
+//.o-tile__icon
+
+// Typography
+//.o-tile__title
+//.o-tile__subtitle
+//.o-tile__text
+
+
+//modifiers 
+// .tile--generic-feed
+// .tile--feed-items
+
+
+//elements in situe
+//.d-section--alignment-none (image above text default)
+//.d-section--alignment-center(image on top with text centered)
+//.d-section--alignment-left (media floated left)
+//.d-section--alignment-right (media floated right)
+//.d-section--style-feed (normally where you find tiles
+
+// turn it into a flex box contianer and push button to the bottom
+.flexbox .o-tile {
+    .min-width(40em {
+        // turn it in to a flex box contianer 
+    display: -ms-flexbox;  /* TWEENER - IE 10 */
+    display: -webkit-flex;
+    display: flex;
+    
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-wrap: nowrap;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap:nowrap;
+        
+    });
+}
+
+.flexbox .o-tile__body {
+    .min-width(40em {
+        //-ms-flex: auto; 
+        -ms-flex: 1 1 auto;/* IE 10 */
+        -webkit-flex: auto;       /* Safari 6.1+. iOS 7.1+, BB10 */
+        flex: auto;
+        
+        display: -ms-flexbox;  /* TWEENER - IE 10 */
+        display: -webkit-flex;
+        display: flex;
+    
+        -ms-flex-direction: column;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-wrap: nowrap;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap:nowrap;
+        
+    });
+}
+    
+//tidy up 
+
+    .min-width(40em {
+        /*.flexbox .d-feed:not(.d-feed--style-1) .o-tile__hgroup {
+            min-height: 7.25em;
+        }*/
+        
+        .flexbox .o-tile__text {
+            -ms-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+        }
+    });
+
+// SITE SPECIFIC TWEAKS =================================================== 
+
+
+.min-width(40em {
+// when the tiles are side by side we need some gutters 
+.o-tile__body, .o-tile__item {
+    padding-left: @gutter;
+    padding-right: @gutter;
+     
+}
+    
+.o-tile__text {
+     padding-right: (@gutter * 2); 
+}
+    
+}); 
+
+// end base
+

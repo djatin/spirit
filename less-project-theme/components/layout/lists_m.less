@@ -1,0 +1,43 @@
+// out: null
+/* ============================================================
+
+    Big Mallet's Mallet - Extended
+    Lists
+	Version: 3.1
+	
+    Layout for lists
+
+============================================================ */
+
+/* Media Queries =================================================== */
+
+// 640px/40em
+.min-width(40em; {
+    
+    .tab-interface__o-list {
+        .clearfix();
+        margin-left: -@gutter--grid;
+    }
+    
+    .tab-interface .o-list__item {
+        margin-top: 0;
+        margin-left: @gutter--grid; 
+        .one-half--gutter();
+        float: left;
+    }
+    
+    .tab-interface__panel {
+        margin-top: @gutter; // match wrappers
+    } 
+});
+
+.tab-interface .o-list__item {
+    // 768px/48em
+.min-width(48em; {
+        margin-top: @gutter--grid; // match the radios container margin top so titles have the same margin
+    });
+
+}
+
+// Component in situ 
+

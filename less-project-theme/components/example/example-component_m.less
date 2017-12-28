@@ -1,0 +1,35 @@
+// out: null
+// Media Queries for component
+/* !component name --------------------------------------------------- */
+/* clases
+.name-space-component (generic class )
+.name-space-component__child
+
+.name-space-component--modifier
+*/
+.name-space-component {
+	// 320px/20em
+	.min-width(20em; {
+        float: left;
+        width: 70%;
+    });
+	// 768px/48em
+	.min-width(48em; {
+		width: 95%;
+	});
+	// 1248px/78em
+	.min-width(78em; {
+		width: 100%;
+		&:after {
+			font-size: 1em;
+		}
+	});
+}
+
+// Media Queries for component insitue
+.warning .name-space-component {
+    // 1px/0.0625em
+    .min-width(0.0625em; { 
+        color: green;
+    });
+}

@@ -1,0 +1,256 @@
+// out: null
+/* Typography =================================================== */
+/*uses: http:/csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/ */
+/* Define your base font-size html; most elements will inherit this. */
+/* Assuming 16px... */
+/* 24px (This is now our magic number; all subsequent margin-bottoms and line-heights want to be a multiple of this number in order to maintain vertical rhythm.) */
+
+/* These handle massive type, for less frequently occuring bits of text (e.g. in mastheads and banners). */
+.giga {
+    .giga();
+
+}
+.mega {
+    .mega();
+
+}
+.kilo {
+    .kilo();
+
+}
+
+/* Define headings and their associated classes here. */
+h1 {
+    .alpha--margin();
+
+}
+h2 {
+    .beta--margin();
+
+}
+h3 {
+    .gamma--margin();
+
+}
+h4 {
+    .delta--margin();
+
+}
+h5 {
+    .epsilon--margin();
+  
+}
+h6 {
+    .zeta--margin();
+    
+}
+
+/* Smaller-than-body-copy sizes here. */
+small {
+    .milli();
+}
+
+p, 
+ol, 
+ul, 
+dl, 
+address { 
+font-size: @basefontsize;
+line-height: @baseline;
+}
+
+// paragraphs 
+p {
+  margin-top: @baselineunit; 
+}
+
+// lists 
+
+ul, 
+ol{ 
+    margin-top: @baselineunit;
+    padding : 0 0 0 @baselineunit;
+    list-style-position: outside;
+}
+
+ul {
+    list-style-type: square;   
+}
+    
+ol {
+    list-style-type: decimal; 
+}
+
+ul li, 
+ol li { 
+    margin-top: (@baseline/2 * 1em);
+}
+
+li * {
+    margin-top: 0;
+}
+
+// definition lists
+dt { 
+margin-top: 0.75em;
+padding-bottom: 0.6875em;
+border-bottom: 1px dashed @grey--light-3;
+font-weight : bold;
+
+}
+dt + dd {
+    margin-top: (@baseline/2 * 1em);
+}
+
+// blockquote and figure text
+
+// see Elements
+
+
+// text-level
+
+abbr[title] { 
+border-bottom : 1px dotted @grey--light-3; 
+cursor : help; }
+
+b, strong,  { 
+font-style: normal;
+font-weight : 700; }
+
+em, i {
+font-style: italic;
+}
+
+dfn { 
+font-style : italic; }
+
+mark, ins {
+    padding: 0.25em;
+    background-color : @whiteonblack; 
+    font-style : italic;
+    color : @textcolor; 
+    text-decoration : none;
+}
+
+mark {  
+font-weight : bold; 
+}
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+time {
+    font-family: @fall-back--serif;
+    font-style: italic;
+    //color: @grey-color-30;
+}
+
+// Code (inline and block)
+// --------------------------------------------------
+// Inline and block code styles
+code,
+kbd,
+pre,
+samp,
+var {
+  font-family: @font-stack__codefont;
+}
+
+// Inline code
+var {
+  font-style: italic;  
+}
+
+code {
+  padding: 0.1875em 0.375em;
+  font-size: 90%;
+  color: @basecolor;
+  background-color: @whiteonblack;
+}
+
+// User input typically entered via keyboard
+kbd {
+  padding: 0.1875em 0.375em;
+  font-size: 90%;
+  color: @basecolor;
+  background-color: @whiteonblack;
+  box-shadow: inset 0 -1px 0 rgba(0,0,0,.25);
+
+  kbd {
+    padding: 0;
+    font-size: 100%;
+    font-weight: bold;
+    box-shadow: none;
+  }
+}
+
+// Blocks of code
+pre {
+  display: block;
+  padding: ((@baselineunit / 2) - 0.0625em);
+  margin: @baselineunit 0 0;
+  //font-size: (@font-size-base - 1); // 14px to 13px
+  //line-height: @line-height-base;
+  word-break: break-all;
+  word-wrap: break-word;
+  color: @basecolor;
+  background-color: @whiteonblack;
+  border: 1px solid @inputborder;
+
+  // Account for some code outputs that place code tags in pre tags
+  code {
+    padding: 0;
+    font-size: inherit;
+    color: inherit;
+    white-space: pre-wrap;
+    background-color: transparent;
+    border-radius: 0;
+  }
+}
+
+
+
+/* =========================================================
+    Basic Typography classes 
+   =========================================================  */
+
+
+// Use a measure to contstrain max length 
+//.the-measure 
+//.s-the-measure (Scope area for the text style from the wysiwyg text area as youdon't have access to classes)
+
+
+.the-measure {
+    .themeasure();
+    //IE6 hack to make it all readable
+    *width: 40em;
+}
+
+//empty things in the main
+.s-the-measure > :empty {
+    display: none;
+}
+
+//Type in the measure you don't have access to 
+//.s-the-measure p
+
+
+// in stitu ----------------------------------
+
+//.grid .the-measure
+
+
+

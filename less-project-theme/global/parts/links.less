@@ -1,0 +1,33 @@
+// out: null
+/* Links =================================================== */
+a { 
+font-family: inherit;
+font-weight: inherit;
+color : @linkcolor; 
+text-decoration-skip: ink;
+-webkit-text-decoration-skip: ink;
+
+&:visited {
+    color : @linkcolor--visited;
+}
+    
+&:hover, &:active { 
+color : @linkcolor--hover; }
+    
+&:focus { 
+outline: @outline;
+color : @linkcolor; }
+
+}
+
+::-moz-selection { 
+background-color : #99ccff; 
+color : #333; 
+text-shadow : none; }  
+	
+::selection { 
+background-color : #99ccff; 
+color : #333; 
+text-shadow : none; }
+
+// specific links 

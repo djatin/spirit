@@ -1,0 +1,185 @@
+// out: null
+
+// global styles 
+
+/* !navigation --------------------------------------------------- */
+/* clases
+.navigation (generic class based on role="navigation")
+
+.global-nav (site menu)
+.utility-menu (secondary menu)
+
+.menu (generic menu)
+.menu li 
+.menu li a
+
+*/
+
+/* Menu toggle ---------------------------- */
+// this is the menu button to link to nav on very small devices or when there is no js on small devices
+// this get hidden by the off canvas css when js is enabled 
+/* Menu toggle */
+.menu-toggle {
+    display: block;
+    background: transparent !important;
+    cursor: pointer;
+    .ie8 & {
+        display: none;
+    }
+}
+
+.menu-toggle a {
+    margin: 0.75em auto; 
+    max-width: 13.5em; //216px
+}
+
+.toggle-control {
+    display: block;
+    margin: 0.75em;
+    padding: 0.6875em;
+    min-height: 3em;
+    min-width: 3em;
+    border: 1px solid @grey;
+    background: transparent;
+    text-align: center;
+    overflow: hidden;
+    .appearance();
+    &:hover, &:active, &:focus {
+        color: @white;
+        text-decoration: none;
+        background-color: @grey;
+    }
+    &:focus {
+       outline: 2px solid #99ccff; 
+       outline-offset: -2px;
+    }   
+}
+
+
+/* Navigation styles ---- */
+
+.menu, .menu li, .menu a {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+.menu button, .menu a, .menu span {
+    display: block;
+    padding: 1.25em;
+    font-size: 0.75em;
+    color: @grey--dark-4;
+    text-decoration: none;
+    text-transform: uppercase;
+    .letterspacing60();
+    
+}
+
+// Span should not have hover, focus and active
+.menu button, .menu a {
+    &:active, &:focus {
+        outline: @outline;
+    }
+    &:active, &:focus, &.active, &.is-active {
+        color: @white;
+    }
+    &.active, &.is-active {
+        background-color: darken(@basecolor, 5%);
+    }
+    
+    &:active, &:focus {
+        background-color: darken(@basecolor, 10%);
+        
+    }
+    &:hover {
+        background-color: @basecolor;
+        color: @whiteonblack;
+    }
+    
+}
+
+//active trail spans need to be higlighed
+.menu span, .menu button {
+    &.active-trail {
+        color: @white;
+        background-color: darken(@basecolor, 2%);
+    }
+}
+
+
+// Submenu -------------------
+/*.menu .menu a {
+       padding-left: 2em;
+}*/
+
+// both 
+
+
+//Component in situe --------------------
+.navigation {
+    margin-top: @space-s;
+    margin-bottom: @space-s;
+    padding-left: @space-s;
+    padding-right: @space-s;
+}
+
+// global navigation -------------------
+
+
+
+.global-nav button, .global-nav a, .global-nav span {
+    padding-top: 0.92857142857143em;
+    padding-right: 1em;
+    padding-bottom: 0.92857142857143em;
+    padding-left: 1em;
+    .zeta ();
+
+}
+
+.global-nav .menu .menu a {
+    font-family: @fall-back--sans-serif;
+    padding-top: 1.25em;
+    padding-bottom: 1.25em;
+    padding-left: 1.166666666666667em;
+    padding-right: 1.166666666666667em;
+    font-size: 0.75em;
+}
+
+//Component in situe --------------------
+
+
+// utility navigation -------------------
+
+
+// Component in situe
+
+
+// utility navigation -------------------
+
+
+//Specific navigation buttons --------
+
+// donate button 
+
+.menu .donate a {
+    font-weight: 700;
+    background-color: @highlight--color-1;
+    font-family: @fall-back--sans-serif;
+    color: @white;
+    .letterspacing120();
+    .wf-active & {
+        font-family: @font-stack__open;
+        -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+    }
+    &:active, &:focus {
+        outline: @outline;
+    }
+    &:active, &:focus, &.active, &.is-active {
+        background-color: darken(@highlight--color-1, 5%);
+    }
+    &:hover {
+        background-color: darken(@highlight--color-1, 3%);
+    }
+}

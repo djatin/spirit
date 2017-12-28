@@ -1,0 +1,40 @@
+// out: null
+// 1. SITE 					==============================
+/* 	=========================================================================
+	Site defaults 
+	========================================================================== */
+
+html {
+background : @htmlcolor; 
+-webkit-overflow-scrolling : touch; 
+-webkit-tap-highlight-color : rgba(0,0,0,0); 
+/* in normalise 
+-webkit-text-size-adjust: 100%; 
+-ms-text-size-adjust: 100%; */
+-ms-overflow-style: scrollbar;
+}
+
+body { 
+// All body resets here
+margin : 0; 
+padding : 0; 
+border: 0;
+width : 100%;
+background-color : @bodycolor;
+font-family : @fall-back--sans-serif;
+font-size: 100%;
+font-weight:normal;
+line-height : @baseline;
+vertical-align:baseline;
+color : @textcolor;
+
+
+    // load webfont
+    .wf-active & {
+        font-family : @basefont;
+    }
+}
+
+
+
+

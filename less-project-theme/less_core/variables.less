@@ -1,0 +1,176 @@
+// out: null
+// Variables =================================================== 
+ 
+// 1. ROOT 					==============================
+//@base-url : 'clockworkpie.bigmallet.co.uk'; //maybe useful on small builds
+@htmlcolor : @white; 
+@bodycolor : @htmlcolor; //
+@textcolor : @grey; // text grey #464646
+@splashbg  : @highlight--color-2; //splash deafult bg
+
+// 2. TYPOGRAPHY 			==============================
+// Font Stack add a font stack (if you want to fallback to something more intesting than aerial or helvetia
+@fall-back--sans-serif: sans-serif;
+@fall-back--serif: TimesNewRoman, "Times New Roman", serif;
+
+@font-stack__open: 'Open Sans', @fall-back--sans-serif;
+@font-stack__playfair: 'Playfair Display', @fall-back--sans-serif;
+@font-stack__codefont : Monaco, Courier New, monospace;
+
+
+@basefont : @font-stack__open;
+@basefontsize : 1em;
+@baseline : 1.5; // don't define a unit or things will not scale
+@baselineunit: (@baseline * 1em);
+
+
+// 3. COLOUR 				==============================
+
+@basecolor : rgb(47, 128, 130); //teal #2f8082
+
+//@emergencybg : rgb(247, 105, 105); //#f76969
+@twitterbg : rgb(0,158,239); //#009eef 
+@footerbg : @whiteonblack; //#2a2a2a
+@footertextcolor : @grey--dark-4;
+
+@highlight--color-1 : rgb(202, 69, 0); // #ca4500 rusty orange
+@highlight--color-2 : rgb(67, 87, 100); //#435764 dark blue bg
+@highlight--color-3 : rgb(245, 161, 29); // #f5a11d weird orange/yellow
+
+@bck-color-base: @white;
+@bck-color-alt: #f7f5ea;
+// greyscale
+@white : rgb(255,255,255); //#ffffff
+@whiteonblack : rgb(242,242,242); //#f2f2f2 white text on black
+// Design greys greys from designs
+@grey--light-1: #c2c2c2; //#c2c2c2
+@grey--light-2: #a4a4a4; //#a4a4a4;
+@grey--light-3: #7a8683; //#7a8683;
+@grey--light-4: #807f7b; //#807f7b;
+
+@grey--dark-1: rgb(108,109,112); //#6c6d70
+@grey--dark-2: rgb(93,94,97); //#5d5e61
+@grey--dark-3: rgb(74,71,71); //#4a4747
+@grey--dark-4: rgb(51,51,51); //#333
+
+@black : rgb(0,19,20); // never use pure black 001314
+
+// greys based on blacks
+@grey-color-05: lighten(@grey, 5%);
+@grey-color-10: lighten(@grey, 10%);
+@grey-color-20: lighten(@grey, 20%);
+@grey-color-30: lighten(@grey, 30%);
+@grey: rgb(70, 70, 70); // text grey #464646 OK for Headings 
+@grey-dk-color-20: darken(@grey, 20%); // text grey this is accessible
+@grey-dk-color-70: darken(@grey, 70%);
+@grey-dk-color-80: darken(@grey, 80%);
+@grey-dk-color-90: darken(@grey, 90%);   
+
+// error, messages and warnings
+@errorcolor: #EF4836;
+@warningcolor: #F39C12;
+@okcolor: #019875;
+
+// links 
+@linkcolor: @basecolor;
+//** Link hover color set via `darken()` function.
+@linkcolor--hover: darken(@linkcolor, 5%);
+@linkcolor--visited: lighten(@linkcolor, 3%);
+@outline: 2px solid #99ccff;
+
+//Buttons
+@btnbackgroundcolor: @basecolor;
+
+
+// tables 
+
+@tablebackground 	: transparent;
+@tablestripe 		: darken(@tablehover, 2%);
+@tablehover 		: @grey--light-1;
+@tablehovertext     : @grey--dark-4;
+@tableborder 		: @grey--light-2;
+@tableborderwidth	: 1px;
+@tableborderstyle	: solid;
+
+// forms 
+@formbg                  : lighten(@whiteonblack, 5%);
+@formborder              : @grey--light-2;
+@formtext                : @grey--dark-1;
+@inputbackground 	     : @white; 
+@inputborder 		     : @grey-color-30;
+@inputborderwidth	     : 1px;
+@inputborderstyle	     : dotted;
+@placeholdercolor        : @grey--light-3; //#b5b5b5; 
+@inputbackground--hover  : @white;
+@inputborder--hover      : darken(@formbg,7%);
+@inputbackground--focus  : @white;
+@inputborder--focus 	 : lighten(@warningcolor, 10%);
+@inputtext               : @textcolor; // text grey #757575
+@submitbackground        : @highlight--color-1;
+@submitborder            : @highlight--color-1;
+@submittext              : @white; 
+
+// 6. LAYOUT 				==============================
+
+
+// GOLDEN SECTION SPLITS (eg for things out side the grids but still need some sort of layout rule)
+@goldensectionlg : 61.8%;
+
+@goldensectionsm : 38.2%;
+
+
+// Z-index master list
+//
+// list of global z-indexs.
+//
+// Note Drupal Admin bar starts a z-index: 600 so everythin need to be lower
+
+@zindex-modal:             490;
+@zindex-navbar--fixed:     475;
+@zindex-nav:               450;
+@zindex-overlay:           425;
+@zindex-simple--front:      10;
+@zindex-simple--behind:      1;
+// add varibales as required
+
+// 7. TIMING 				==============================
+
+@duration-instantly: 0s;
+@duration-immediately: 0.05s;
+@duration-quickly: 0.1s;
+@duration-promptly: 0.2s;
+@duration-slowly: 0.4s;
+@duration-paused: 3.2s;
+
+
+//  8. VENDOR-SPECIFIC 		==============================
+//  9. MODERNIZR 			==============================
+//  10. TEMPLATE SPECIFICS 	==============================
+
+//layout ------------------------------------------------
+
+// Logo sizes
+//logo--site
+@siteLogoWidth: 17.5em; //280px;
+@siteLogoHeight: 4.125em; //66px;
+
+// gutter variable
+@gutter--grid:           1.3671875%;
+@gutter:                 6.25%;
+
+/*Spacing is defined by your base font size 
+//  Most projects use 16px base font size and line height of 1.5 which 
+//  equates to 24px so spacing is multiples of 24
+//
+*/
+
+@space-xxs: 0.1875em;//3px
+@space-xs: 0.375em;//6px
+@space-s: 0.75em;//12px
+@space-m: 1em;//16px
+@space-default: 1.5em; //24px
+@space-l: 2.25em;//36px
+@space-xl: 3em;//48px
+@space-xxl: 4em;//64px
+@space-xxxl: 4.5em;//72px
+

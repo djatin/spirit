@@ -1,0 +1,91 @@
+// out: null
+// Media Queries for component
+/* !component name --------------------------------------------------- */
+/* !wrappers --------------------------------------------------- */
+/* clases
+/* !wrappers --------------------------------------------------- */
+/* clases
+.wrapper (generic class )
+
+.banner__wrapper (see banner role)
+.main__wrapper 
+.header__warpper
+.admin__wrapper
+.contentinfo__wrapper (see contentinfo role)
+
+section (semantic wrapper)
+.section (class of wrapper, incase div is use instead of section)
+.section__wrapper 
+
+.the-measure (text wrapper)
+
+// modifiers 
+
+.wrapper--page (whole site wrapper)
+*/
+//.wrapper {
+    
+    // 1px/0.0625em
+    //.min-width(0.0625em; { 
+       // .clear-both();
+    //});
+	// 320px/20em
+	//.min-width(20em; {
+        
+    //});
+	// 768px/48em
+	//.min-width(48em; {
+		
+	//});
+	// 1248px/78em
+	//.min-width(78em; {
+		
+	//});
+//}
+
+.banner__wrapper {
+    // 640px/40em
+	.min-width(40em; {
+	   //account for navigation
+        padding-top: @space-s;
+        padding-right: 0;
+        padding-left: 0;
+        padding-bottom: 1.125em;
+        .seven-eighths();
+	});
+    // 912px/57em
+	.min-width(57em; {
+        padding-bottom: @space-s
+    });
+    
+}
+
+// 640px/40em
+.min-width(40em; {
+ 
+.header__wrapper, .admin__wrapper {
+    padding-left: @gutter;
+    padding-right: @gutter;
+        
+}
+
+
+.section__wrapper {
+    margin-top: @gutter;
+    margin-bottom: @gutter;
+    padding-left: @gutter;
+    padding-right: @gutter;
+}
+    
+});
+
+.min-width(120em; {
+    /// this class is on the html 
+    .cssvwunit {
+       font-size: 0.833333333333333vw; 
+    }
+    
+});
+// Media Queries for component in situ
+
+
