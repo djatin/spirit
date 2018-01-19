@@ -47,7 +47,7 @@ infographic__figcaption (wrapper for the text)
 .infographic__highlight {
     // get bigger when you have space
 	.min-width(30em; {
-        .kilo ();
+        //.kilo ();
     });
 }
 
@@ -61,8 +61,10 @@ infographic__figcaption (wrapper for the text)
 .section__figure-group {
     display: flex; /* 1 */
   flex-wrap: wrap; /* 2 */
-  margin-left: (@gutter/2); /* 5 match margin on items */
-  margin-right: (@gutter/2);
+    margin-left: -2%;
+    margin-right: -2%;
+  //margin-left: (@gutter/2); /* 5 match margin on items */
+  //margin-right: (@gutter/2);
     
 }
 
@@ -71,6 +73,10 @@ infographic__figcaption (wrapper for the text)
     flex: 1 0 ((100% / 3) - (@gutter));/* 3 100% / number of items - the margin-left + margin-right */
 }
 
+    .infographic{
+        margin-bottom: 0;
+    }
+    
 });
     
 /*.section__figure-group > figure {

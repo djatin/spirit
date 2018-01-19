@@ -35,12 +35,12 @@
 
 .toggle-control {
     display: block;
-    margin: 0.75em;
+    margin: 3em 0.75em 0;
     padding: 0.6875em;
     min-height: 3em;
     min-width: 3em;
     border: 1px solid @grey;
-    background: transparent;
+    background: @whiteonblack;
     text-align: center;
     overflow: hidden;
     .appearance();
@@ -68,8 +68,9 @@
 .menu button, .menu a, .menu span {
     display: block;
     padding: 1.25em;
-    font-size: 0.75em;
-    color: @grey--dark-4;
+    font-size: 1em;
+    color: @black;
+    font-family: @font-stack__oswald;
     text-decoration: none;
     text-transform: uppercase;
     .letterspacing60();
@@ -81,20 +82,8 @@
     &:active, &:focus {
         outline: @outline;
     }
-    &:active, &:focus, &.active, &.is-active {
-        color: @white;
-    }
-    &.active, &.is-active {
-        background-color: darken(@basecolor, 5%);
-    }
-    
-    &:active, &:focus {
-        background-color: darken(@basecolor, 10%);
-        
-    }
     &:hover {
-        background-color: @basecolor;
-        color: @whiteonblack;
+        color: @grey--light-2;
     }
     
 }
@@ -129,12 +118,11 @@
 
 
 .global-nav button, .global-nav a, .global-nav span {
-    padding-top: 0.92857142857143em;
+    padding-top: 0.75em;
     padding-right: 1em;
-    padding-bottom: 0.92857142857143em;
+    padding-bottom: 0.75em;
     padding-left: 1em;
-    .zeta ();
-
+    //.zeta ();
 }
 
 .global-nav .menu .menu a {
@@ -181,5 +169,71 @@
     }
     &:hover {
         background-color: darken(@highlight--color-1, 3%);
+    }
+}
+
+
+.contentinfo__global-nav {
+    .menu li a{
+        padding: .375em 0 .875em;
+        color: @white;
+        &:focus, &:active{
+            background: none;
+            color: inherit;
+        }
+    }
+    .menu .menu li a{
+        padding: .75em 0;
+        font-size: .9375em;
+        text-transform: none;
+        color: @highlight--color-4;
+    }
+}
+
+//.header__partner-logos .menu li{
+.partner-logos .menu li{
+    display: inline-block;
+    margin: 0 1em 0 0;
+    &:last-child{
+        margin-right: 0;
+    }
+    a{
+        padding: 0;
+        color: transparent;
+        text-indent: -12em;
+        overflow: hidden;
+        height: 3em;
+        background-repeat: no-repeat;
+    }
+    a[style="big-lottery-fund"]{
+        background-image: url(../img/big-lottery-fund.png);
+        width: 15em;
+        border-right: 1px solid @whiteonblack;
+        opacity: .65;
+    }
+    a[style="national-lottery"]{
+        background-image: url(../img/national-lottery.png);
+        width: 3em;
+    }
+}
+
+.contentinfo__utility-nav{
+    clear: both;
+    margin-top: 1em;
+    .menu li{
+        display: inline-block;
+        margin-left: 1em;
+        margin-right: 1em;
+        margin-top: 1em;
+        &:first-child{
+            margin-left: 0;
+        }
+        &:last-child{
+            margin-right: 0;
+        }
+        a{
+            padding: 0;
+            color: @white;
+        }
     }
 }

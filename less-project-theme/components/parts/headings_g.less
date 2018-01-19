@@ -18,8 +18,13 @@
 }*/
 
 .title {
-    .alpha--no-margin ();
+    .gamma--no-margin ();
     text-transform: uppercase;
+    .letterspacing120();
+    color: @titlecolor;
+    .wf-active &{
+        font-family: @titlefont;
+    }
 }
 
 // long titles 
@@ -33,7 +38,7 @@
 } 
 
 .hgroup {
-    margin-bottom: @space-default;
+    //margin-bottom: @space-default;
 }
 
 .hgroup__subtitle {
@@ -61,12 +66,23 @@
 
 
 .o-media__hgroup {
-    margin-top: @space-default; //stop the center media hitting the top of the media item
+    //margin-top: @space-default; //stop the center media hitting the top of the media item
 }
 
 //contentinfo title 
 .contentinfo .title {
-    .gamma ();
+    .gamma--no-margin ();
+    color: inherit;
+    font-family: @font-stack__oswald;
+}
+
+.o-splash__hgroup .title{
+    .mega();
+    color: inherit;
+    margin: 0;
+    .wf-active &{
+        font-family: @bannertitlefont;
+    }
 }
 
 // scoped areas where we have no control over user input
@@ -74,4 +90,12 @@
     h2, h3, h4, h5, h6 {
     font-weight: 700;
     }
+}
+
+.hgroup--emblished{
+    text-align: center;
+}
+
+.d-section--style-banner-1 .title--splash{
+    .alpha ();
 }

@@ -110,7 +110,7 @@
 });
 
 //768px Minor -----------------------
-.min-width(48em; {
+.min-width(70em; {
 // Make the skip to menu button tabable on focus 
 .menu-toggle .toggle-control {
         //all imutable don't want overidden
@@ -146,6 +146,8 @@
     // Sub nav
     .navigation__global-nav .menu .menu {
         position: absolute;
+        background: @grey--dark-1;
+        width: 14em;
     }
     
     .navigation__global-nav .menu {
@@ -154,8 +156,12 @@
     }
     
     .navigation__global-nav .menu li {
-    float: left;
+        float: left;
+    }
     
+    .navigation__global-nav .menu .menu li{
+        float: none;
+        display: block;
     }
     
 // utility navigation -------------------
@@ -166,16 +172,13 @@
     right: 0;
      .clearfix();   
 }
-    
-});
-
-//912px Minor -----------------------
-.min-width(57em; {
  
 // navigation (role='navigation') -----------------------------   
     .navigation {
-        top: 5.25em; 
-        right: @gutter;
+        top: 3em; 
+        left: 29em;
+        right: auto;
+        border-left: 1px solid @white;
     }
 // global navigation -------------------
     .navigation__global-nav > .menu {
@@ -192,25 +195,45 @@
 .navigation__utility-nav {
         top:-4.5em;
 }  
-    
+    .menu button, .menu a, .menu span{
+        color: @white;
+        background-color: transparent;
+    }
 });
 
-.min-width(78em; {
- 
-// navigation (role='navigation') -----------------------------   
-    .navigation {
-        top: 5.25em; 
-        right: @gutter;
+.min-width(48em{
+    .header__partner-logos{
+        /*float: right;
+        margin-top: 2.25em;*/
+        float: left;
+        margin-top: 2.25em;
+        margin-left: 1em;
+        border-left: 1px solid #f2f2f2;
+        padding-left: 1em;
     }
-// global navigation -------------------
- 
-    
-// utility navigation -------------------
-    
-.navigation__utility-nav {
-        top:-4.5em;
-}  
-    
+   .contentinfo__global-nav {
+        .menu {
+            display: table;
+            .one-whole();
+            //text-align: center;
+            li{
+                display: table-cell;
+                vertical-align: top;
+            }
+        }
+        .menu .menu li{
+            display: block;
+        }
+    } 
+});
+
+.min-width(70em{
+    .header__partner-logos{
+        float: right;
+        margin-left: 0;
+        border-left: none;
+        padding-left: 0;
+    }
 });
 
 // Media Queries for component in situ 

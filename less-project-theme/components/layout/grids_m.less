@@ -104,7 +104,7 @@
     .grid--gutter {
         .min-width(@handheld_minor {
         
-            margin-right: (0% - @gutter--grid);     /* [3] */
+            //margin-right: (0% - @gutter--grid);     /* [3] */
             
          });   
     }
@@ -125,6 +125,10 @@
         // once grid items start being in a grid remove default top margin
         margin: 0 @gutter--grid @gutter--grid 0; 
         //padding: 0 0 0 @gutter;           /* [2] */ 
+            
+            &:last-child{
+                margin-right: 0;
+            }
             
         }); 
         

@@ -35,6 +35,8 @@
 //.d-section--style-feed (normally where you find tiles
 
 // turn it into a flex box contianer and push button to the bottom
+
+
 .flexbox .o-tile {
     .min-width(40em {
         // turn it in to a flex box contianer 
@@ -89,19 +91,32 @@
 
 // SITE SPECIFIC TWEAKS =================================================== 
 
-
-.min-width(40em {
-// when the tiles are side by side we need some gutters 
-.o-tile__body, .o-tile__item {
-    padding-left: @gutter;
-    padding-right: @gutter;
-     
-}
-    
-.o-tile__text {
-     padding-right: (@gutter * 2); 
-}
-    
+.min-width(30em{
+    .o-tile__title{
+        font-size: 2.1875em;
+        margin-bottom: .75em;
+    } 
+});
+.min-width(48em {
+    .d-section--style-feed.d-section--alignment-left,
+    .d-section--style-feed.d-section--alignment-right{
+        .o-tile__item{
+            max-width: 67%;
+            width: 100%;
+        }
+    }
+    .d-section--style-feed.d-section--alignment-left{
+        .o-tile__item{
+            float: left;
+            padding-right: (@gutter / 2);
+        }
+    }
+    .d-section--style-feed.d-section--alignment-right{
+        .o-tile__item{
+            float: right;
+            padding-left: (@gutter / 2);
+        }
+    }
 }); 
 
 // end base

@@ -28,7 +28,7 @@
 
 .o-btn a {
 display : inline-block;
-margin : 1px 0; // 12px 0 12px
+//margin : 1px 0; // 12px 0 12px
 padding : 0.75em 1.5em; // height 48px; 
 font-size: 1em;
 //font-weight: 700;
@@ -46,6 +46,9 @@ background-color : darken(@btnbackgroundcolor, 2%);
 .BoxShadowHelper(0); 
 .transition(background @duration-promptly ease-in-out);
     
+    .wf-active &{
+        font-family: @font-stack__oswald;
+    }
     &:hover, &:active, &:focus {
         color: @white;
          
@@ -60,8 +63,6 @@ background-color : darken(@btnbackgroundcolor, 2%);
     }
     
     &:hover, &:active, &:focus {
-        margin-top: 2px;
-        margin-bottom: 0; // 13px 0 11px
         box-shadow: none;
     }
     
@@ -72,9 +73,9 @@ background-color : darken(@btnbackgroundcolor, 2%);
 
 //rust
 .btn--style-1 a {
-    background : darken(@highlight--color-1, 2%);
+    background : @highlight--color-1;
     &:hover {
-        background-color: @highlight--color-1;
+        background-color: darken(@highlight--color-1, 5%);
     }
    &:active, &:focus {
         background-color : lighten(@highlight--color-1, 3%);
@@ -84,14 +85,12 @@ background-color : darken(@btnbackgroundcolor, 2%);
 
 // Ghost
 .btn--style-2 a {
-    border: 2px solid @grey;
-    color: @grey;
-    background : none;
+    background : @highlight--color-3;
     &:hover {
-        border-color : @btnbackgroundcolor;
+        border-color : darken(@highlight--color-3, 5%);
     }
    &:active, &:focus {
-        border-color: lighten(@btnbackgroundcolor, 1%);
+        border-color: lighten(@highlight--color-3, 5%);
     }
     
 }
@@ -99,9 +98,6 @@ background-color : darken(@btnbackgroundcolor, 2%);
 
 //component in situe
 
-.o-tile .o-btn {
-    margin-top: @space-m;
-}
 
 // media button
 

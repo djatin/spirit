@@ -29,7 +29,7 @@
         // Common scripts adds class Mustardo if your in a HTML5 browser
 		
 		
-		/*// ACCESSIBLE OFF CANVASS MENU 2.0 */
+		// ACCESSIBLE OFF CANVASS MENU 2.0 
 		// only for cuts mustard browsers
 		jQuery('#menu-toggle').addClass('mustardo-menu-toggle');
         jQuery('#navigation').addClass('mustardo-navigation')
@@ -45,7 +45,7 @@
 		jQuery('.mustardo-navigation').attr( 'aria-hidden', 'true' );
 		
 		// This should only happen till a certain point
-		if (Modernizr.mq('(max-width: 47.9375em)')) {
+		if (Modernizr.mq('(max-width: 69.9375em)')) {
 		 
 		
 		 // remove the link 
@@ -134,7 +134,7 @@
 	// END ACCESSIBLE OFF CANVAS
 	
 	
-	/*// ACCESSIBLE PANEL DROP DOWN MENU */
+	// ACCESSIBLE PANEL DROP DOWN MENU 
         // ARIA Panel Menu 
 	function PanelDropDown() {
 	
@@ -166,7 +166,7 @@
 	}
 	
 	// for navigation 
-	if (Modernizr.mq('(min-width: 48em)')) {
+	if (Modernizr.mq('(min-width: 70em)')) {
 	jQuery('.panel').addClass('js-panel');	
 	jQuery('.panel > a, .panel > span').addClass('js-panel__link');
 	jQuery('.panel .menu').addClass('js-panel__child');	
@@ -229,7 +229,7 @@
  	 });
 	}
 	
-	if (Modernizr.mq('(max-width: 47.9375em)')) {
+	if (Modernizr.mq('(max-width: 69.9375em)')) {
 		//SO Strip all stuff out of navigation panels as it is controlled by the off canvas menu. 
 		 jQuery('.js-panel__link').removeClass('bound');
 		jQuery('#navigation .panel').removeClass('js-panel');	
@@ -265,7 +265,7 @@
 	// END FUCTION
 	}
 	
-	// END ACCESSIBLE PANEL DROP DOWN MENU 
+	// END ACCESSIBLE PANEL DROP DOWN MENU
 	
 	
 	/*// TAKEOVER OVERLAY - Cookie 
@@ -369,7 +369,7 @@ function showHideTakeover () {
 		//END TAKEOVER */
 		
 		
-		/*//FORM SCRIPTS  ==========================================*/ 
+		/*//FORM SCRIPTS  ==========================================
 		//Get some classes going
 		function DonateFormBehaviour() {
 		$('.form--sponsor, .form--donate').addClass('js-donate-form');
@@ -416,9 +416,9 @@ function showHideTakeover () {
 		
 		}//end wrapper function
 		
-		//END FORM SCRIPTS ==========================================
+		//END FORM SCRIPTS ========================================== */ 
 		
-		/*//ACCESSIBLE TAB LIST  ==================================*/
+		/*//ACCESSIBLE TAB LIST  ==================================
 		
 		//Stolen almost wholesale from Heydon Pickering's http://heydonworks.com/practical_aria_examples/#tab-interface
 		//And http://simplyaccessible.com/article/danger-aria-tabs/
@@ -572,14 +572,33 @@ $('[role="tab"]').on('click', function(e) {
 		
 		
 		
-		//END ACCESSIBLE TAB LIST =================================
+		//END ACCESSIBLE TAB LIST ================================= */
+		
+		//super simple image switcheroo for logo to svg
+		function replacePNG() {
+
+			// Check moderizr 
+			if (jQuery('html').hasClass('no-svg')) {
+			jQuery('.logo--site .logo__img').each(function(index,element) {
+          			element.src = element.src.replace('.gif','.png');
+        	});
+			
+			} else if (jQuery('html').hasClass('svg')) {
+				
+				jQuery('.logo--site .logo__img').each(function(index,element) {
+          			element.src = element.src.replace('.gif','.svg');
+					
+        		});
+			}
+		};
 		
 		
 		//INNIT FUNCTIONS
 		OffCanvasMenu();
 		PanelDropDown();
 		//showHideTakeover ();
-		DonateFormBehaviour();
+		//DonateFormBehaviour();
+		replacePNG();
 		
 		//RESIZE FUNCTIONS
 		var widthHorz ='';
@@ -590,7 +609,7 @@ $('[role="tab"]').on('click', function(e) {
 	
 		$window.smartresize(function() {
 		// fix reszie bug in android
-		 if ( widthHorz != $window.width() ) {
+		  if ( widthHorz != $window.width() ) {
 			OffCanvasMenu();
 
 		 }

@@ -33,11 +33,10 @@ d-section--modification-1|data capture banner
 
 // default for banner is centered text
 .d-section--style-banner {
-        margin: 0;
-        padding: 0;
-
-        .clearfix(); 
-        overflow: hidden; // hide everyting outside this
+    margin: 0;
+    padding: 0;
+    .clearfix(); 
+    overflow: hidden; // hide everyting outside this
         
 }
 //pattern library style so you can see where one banner starts and one finishes
@@ -48,7 +47,7 @@ d-section--modification-1|data capture banner
 
 .o-splash {
     color: @white;
-    background: @highlight--color-2;  
+    background: inherit;  
 }
 
 .o-splash__anchor {
@@ -69,8 +68,7 @@ d-section--modification-1|data capture banner
 .o-splash__the-measure {
         margin-left: auto;
         margin-right: auto;
-        .themeasure();
-    
+        .themeasure();   
 }
 
 .o-splash__hgroup {
@@ -80,10 +78,13 @@ d-section--modification-1|data capture banner
 .o-splash__text {
     margin-top: @space-default;
     
+    .wf-active &{
+        font-family: @font-stack__georgia;
+    }
 }
 
 .o-splash__text p { 
-    .zeta--margin(); 
+    .epsilon--margin (); 
 }
 
 /*.o-splash__icon {
@@ -98,7 +99,7 @@ d-section--modification-1|data capture banner
 
 // Align everything left is done by deafult
 .d-section--alignment-left .o-splash__text, .d-section--alignment-right .o-splash__text {
-    .seven-eighths();
+    //.seven-eighths();
 }
 
 .d-section--alignment-left .o-splash__text {
@@ -131,7 +132,21 @@ d-section--modification-1|data capture banner
     }
     
 .d-section--alignment-right .o-splash__the-measure {
-        margin-right: 0;
+    margin-right: 0;
+    text-align: right;
+}
+
+.d-section--modification-1 .o-splash__the-measure{
+    border-bottom: 1px solid @white;
+    padding-bottom: @gutter--grid;
+}
+
+.d-section--style-banner-1 .o-splash__hgroup:before{
+    content: '';
+    width: 100%;
+    display: block;
+    height: 6.375em;
+    background: url(../img/spirit_illustration.png) no-repeat center;
 }
 
 //Tall / Short / Other styles 

@@ -14,14 +14,18 @@
 @fall-back--serif: TimesNewRoman, "Times New Roman", serif;
 
 @font-stack__open: 'Open Sans', @fall-back--sans-serif;
-@font-stack__playfair: 'Playfair Display', @fall-back--sans-serif;
+@font-stack__oswald: 'Oswald', @fall-back--sans-serif;
+@font-stack__georgia: 'Georgia', @fall-back--sans-serif;
 @font-stack__codefont : Monaco, Courier New, monospace;
 
+@titlefont : @font-stack__georgia;
+@bannertitlefont : @font-stack__oswald;
 
 @basefont : @font-stack__open;
 @basefontsize : 1em;
 @baseline : 1.5; // don't define a unit or things will not scale
 @baselineunit: (@baseline * 1em);
+
 
 
 // 3. COLOUR 				==============================
@@ -30,12 +34,18 @@
 
 //@emergencybg : rgb(247, 105, 105); //#f76969
 @twitterbg : rgb(0,158,239); //#009eef 
-@footerbg : @whiteonblack; //#2a2a2a
-@footertextcolor : @grey--dark-4;
+@footerbg : @grey--dark-1; //#676767
+@footertextcolor : @whiteonblack;
 
-@highlight--color-1 : rgb(202, 69, 0); // #ca4500 rusty orange
-@highlight--color-2 : rgb(67, 87, 100); //#435764 dark blue bg
-@highlight--color-3 : rgb(245, 161, 29); // #f5a11d weird orange/yellow
+@highlight--color-1 : rgb(146, 59, 102); // #923b66 dark pink
+@highlight--color-2 : rgb(96, 125, 64); //#627d40 green bg
+@highlight--color-3 : rgb(98, 79, 118); // #624f76 moov
+@highlight--color-4 : rgb(213, 219, 216); // #d5dbd8 light grey
+@highlight--color-5 : rgb(101, 143, 169); // #658fa9 blue
+
+@formbtncolor : rgb(99, 156, 184); // #639cb8;
+@titlecolor : rgb(140, 140, 140); // #8c8c8c;
+@headerbgcolor : rgb(28, 28, 28); // #1c1c1c;
 
 @bck-color-base: @white;
 @bck-color-alt: #f7f5ea;
@@ -48,7 +58,7 @@
 @grey--light-3: #7a8683; //#7a8683;
 @grey--light-4: #807f7b; //#807f7b;
 
-@grey--dark-1: rgb(108,109,112); //#6c6d70
+@grey--dark-1: rgb(103,103,103); //#676767
 @grey--dark-2: rgb(93,94,97); //#5d5e61
 @grey--dark-3: rgb(74,71,71); //#4a4747
 @grey--dark-4: rgb(51,51,51); //#333
@@ -106,8 +116,8 @@
 @inputbackground--focus  : @white;
 @inputborder--focus 	 : lighten(@warningcolor, 10%);
 @inputtext               : @textcolor; // text grey #757575
-@submitbackground        : @highlight--color-1;
-@submitborder            : @highlight--color-1;
+@submitbackground        : @formbtncolor;
+@submitborder            : @formbtncolor;
 @submittext              : @white; 
 
 // 6. LAYOUT 				==============================

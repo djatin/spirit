@@ -14,8 +14,18 @@ things in the banner
 	// 320px/20em
 	.min-width(20em; {
         position: relative;
-        
+        z-index: 2;
+        .not-logged-in &{
+            height: 7.75em;
+        }
     });
+    .has-banner &{
+        .min-width(40em{
+            position: absolute; 
+            width: 100%;
+            z-index: 450;
+        });
+    }
 	// 768px/48em
 	//.min-width(48em; {
 	   //account for navigation

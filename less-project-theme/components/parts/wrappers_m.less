@@ -66,7 +66,7 @@ section (semantic wrapper)
 .header__wrapper, .admin__wrapper {
     padding-left: @gutter;
     padding-right: @gutter;
-        
+    padding-top: 4em;
 }
 
 
@@ -78,6 +78,25 @@ section (semantic wrapper)
 }
     
 });
+
+
+.wrapper--page {
+    // 1px/0.0625em
+    .min-width(0.0625em; { 
+        //max-width: none;
+        max-width: 85em;
+        overflow: hidden;
+    });
+    .min-width(84em; { 
+        .box-shadow();
+    });
+    // make the site bigger at large sizes
+    //1632px /101em
+    .min-width(102em; { 
+        font-size: 1.125em;
+        font-size: 1vw;
+    });   
+}
 
 .min-width(120em; {
     /// this class is on the html 

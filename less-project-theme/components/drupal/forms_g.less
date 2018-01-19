@@ -100,8 +100,9 @@ input, textarea, button, select {
 
 //borders fro inputs and text area
 input,textarea {
-padding: 0.42857142857143em; //6px + 1px border + 22px lineheight = 36px 
-height: 3.428571428571429em; //48px 
+//padding: 0.42857142857143em; //6px + 1px border + 22px lineheight = 36px 
+//height: 3.428571428571429em; //48px
+padding: .643em 1em;
 // Ios Gradient background
 background-image:-webkit-gradient(linear, 0% 0%, 0% 100%, from(hsla(0,0%,100%,0)), to(hsla(0,0%,100%,0)));
 background-image:-webkit-linear-gradient(hsla(0,0%,100%,0), hsla(0,0%,100%,0));
@@ -347,12 +348,13 @@ display : none; }
 
 
 .form-submit {
-    margin : 1px 0 3px; // 1px 0 3px // match box shadow
-    padding : 0.857142857142857em 1.71428571428571em; // height 48px; 
+    //margin : 1px 0 3px; // 1px 0 3px // match box shadow
+    //padding : 0.857142857142857em 1.71428571428571em; // height 48px; 
+    padding : 0.5em 1em; // height 48px; 
     height: auto;
     width: auto; 
-    .zeta (); //14px / 22px
-    font-weight: 700;
+    .epsilon (); //16px
+    font-weight: 400;
     text-transform: uppercase;
     text-align: center;
     color : @submittext; 
@@ -366,24 +368,20 @@ display : none; }
     // match .o-btn
     .BoxShadowHelper(0);
     .rounded(0);
+    .wf-active &{
+        font-family: @font-stack__oswald;
+    }
     &:hover, &:active, &:focus {
         color: @submittext;
     }
     &:hover {
        background-color : darken(@submitbackground, 4%);
        border-color : darken(@submitborder, 4%); 
-            
     }
-    &:active, &:focus {
-        
+    &:active, &:focus {   
         background-color : lighten(@submitbackground, 2%);
         border-color : lighten(@submitborder, 2%);
         
-    }
-    &:hover, &:active, &:focus {
-        margin-top: 2px;
-        margin-bottom: 2px; 
-        box-shadow: none;
     }
 }
 
