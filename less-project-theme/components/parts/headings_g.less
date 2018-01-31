@@ -18,12 +18,25 @@
 }*/
 
 .title {
-    .gamma--no-margin ();
+    .gamma--margin ();
     text-transform: uppercase;
     .letterspacing120();
     color: @titlecolor;
     .wf-active &{
         font-family: @titlefont;
+    }
+}
+
+.node-type-blog .d-section--style-text .title{
+    .alpha ();
+    &:after{
+        content: '';
+        width: 3em;
+        height: 1px;
+        display: block;
+        margin-top: .75em;
+        margin-bottom: 1em;
+        background: @titlecolor;
     }
 }
 

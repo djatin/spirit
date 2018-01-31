@@ -201,16 +201,28 @@
     }
 });
 
-.min-width(48em{
-    .header__partner-logos{
-        /*float: right;
-        margin-top: 2.25em;*/
+.header__partner-logos{
+    text-align: right;
+    .min-width(29em{
+        margin-top: -2em;
+    });
+    .min-width(43em{
         float: left;
-        margin-top: 2.25em;
+        margin-top: 1.25em;
         margin-left: 1em;
         border-left: 1px solid fade(@whiteonblack, 65%);
-        padding-left: 1em;
+        padding-left: 1em; 
+    });
+}
+.min-width(51.25em{
+    .toggle-control{
+        margin-top: 3em;
     }
+    .header__partner-logos{
+        margin-top: 2.25em;
+    }
+});
+.min-width(48em{
    .contentinfo__global-nav {
         .menu {
             display: table;

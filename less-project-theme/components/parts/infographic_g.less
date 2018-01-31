@@ -26,8 +26,6 @@ infographic__figcaption (wrapper for the text)
     //display: inline-block;
     margin-top: @space-default;
     margin-bottom: @space-default;
-    padding-left: 2%;
-    padding-right: 2%;
     text-align: center;
     vertical-align: top;
 }   
@@ -57,6 +55,9 @@ infographic__figcaption (wrapper for the text)
 
 .infographic__title {
     .beta--margin ();
+    .wf-active &{
+        font-family: @font-stack__georgia;
+    }
 }
 
 // the emblished part of the infographic title

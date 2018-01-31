@@ -66,8 +66,15 @@
            float: right;
     }
         
+    .d-section--style-media[class*='--alignment-center'] .o-media__item  {
+           margin-left: auto;
+           margin-right: auto;
+           float: none;
+           .themeasurelg()
+    }
     
-    .d-section--style-media[class*='--alignment-center'] .o-media__body {
+    .d-section--style-media[class*='--alignment-center'] .o-media__body,
+    .d-section--style-media[class*='--alignment-center'] .the-measure {
             // match the text measure
            margin-left: auto;
            margin-right: auto;
@@ -101,11 +108,11 @@
            .five-eighths();
     }
 
-    .d-section--style-media[class*='--alignment-center'] .o-media__item  {
+    /*.d-section--style-media[class*='--alignment-center'] .o-media__item  {
            margin-left: auto;
            margin-right: auto;
            float: none;
-    }
+    }*/
     
     
     .d-section--style-media[class*='--alignment-center'] .o-media__item[class*='gallery']  {

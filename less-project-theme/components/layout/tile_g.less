@@ -34,7 +34,8 @@
 
 .o-tile img {
     display: block;
-    margin-top: 0;
+    max-width: 12em;
+    margin: 0 auto;
 }
 
 .o-tile__body {
@@ -43,20 +44,22 @@
     //overflow: hidden;  
     /*// for testing 
     border: 1px solid #ccc;*/
+    text-align: center;
 }
 
 .o-tile__title {
     margin-bottom: @space-default;
     .beta--margin ();
+    font-weight: 300;
     .wf-active &{
-        font-family: @font-stack__georgia;
+        font-family: @font-stack__oswald;
     }
 }
 
 .o-tile__title a {
     display: block;
     //padding-right: 0.75em;
-    color: inherit;
+    color: @highlight--color-5;
     position: relative;
     
     &:hover {
@@ -93,10 +96,26 @@
     .epsilon ();
 }
 
-/*.o-tile__btn {
-    display: none; // I have a feeling this may come back so don't remove from template
-}*/
-
+.d-section--style-feed.d-section--alignment-left,
+.d-section--style-feed.d-section--alignment-right{
+    .o-tile img{
+        max-width: 100%;
+    }
+    .o-tile__body{
+        text-align: left;
+    }
+    .o-tile__title a{
+        color: inherit;
+    }
+}
+.wf-active{
+    .d-section--style-feed.d-section--alignment-left,
+    .d-section--style-feed.d-section--alignment-right{
+        .o-tile__title{
+            font-family: @font-stack__georgia;
+        }
+    }
+}
 
 //elements in situe
 //.d-section--alignment-none (image above text default)

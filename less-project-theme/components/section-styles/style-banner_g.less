@@ -46,10 +46,15 @@ d-section--modification-1|data capture banner
 
 
 .o-splash {
-    color: @white;
+    //color: @white;
     background: inherit;  
 }
 
+.d-section--style-2, .d-section--style-1{
+    .o-splash{
+        color: @white;
+    }
+}
 .o-splash__anchor {
     position: relative;  
 }
@@ -68,7 +73,7 @@ d-section--modification-1|data capture banner
 .o-splash__the-measure {
         margin-left: auto;
         margin-right: auto;
-        .themeasure();   
+        .themeasurelg();   
 }
 
 .o-splash__hgroup {

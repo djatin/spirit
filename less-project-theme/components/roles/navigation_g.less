@@ -35,7 +35,7 @@
 
 .toggle-control {
     display: block;
-    margin: 3em 0.75em 0;
+    margin: 2em 0.75em 0;
     padding: 0.6875em;
     min-height: 3em;
     min-width: 3em;
@@ -177,9 +177,13 @@
     .menu li a{
         padding: .375em 0 .875em;
         color: @white;
+        display: inline-block;
         &:focus, &:active{
             background: none;
             color: inherit;
+        }
+        &:hover{
+            color: @whiteonblack;
         }
     }
     .menu .menu li a{
@@ -187,33 +191,42 @@
         font-size: .9375em;
         text-transform: none;
         color: @highlight--color-4;
+        &:hover{
+            color: lighten(@highlight--color-4, 10%);
+        }
     }
 }
 
 //.header__partner-logos .menu li{
-.partner-logos .menu li{
-    display: inline-block;
-    margin: 0 1em 0 0;
-    &:last-child{
-        margin-right: 0;
-    }
-    a{
-        padding: 0;
-        color: transparent;
-        text-indent: -12em;
-        overflow: hidden;
-        height: 3em;
-        background-repeat: no-repeat;
-    }
-    a[style="big-lottery-fund"]{
-        background-image: url(../img/big-lottery-fund.png);
-        width: 15em;
-        border-right: 1px solid @whiteonblack;
-        opacity: .65;
-    }
-    a[style="national-lottery"]{
-        background-image: url(../img/national-lottery.png);
-        width: 3em;
+.partner-logos{
+    max-height: 3em;
+    .menu li{
+        display: inline-block;
+        margin: 0 1em 0 0;
+        &:last-child{
+            margin-right: 0;
+        }
+        a{
+            padding: 0;
+            color: transparent;
+            text-indent: -12em;
+            overflow: hidden;
+            height: 3em;
+            background-repeat: no-repeat;
+        }
+        a[style="big-lottery-fund"]{
+            background-image: url(../img/big-lottery-fund.png);
+            width: 15em;
+            border-right: 1px solid @whiteonblack;
+            opacity: .65;
+        }
+        a[style="national-lottery"]{
+            background-image: url(../img/national-lottery.png);
+            width: 3em;
+        }
+        &:hover{
+            opacity: .9;
+        }
     }
 }
 
@@ -234,6 +247,9 @@
         a{
             padding: 0;
             color: @white;
+            &:hover{
+                color: @whiteonblack;
+            }
         }
     }
 }
