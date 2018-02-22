@@ -126,12 +126,12 @@
 }
 
 .global-nav .menu .menu a {
-    font-family: @fall-back--sans-serif;
-    padding-top: 1.25em;
-    padding-bottom: 1.25em;
+    //font-family: @fall-back--sans-serif;
+    padding-top: 1em;
+    padding-bottom: 1em;
     padding-left: 1.166666666666667em;
     padding-right: 1.166666666666667em;
-    font-size: 0.75em;
+    font-size: 0.875em;
 }
 
 //Component in situe --------------------
@@ -214,15 +214,16 @@
             height: 3em;
             background-repeat: no-repeat;
         }
-        a[style="big-lottery-fund"]{
-            background-image: url(../img/big-lottery-fund.png);
-            width: 15em;
-            border-right: 1px solid @whiteonblack;
-            opacity: .65;
-        }
         a[style="national-lottery"]{
-            background-image: url(../img/national-lottery.png);
+            background-image: url(../img/big_lottery_fund_logo.png);
             width: 3em;
+            background-size: 100% auto;
+        }
+        a[style="big-lottery-fund"]{
+            background-image: url(../img/national-lottery-logo.png);
+            width: 15em;
+            //opacity: .65;
+            background-size: 100% auto;
         }
         &:hover{
             opacity: .9;
@@ -230,6 +231,14 @@
     }
 }
 
+.contentinfo span.nolink{
+    padding-left: 0;
+    padding-right: 0;
+    color: @white;
+}
+.contentinfo .menu li .active-trail{
+    background-color: transparent;
+}
 .contentinfo__utility-nav{
     clear: both;
     margin-top: 1em;

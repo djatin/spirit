@@ -12,7 +12,13 @@ things in the banner
 */
 
 .banner {
-    background: fade(@headerbgcolor, 80%);   
+    background: @headerbgcolor;
+    .has-banner.not-logged-in &{
+        background: fade(@headerbgcolor, 80%);
+    }
+    .video .has-banner.not-logged-in &{
+        background: @headerbgcolor;
+    }
 }
 
 

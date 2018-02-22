@@ -256,7 +256,45 @@
 
 */
 
-
+.flexbox .d-feed--style-7 .d-feed__body{
+    > .o-tile {
+        margin-bottom: 3em;
+    }
+    .o-tile__title{
+        font-size: 1.5em;
+        font-weight: 500;
+        margin-bottom: 0;
+    }
+    .o-tile__item img{
+        max-width: inherit;
+        width: auto;
+    }
+    .o-btn{
+        text-align: center;
+        padding: 0 (@gutter/2);
+    }
+    .min-width(40em{
+        -webkit-justify-content: left;
+        justify-content: left;
+        margin-left: -3.125%;
+        margin-right: -3.125%;
+        > .o-tile {
+            padding: 0 (@gutter/2);
+            margin-bottom: (@gutter/2);
+        }
+        .o-tile__item img{
+            max-width: 100%;
+        }
+    });
+    .min-width(60em{
+        > .o-tile {
+            .one-third ();
+            max-width: 33.333%;
+            -webkit-flex: 1 0 33.333%;
+            flex: 1 0 33.333%;
+        }
+    });
+}
 
 // Component in situ 
 

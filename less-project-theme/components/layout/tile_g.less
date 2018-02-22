@@ -55,7 +55,21 @@
         font-family: @font-stack__oswald;
     }
 }
-
+.view-news-feed {
+    .o-tile__title {
+        font-family: @font-stack__georgia;
+        text-align: left;
+        font-size: 1.5em;
+        &:hover {
+	       text-decoration: underline;
+        }
+    }
+    .o-tile__subtitle{
+        max-width: 100%;
+        border-bottom: none;
+        text-align: left;
+    }
+}
 .o-tile__title a {
     display: block;
     //padding-right: 0.75em;

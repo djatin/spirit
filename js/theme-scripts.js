@@ -637,7 +637,30 @@ $('[role="tab"]').on('click', function(e) {
       
           // end non-mustardo
       }
-    
+		/*if(jQuery('html').hasClass('js')){
+			jQuery('.timeline-entry__year:not(.bound)').addClass('bound').click(function(){
+				jQuery('.timeline-entry__year').removeClass('timeline_active');
+				jQuery('.timeline-entry__body').hide();
+				jQuery(this).addClass('timeline_active');
+				jQuery(this).next('.timeline-entry__body').toggle();
+			});			
+		}*/
+		
+		if($("html.js").length) { // if HTML element with class .js exists
+			$('.view-timeline .views-row-first .timeline-entry__year').addClass('timeline_active');
+			$('.timeline-entry__year:not(.bound)').addClass('bound').click(function(e) { // event gets called when user clicks on year
+				
+				if($(this).hasClass("timeline_active")){ 
+					$(".timeline_active").removeClass("timeline_active"); // remove class from this element and don't re-add it
+				}else {
+					$(".timeline_active").removeClass("timeline_active"); // remove class from all elements
+					$(this).addClass("timeline_active") //add it to the one you've just clicked on
+				}
+				
+			});
+			
+		}
+		
       // END DRUPAL THEME SCRIPTS
     }
   };
