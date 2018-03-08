@@ -97,7 +97,7 @@ d-section--modification-1|data capture banner
 .min-width(@medium_major {
     
     .d-section--style-banner, .o-splash {
-        height: 33em; // must match image
+        //height: 33em; // must match image
     // cut off the banner here
         overflow: hidden;
     }
@@ -115,7 +115,7 @@ d-section--modification-1|data capture banner
     .o-splash__anchor {
         // height needs to be set to the aspect ratio fo the banner image
         // currently
-        height: 33em;
+        //height: 33em;
         position: absolute;
         top: 0;
         left: 0;
@@ -157,6 +157,7 @@ d-section--modification-1|data capture banner
         // rest padding to match wrappers
         padding-left: @gutter;
         padding-right: @gutter;
+        padding-bottom: 2.25em;
         vertical-align: bottom;
         // make the wrapper site infront of the anchor image
         position: relative;
@@ -178,6 +179,13 @@ d-section--modification-1|data capture banner
         //vertical-align: middle;
     }
     
+    .js-splash-video__wrapper .o-splash__text{
+        color: @white;
+    }
+    
+    .d-section--style-banner {
+        margin-bottom: 3em;
+    }
     
 });
 
@@ -187,14 +195,15 @@ d-section--modification-1|data capture banner
 //d-section--style-banner-1|Short
 //d-section--style-banner-2|Tall
 
-
-.d-section--style-banner.d-section--style-banner-1, .d-section--style-banner-1 .o-splash, .d-section--style-banner-1 .o-splash__anchor {
-    .min-width(@medium_major {
-        //height: 19.5em; // 312px
+.min-width(@medium_major {
+    .d-section--style-banner.d-section--style-banner-1, .d-section--style-banner-1 .o-splash, .d-section--style-banner-1 .o-splash__anchor {
         height: 21.375em; // 342px
-    });
-} 
+    } 
 
+    .d-section--style-banner.d-section--style-banner-2, .d-section--style-banner-2 .o-splash, .d-section--style-banner-2 .o-splash__anchor {
+        height: 33em; // 528px
+    }
+});
 
 //Tweaks
 // Data capture banners 
@@ -220,5 +229,3 @@ d-section--modification-1|data capture banner
         }
         });
     }
-
-

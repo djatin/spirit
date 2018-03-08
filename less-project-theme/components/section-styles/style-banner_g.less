@@ -33,7 +33,7 @@ d-section--modification-1|data capture banner
 
 // default for banner is centered text
 .d-section--style-banner {
-    margin: 0;
+    margin: 0 0 -3em;
     padding: 0;
     .clearfix(); 
     overflow: hidden; // hide everyting outside this
@@ -41,7 +41,7 @@ d-section--modification-1|data capture banner
 }
 //pattern library style so you can see where one banner starts and one finishes
 .section-banner-styles .d-section--style-banner {
-            margin-top: 1px;
+    margin-top: 1px;
 }
 
 
@@ -50,11 +50,6 @@ d-section--modification-1|data capture banner
     background: inherit;  
 }
 
-.d-section--style-2, .d-section--style-1{
-    .o-splash{
-        color: @white;
-    }
-}
 .o-splash__anchor {
     position: relative;  
 }
@@ -64,16 +59,23 @@ d-section--modification-1|data capture banner
 }
 
 .o-splash__wrapper {
-    padding-top: 1.875em; //36px - 6px of the line height ; 
-    padding-left: @space-l;  
-    padding-right: @space-l;  
-    padding-bottom: @space-l;
+    padding: 1.5em;
+}
+
+.d-section--style-2, .d-section--style-1{
+    margin-bottom: 0;
+    .o-splash{
+        color: @white;
+    }
+    /*& + .section__wrapper{
+        margin-top: 3em;
+    }*/
 }
 
 .o-splash__the-measure {
-        margin-left: auto;
-        margin-right: auto;
-        .themeasurelg();   
+    margin-left: auto;
+    margin-right: auto;
+    .themeasurelg();   
 }
 
 .o-splash__hgroup {

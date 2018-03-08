@@ -88,14 +88,13 @@
 // not to be shown or read
 .o-tile__subtitle {
     //display: none;
-    margin-top: 0; //0
+    //margin-top: 0; //0
     .zeta ();
     font-family: @fall-back--serif;
     .letterspacing120();
     text-transform: uppercase;
     border-bottom: 1px solid;
     padding-bottom: .75em;
-    max-width: 80%;
     .wf-active &{
         font-family: @font-stack__oswald;
     }
@@ -110,6 +109,10 @@
     .epsilon ();
 }
 
+.d-feed--style-2 .o-tile__text{
+    .visually-hidden();
+}
+
 .d-section--style-feed.d-section--alignment-left,
 .d-section--style-feed.d-section--alignment-right{
     .o-tile img{
@@ -120,6 +123,9 @@
     }
     .o-tile__title a{
         color: inherit;
+    }
+    .o-tile__subtitle{
+        max-width: 80%;
     }
 }
 .wf-active{
@@ -142,10 +148,10 @@
 // SITE SPECIFIC TWEAKS =================================================== 
 // feed taging styles
 .o-tile__footer {
-    margin-top: @space-l;
+    /*margin-top: @space-l;
     padding-top: @space-s;
     border-top-width: 1px;
-    border-top-style: solid;
+    border-top-style: solid;*/
     border-top-color: @textcolor;
     .zeta ();
 }
@@ -153,6 +159,7 @@
 .o-tile__category {
     font-weight: 700;
     color: @basecolor;
+    .visually-hidden();
 }
 
 // end base
